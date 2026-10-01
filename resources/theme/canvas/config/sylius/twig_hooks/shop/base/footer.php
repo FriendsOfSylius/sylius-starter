@@ -12,6 +12,11 @@ return App::config([
                     'template' => 'shop/shared/layout/base/footer/content.html.twig',
                 ],
             ],
+            'sylius_shop.base.footer.content' => [
+                'copy' => [
+                    'template' => 'shop/shared/layout/footer/copy.html.twig',
+                ],
+            ],
         ],
     ],
 ]);
