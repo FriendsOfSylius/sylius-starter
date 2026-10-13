@@ -12,8 +12,6 @@ use Castor\Docker\Event\RegisterServiceEvent;
 use Castor\Docker\Service\PhpMode;
 use Castor\Docker\Service\PostgresService;
 use SyliusStarter\Core\Service\SyliusService;
-use SyliusStarter\PaymentGateways\Attribute\AsPaymentGatewayInstaller;
-use SyliusStarter\PaymentGateways\Attribute\AsPaymentGatewayRemover;
 use SyliusStarter\Plugins\Attribute\AsPluginInstaller;
 use SyliusStarter\Plugins\Attribute\AsPluginRemover;
 use SyliusStarter\Themes\Themes;
@@ -128,18 +126,6 @@ function test_installer(): void
 function test_remover(): void
 {
     io()->success('New remover using a custom function is ok');
-}
-
-#[AsPaymentGatewayInstaller(name: 'test_payment_gateway_with_function')]
-function test_payment_gateway_installer(): void
-{
-    io()->success('New payment gateway installer using a custom function is ok');
-}
-
-#[AsPaymentGatewayRemover(name: 'test_payment_gateway_with_function')]
-function test_payment_gateway_remover(): void
-{
-    io()->success('New payment gateway remover using a custom function is ok');
 }
 
 #[AsListener(RegisterServiceEvent::class)]

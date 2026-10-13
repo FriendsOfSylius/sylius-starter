@@ -35,7 +35,6 @@
         "sylius-starter/b2b": "self.version",
         "sylius-starter/import": "self.version",
         "sylius-starter/menu": "self.version",
-        "sylius-starter/payment-gateways": "self.version",
         "sylius-starter/plugins": "self.version",
         "sylius-starter/themes": "self.version",
         "sylius-starter/upsun": "self.version"
@@ -49,7 +48,6 @@
             "SyliusStarter\\B2b\\": "src/B2b/src/",
             "SyliusStarter\\Import\\": "src/Import/src/",
             "SyliusStarter\\Menu\\": "src/Menu/src/",
-            "SyliusStarter\\PaymentGateways\\": "src/PaymentGateways/src/",
             "SyliusStarter\\Plugins\\": "src/Plugins/src/",
             "SyliusStarter\\Themes\\": "src/Themes/src/",
             "SyliusStarter\\Upsun\\": "src/Upsun/src/"
@@ -63,7 +61,6 @@
             "src/Import/src/bootstrap.php",
             "src/Import/src/functions.php",
             "src/Menu/src/functions.php",
-            "src/PaymentGateways/src/functions.php",
             "src/Plugins/src/functions.php",
             "src/Themes/src/functions.php",
             "src/Upsun/src/functions.php"
@@ -75,7 +72,6 @@
             "SyliusStarter\\B2b\\Tests\\": "src/B2b/tests/",
             "SyliusStarter\\Import\\Tests\\": "src/Import/tests/",
             "SyliusStarter\\Menu\\Tests\\": "src/Menu/tests/",
-            "SyliusStarter\\PaymentGateways\\Tests\\": "src/PaymentGateways/tests/",
             "SyliusStarter\\Plugins\\Tests\\": "src/Plugins/tests/",
             "SyliusStarter\\Themes\\Tests\\": "src/Themes/tests/",
             "SyliusStarter\\Upsun\\Tests\\": "src/Upsun/tests/",

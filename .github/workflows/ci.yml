@@ -229,12 +229,6 @@ jobs:
                         value: "castor sylius:add product_bundle"
                     -   name: Sylius Wishlist Plugin
                         value: "castor sylius:add wishlist && castor sylius:remove wishlist"
-                    -   name: Sylius Mollie Payment Gateway
-                        value: "castor sylius:payment-gateways:setup --only test_payment_gateway_with_function && castor sylius:payment-gateways:setup mollie"
-                    -   name: Sylius Paypal Payment Gateway
-                        value: "castor sylius:payment-gateways:setup paypal"
-                    -   name: Sylius Stripe Payment Gateway
-                        value: "castor sylius:payment-gateways:setup stripe"
                     -   name: Canvas theme
                         value: "castor sylius:theme:setup canvas"
                     -   name: Blush theme
@@ -259,8 +253,6 @@ jobs:
                         value: "castor sylius:plugin:add test_installer_with_function test_installer_with_class"
                     -   name: Custom plugin removers
                         value: "castor sylius:plugin:remove test_remover_with_function test_remover_with_class"
-                    -   name: Custom payment gateways
-                        value: "castor sylius:payment-gateways:setup test_payment_gateway_with_function test_payment_gateway_with_class"
         runs-on: ubuntu-latest
         steps:
             - name: Log in to registry

@@ -17,8 +17,6 @@ your stack into a Sylius app, and gives you the tasks to drive it.
         * [Available plugins](#available-plugins)
         * [❌ Remove plugins](#-remove-plugins)
         * [Available plugins](#available-plugins-1)
-    * [💳 Setup payment gateways](#-setup-payment-gateways)
-        * [Available payment gateways](#available-payment-gateways)
     * [🎨 Setup a theme](#-setup-a-theme)
         * [Available themes](#available-themes)
     * [☰ Remove menu items from the Admin panel](#-remove-menu-items-from-the-admin-panel)
@@ -60,13 +58,13 @@ your stack into a Sylius app, and gives you the tasks to drive it.
 Castor Sylius provides a higher-level interface for building, configuring and operating a Sylius application.
 
 It goes beyond Symfony Flex recipes: instead of only installing and configuring packages, it can orchestrate complete
-project workflows — from setting up payment gateways and storefront themes to enabling B2B features, customizing the
+project workflows — from installing plugins and storefront themes to enabling B2B features, customizing the
 Admin panel, running Doctrine migrations, building assets, managing Docker services, or importing a catalog.
 
 It can also safely modify the application itself when needed, using AST-based transformations for PHP files and
 dedicated helpers for YAML, JavaScript and Symfony configuration.
 
-For example, removing a payment gateway such as Mollie may require more than a `composer remove`: Doctrine entities may
+For example, removing a plugin may require more than a `composer remove`: Doctrine entities may
 need to be updated, the plugin's migrations rolled back, assets rebuilt and the application cache cleared. Castor Sylius
 can encode this entire workflow as a single, deterministic command.
 
@@ -110,7 +108,6 @@ castor docker:service:install sylius
 |-----------------------------------------------------------------------------------------|---------------------------------|-----------------------------------------------------------------------|
 | [`sylius-starter/core`](https://github.com/sylius-starter/core)                         | `SyliusStarter\Core`            | Castor plugin: `SyliusService`, installer, `sylius:fixtures`, helpers |
 | [`sylius-starter/plugins`](https://github.com/sylius-starter/plugins)                   | `SyliusStarter\Plugins`         | `sylius:plugin:add`, `sylius:plugin:remove`                           |
-| [`sylius-starter/payment-gateways`](https://github.com/sylius-starter/payment-gateways) | `SyliusStarter\PaymentGateways` | `sylius:payment-gateways:setup`                                       |
 | [`sylius-starter/themes`](https://github.com/sylius-starter/themes)                     | `SyliusStarter\Themes`          | `sylius:theme:setup`                                                  |
 | [`sylius-starter/menu`](https://github.com/sylius-starter/menu)                         | `SyliusStarter\Menu`            | `sylius:menu:remove`                                                  |
 | [`sylius-starter/b2b`](https://github.com/sylius-starter/b2b)                           | `SyliusStarter\B2b`             | `sylius:b2b:enable`                                                   |
@@ -131,7 +128,6 @@ Replace the package in your `castor.composer.json` (`castor composer remove cast
 | `Castor\Sylius\Service\SyliusService`                     | `SyliusStarter\Core\Service\SyliusService`                      |
 | `Castor\Sylius\App`, `Castor\Sylius\Util\*`               | `SyliusStarter\Core\App`, `SyliusStarter\Core\Util\*`           |
 | `Castor\Sylius\Attribute\AsPluginInstaller` / `Remover`   | `SyliusStarter\Plugins\Attribute\AsPluginInstaller` / `Remover` |
-| `Castor\Sylius\Attribute\AsPaymentGateway*`               | `SyliusStarter\PaymentGateways\Attribute\AsPaymentGateway*`     |
 | `Castor\Sylius\Attribute\AsTheme*`                        | `SyliusStarter\Themes\Attribute\AsTheme*`                       |
 | `Castor\Sylius\Plugin\Installer\PluginInstallerInterface` | `SyliusStarter\Core\Component\InstallerInterface`               |
 | `Castor\Sylius\Plugin\Remover\PluginRemoverInterface`     | `SyliusStarter\Core\Component\RemoverInterface`                 |
@@ -141,8 +137,6 @@ Replace the package in your `castor.composer.json` (`castor composer remove cast
 ### Add or Remove plugins
 
 Install or uninstall Sylius plugins with simple commands.
-
-> **Note:** Payment gateways are managed separately with `sylius:payment-gateways:setup`.
 
 #### ✚ Add plugins
 
@@ -202,52 +196,6 @@ castor sylius:remove invoicing cms
 | invoicing    | Invoicing plugin for Sylius                        |
 | recaptcha    | Google reCAPTCHA v3 to customer registration       |
 | wishlist     | Wishlist plugin for Sylius                         |
-
-### 💳 Setup payment gateways
-
-Configure which payment gateways are active in your Sylius application.
-
-> **Note:** Payment gateways have their own dedicated command and are not managed through
-> `sylius:add` / `sylius:remove` by design.
-
-A single command to setup which payment gateways you want to use in your Sylius application. By default, only installs
-the
-selected gateways. Pass `--only` to also remove unselected gateways.
-
-**Example:**
-
-```bash
-castor sylius:payment-gateways:setup stripe
-```
-
-You can also pass multiple gateways:
-
-```bash
-castor sylius:payment-gateways:setup paypal stripe
-```
-
-![Setting up multiple Sylius payment gateways with command-line arguments](docs/images/sylius-payment-gateways-setup-arguments.svg)
-
-If no arguments are provided, an interactive prompt will ask you to choose the payment gateways.
-
-![Selecting multiple Sylius payment gateways interactively](docs/images/sylius-payment-gateways-setup-interactive.svg)
-
-**Remove unselected gateways:**
-
-```bash
-castor sylius:payment-gateways:setup --only stripe
-```
-
-#### Available payment gateways
-
-| Gateway | Description                         |
-|---------|-------------------------------------|
-| mollie  | Setup Sylius Mollie payment gateway |
-| paypal  | Setup Sylius Paypal payment gateway |
-| stripe  | Setup Sylius Stripe payment gateway |
-
-> **Note:** You can [register your own gateways](#-extending-the-plugin) with the `AsPaymentGatewayInstaller` and
-> `AsPaymentGatewayRemover` attributes.
 
 ### 🎨 Setup a theme
 
@@ -536,7 +484,7 @@ castor sylius:import:fixtures:load --project=example
 
 ## 🧩 Extending the plugin
 
-The lists above are not closed: you can add your own plugins, themes and payment gateways to the commands, from your
+The lists above are not closed: you can add your own plugins and themes to the commands, from your
 own `castor.php` (or from any file it `import()`s), using the attributes shipped with each package.
 
 Once registered, your component is offered in the interactive prompt of its command **and** is callable by name on the
@@ -544,16 +492,14 @@ command line, exactly like a built-in one.
 
 ### Available attributes
 
-The attributes live in the `Attribute` namespace of their package (`SyliusStarter\Plugins\Attribute`,
-`SyliusStarter\PaymentGateways\Attribute` and `SyliusStarter\Themes\Attribute`), take a required `name` argument,
+The attributes live in the `Attribute` namespace of their package (`SyliusStarter\Plugins\Attribute` and
+`SyliusStarter\Themes\Attribute`), take a required `name` argument,
 and can be put on a function or on a class.
 
 | Attribute                                           | Command                                              | Called when                            |
 |-----------------------------------------------------|------------------------------------------------------|----------------------------------------|
 | `#[AsPluginInstaller(name: '…', description: '…')]` | `castor sylius:add <name>`                           | `sylius:add` picks the plugin          |
 | `#[AsPluginRemover(name: '…', description: '…')]`   | `castor sylius:remove <name>`                        | `sylius:remove` picks the plugin       |
-| `#[AsPaymentGatewayInstaller(name: '…')]`           | `castor sylius:payment-gateways:setup <name>`        | the gateway is selected                |
-| `#[AsPaymentGatewayRemover(name: '…')]`             | `castor sylius:payment-gateways:setup --only <name>` | `--only` drops the unselected gateways |
 | `#[AsThemeInstaller(name: '…')]`                    | `castor sylius:theme:setup <name>`                   | the theme is selected                  |
 | `#[AsThemeRemover(name: '…')]`                      | `castor sylius:theme:setup <another-theme>`          | another theme gets selected            |
 
@@ -655,27 +601,7 @@ final class AcmeThemeRemover
 }
 ```
 
-Themes and payment gateways work exactly the same way; the attribute is what changes:
-
-```php
-#[AsPaymentGatewayInstaller(name: 'adyen')]
-function install_adyen(App $app): void
-{
-    Composer::allowContribRecipes($app);
-    Docker::run($app, 'composer require adyen/sylius-adyen-plugin');
-    Symfony::cacheClear($app);
-}
-
-#[AsPaymentGatewayRemover(name: 'adyen')]
-function remove_adyen(App $app): void
-{
-    Composer::allowContribRecipes($app);
-    Database::rollbackPluginMigrations($app, 'Adyen\SyliusAdyenPlugin\Migrations');
-    Docker::run($app, 'composer remove adyen/sylius-adyen-plugin');
-    Assets::build($app);
-    Symfony::cacheClear($app);
-}
-```
+Themes work exactly the same way, with the `AsThemeInstaller` and `AsThemeRemover` attributes.
 
 ### The App instance
 
@@ -734,7 +660,7 @@ does not cover.
   a file nobody imports is never seen.
 - **Names are unique per family.** The `name` is the CLI argument and the label of the interactive prompt. Registering
   it twice, or reusing a built-in name, replaces the previous component.
-- **Pair your installers with removers.** `sylius:remove` and `sylius:payment-gateways:setup --only` simply warn when
+- **Pair your installers with removers.** `sylius:remove` simply warns when
   the remover is missing, but `sylius:theme:setup` runs the remover of every *other* registered theme: a theme without
   one makes every single theme switch print an `Unknown theme remover` warning.
 - **Only one theme is active at a time.** Installing a theme removes the others first, then installs it. Keep the
@@ -767,8 +693,8 @@ TaskProviderRegistry::register('my_tasks', static fn (SyliusService $service): i
 
 A package can also hook into `castor docker:service:install sylius` (extra questions and steps run once Sylius is
 installed) by
-registering a `SyliusInstallerExtensionInterface` in `SyliusInstallerExtensions`, as `sylius-starter/payment-gateways`
-does to ask which payment gateways to configure, and `sylius-starter/themes` to ask which storefront theme to use.
+registering a `SyliusInstallerExtensionInterface` in `SyliusInstallerExtensions`, as `sylius-starter/themes` does to ask
+which storefront theme to use.
 
 ## 🏗️ Monorepo & contributing
 
@@ -784,7 +710,6 @@ src/
 │   ├── src/           SyliusStarter\Core\
 │   └── tests/
 ├── Plugins/           sylius-starter/plugins     (+ resources/)
-├── PaymentGateways/   sylius-starter/payment-gateways
 ├── Themes/            sylius-starter/themes      (+ resources/)
 ├── Menu/              sylius-starter/menu
 ├── B2b/               sylius-starter/b2b         (+ resources/)
