@@ -1,7 +1,7 @@
 name: Split packages
 
 # Splits every package of src/ into its own read-only repository
-# (https://github.com/sylius/starter-<package>) with splitsh-lite.
+# (https://github.com/Sylius/Starter<Package>) with splitsh-lite.
 #
 # Requires a SPLIT_TOKEN secret: a token allowed to push (contents: write)
 # to every package repository.
@@ -82,4 +82,4 @@ jobs:
                     castor monorepo:split "${{ matrix.package.name }}" \
                         --ref="${GITHUB_REF}" \
                         --push \
-                        --remote-pattern="https://x-access-token:${SPLIT_TOKEN}@github.com/{name}.git"
+                        --remote-pattern="https://x-access-token:${SPLIT_TOKEN}@github.com/{repository}.git"

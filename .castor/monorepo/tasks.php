@@ -70,7 +70,7 @@ function validate(): int
  *
  * Examples:
  *   castor monorepo:split                         # dry-run: compute the split SHA of every package
- *   castor monorepo:split core --push             # push main of sylius/starter-core
+ *   castor monorepo:split core --push             # push main of Sylius/StarterCore
  *   castor monorepo:split --ref=refs/tags/v0.1.0 --push
  *
  * @param list<string> $packages
@@ -85,13 +85,13 @@ function split(
     bool $push = false,
     #[AsOption(description: 'Force push (only needed when the history of a package has been rewritten)')]
     bool $force = false,
-    #[AsOption(description: 'Remote URL pattern, {name} and {short} are replaced (env: SPLIT_REMOTE_PATTERN)')]
+    #[AsOption(description: 'Remote URL pattern, {name}, {short} and {repository} are replaced (env: SPLIT_REMOTE_PATTERN)')]
     ?string $remotePattern = null,
     #[AsOption(description: 'Path to the splitsh-lite binary (env: SPLITSH_BIN)')]
     ?string $splitshBin = null,
 ): int {
     $monorepo = monorepo();
-    $remotePattern ??= getenv('SPLIT_REMOTE_PATTERN') ?: 'git@github.com:{name}.git';
+    $remotePattern ??= getenv('SPLIT_REMOTE_PATTERN') ?: 'git@github.com:{repository}.git';
     $splitshBin ??= getenv('SPLITSH_BIN') ?: 'splitsh-lite';
     $ref ??= 'refs/heads/' . trim(capture(['git', 'rev-parse', '--abbrev-ref', 'HEAD']));
 
