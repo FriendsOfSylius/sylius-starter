@@ -37,9 +37,9 @@ final class MonorepoTest extends TestCase
 
     public function testItResolvesPackagesByShortNameOrDirectory(): void
     {
-        static::assertSame('src/PaymentGateways', $this->monorepo->package('payment-gateways')['path']);
-        static::assertSame('src/PaymentGateways', $this->monorepo->package('PaymentGateways')['path']);
-        static::assertSame('src/PaymentGateways', $this->monorepo->package('sylius-starter/payment-gateways')['path']);
+        static::assertSame('src/Themes', $this->monorepo->package('themes')['path']);
+        static::assertSame('src/Themes', $this->monorepo->package('Themes')['path']);
+        static::assertSame('src/Themes', $this->monorepo->package('sylius-starter/themes')['path']);
     }
 
     public function testItBuildsRemoteUrls(): void

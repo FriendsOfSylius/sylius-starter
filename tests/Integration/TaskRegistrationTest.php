@@ -10,7 +10,6 @@ use PHPUnit\Framework\TestCase;
 use SyliusStarter\Core\Installer\SyliusInstallerExtensions;
 use SyliusStarter\Core\Service\SyliusService;
 use SyliusStarter\Core\Task\TaskProviderRegistry;
-use SyliusStarter\PaymentGateways\Installer\PaymentGatewaysSyliusInstallerExtension;
 use SyliusStarter\Themes\Installer\ThemesSyliusInstallerExtension;
 
 /**
@@ -26,7 +25,6 @@ final class TaskRegistrationTest extends TestCase
     {
         yield 'plugins' => ['plugins', 'sylius:plugin:add'];
         yield 'plugins remover' => ['plugins', 'sylius:plugin:remove'];
-        yield 'payment gateways' => ['payment_gateways', 'sylius:payment-gateways:setup'];
         yield 'themes' => ['themes', 'sylius:theme:setup'];
         yield 'menu' => ['menu', 'sylius:menu:remove'];
         yield 'import list' => ['import', 'sylius:import:list'];
@@ -43,11 +41,6 @@ final class TaskRegistrationTest extends TestCase
     {
         static::assertTrue(TaskProviderRegistry::has($provider));
         static::assertContains($task, $this->taskNames(new SyliusService()));
-    }
-
-    public function testPaymentGatewaysExtendTheSyliusInstaller(): void
-    {
-        static::assertInstanceOf(PaymentGatewaysSyliusInstallerExtension::class, SyliusInstallerExtensions::all()['payment_gateways'] ?? null);
     }
 
     public function testThemesExtendTheSyliusInstaller(): void

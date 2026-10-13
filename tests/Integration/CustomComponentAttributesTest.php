@@ -8,13 +8,11 @@ use Castor\Exception\FunctionConfigurationException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use SyliusStarter\Core\App;
-use SyliusStarter\PaymentGateways\Attribute\AsPaymentGatewayInstaller;
 use SyliusStarter\Plugins\Attribute\AsPluginInstaller;
 use SyliusStarter\Plugins\Attribute\AsPluginRemover;
 use SyliusStarter\Themes\Attribute\AsThemeInstaller;
 use SyliusStarter\Themes\Attribute\AsThemeRemover;
 
-use function SyliusStarter\PaymentGateways\resolve_payment_gateway_installer;
 use function SyliusStarter\Plugins\resolve_plugin_installer;
 use function SyliusStarter\Plugins\resolve_plugin_remover;
 use function SyliusStarter\Themes\resolve_theme_installer;
@@ -115,17 +113,6 @@ final class CustomComponentAttributesTest extends TestCase
         static::assertSame($this->app, SpiedComponent::$app);
     }
 
-    public function testItResolvesAPaymentGatewayInstallerAndForwardsTheApp(): void
-    {
-        $descriptor = resolve_payment_gateway_installer(new \ReflectionClass(SpiedPaymentGatewayInstaller::class));
-
-        static::assertSame('spied_gateway', $descriptor?->attribute->name);
-
-        ($descriptor->installer)($this->app);
-
-        static::assertSame($this->app, SpiedComponent::$app);
-    }
-
     public function testItRejectsAnAttributeOnANonCallableClass(): void
     {
         $this->expectException(FunctionConfigurationException::class);
@@ -185,15 +172,6 @@ final class SpiedThemeInstaller
 
 #[AsThemeRemover(name: 'spied_theme')]
 final class SpiedThemeRemover
-{
-    public function __invoke(App $app): void
-    {
-        SpiedComponent::$app = $app;
-    }
-}
-
-#[AsPaymentGatewayInstaller(name: 'spied_gateway')]
-final class SpiedPaymentGatewayInstaller
 {
     public function __invoke(App $app): void
     {
