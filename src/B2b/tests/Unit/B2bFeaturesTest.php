@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\B2b\Tests\Unit;
+namespace Sylius\Starter\B2b\Tests\Unit;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use SyliusStarter\B2b\B2bFeatures;
-use SyliusStarter\Core\Feature\FeatureInterface;
+use Sylius\Starter\B2b\B2bFeatures;
+use Sylius\Starter\Core\Feature\FeatureInterface;
 
 #[CoversClass(B2bFeatures::class)]
 final class B2bFeaturesTest extends TestCase

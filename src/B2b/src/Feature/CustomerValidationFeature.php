@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\B2b\Feature;
+namespace Sylius\Starter\B2b\Feature;
 
-use SyliusStarter\B2b\B2bResourceCopier;
-use SyliusStarter\Core\App;
-use SyliusStarter\Core\Feature\FeatureInterface;
-use SyliusStarter\Core\PhpFile;
-use SyliusStarter\Core\Util\Database;
-use SyliusStarter\Core\Util\Filesystem;
-use SyliusStarter\Core\Util\Yaml;
+use Sylius\Starter\B2b\B2bResourceCopier;
+use Sylius\Starter\Core\App;
+use Sylius\Starter\Core\Feature\FeatureInterface;
+use Sylius\Starter\Core\PhpFile;
+use Sylius\Starter\Core\Util\Database;
+use Sylius\Starter\Core\Util\Filesystem;
+use Sylius\Starter\Core\Util\Yaml;
 
 use function Castor\io;
 

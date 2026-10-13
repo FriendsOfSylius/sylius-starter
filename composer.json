@@ -1,6 +1,6 @@
 {
-    "name": "sylius-starter/sylius-starter",
-    "description": "Sylius Starter: Castor tooling to bootstrap and customize Sylius applications (monorepo of all sylius-starter/* packages)",
+    "name": "sylius/starter",
+    "description": "Sylius Starter: Castor tooling to bootstrap and customize Sylius applications (monorepo of all sylius/starter-* packages)",
     "type": "library",
     "license": "MIT",
     "keywords": [
@@ -8,7 +8,7 @@
         "castor",
         "starter"
     ],
-    "homepage": "https://github.com/sylius-starter/sylius-starter",
+    "homepage": "https://github.com/Sylius/Starter",
     "authors": [
         {
             "name": "Loïc Frémont",
@@ -31,26 +31,26 @@
         "phpunit/phpunit": "^13.2"
     },
     "replace": {
-        "sylius-starter/core": "self.version",
-        "sylius-starter/b2b": "self.version",
-        "sylius-starter/import": "self.version",
-        "sylius-starter/menu": "self.version",
-        "sylius-starter/plugins": "self.version",
-        "sylius-starter/themes": "self.version",
-        "sylius-starter/upsun": "self.version"
+        "sylius/starter-core": "self.version",
+        "sylius/starter-b2b": "self.version",
+        "sylius/starter-import": "self.version",
+        "sylius/starter-menu": "self.version",
+        "sylius/starter-plugins": "self.version",
+        "sylius/starter-themes": "self.version",
+        "sylius/starter-upsun": "self.version"
     },
     "suggest": {
         "jolicode/castor-api": "Expose import tasks over HTTP"
     },
     "autoload": {
         "psr-4": {
-            "SyliusStarter\\Core\\": "src/Core/src/",
-            "SyliusStarter\\B2b\\": "src/B2b/src/",
-            "SyliusStarter\\Import\\": "src/Import/src/",
-            "SyliusStarter\\Menu\\": "src/Menu/src/",
-            "SyliusStarter\\Plugins\\": "src/Plugins/src/",
-            "SyliusStarter\\Themes\\": "src/Themes/src/",
-            "SyliusStarter\\Upsun\\": "src/Upsun/src/"
+            "Sylius\\Starter\\Core\\": "src/Core/src/",
+            "Sylius\\Starter\\B2b\\": "src/B2b/src/",
+            "Sylius\\Starter\\Import\\": "src/Import/src/",
+            "Sylius\\Starter\\Menu\\": "src/Menu/src/",
+            "Sylius\\Starter\\Plugins\\": "src/Plugins/src/",
+            "Sylius\\Starter\\Themes\\": "src/Themes/src/",
+            "Sylius\\Starter\\Upsun\\": "src/Upsun/src/"
         },
         "files": [
             "src/Core/src/Installer/functions.php",
@@ -68,15 +68,15 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "SyliusStarter\\Core\\Tests\\": "src/Core/tests/",
-            "SyliusStarter\\B2b\\Tests\\": "src/B2b/tests/",
-            "SyliusStarter\\Import\\Tests\\": "src/Import/tests/",
-            "SyliusStarter\\Menu\\Tests\\": "src/Menu/tests/",
-            "SyliusStarter\\Plugins\\Tests\\": "src/Plugins/tests/",
-            "SyliusStarter\\Themes\\Tests\\": "src/Themes/tests/",
-            "SyliusStarter\\Upsun\\Tests\\": "src/Upsun/tests/",
-            "SyliusStarter\\Tests\\": "tests/",
-            "SyliusStarter\\Monorepo\\": ".castor/monorepo/"
+            "Sylius\\Starter\\Core\\Tests\\": "src/Core/tests/",
+            "Sylius\\Starter\\B2b\\Tests\\": "src/B2b/tests/",
+            "Sylius\\Starter\\Import\\Tests\\": "src/Import/tests/",
+            "Sylius\\Starter\\Menu\\Tests\\": "src/Menu/tests/",
+            "Sylius\\Starter\\Plugins\\Tests\\": "src/Plugins/tests/",
+            "Sylius\\Starter\\Themes\\Tests\\": "src/Themes/tests/",
+            "Sylius\\Starter\\Upsun\\Tests\\": "src/Upsun/tests/",
+            "Sylius\\Starter\\Tests\\": "tests/",
+            "Sylius\\Starter\\Monorepo\\": ".castor/monorepo/"
         }
     },
     "extra": {

@@ -1,4 +1,4 @@
-# sylius-starter/menu
+# sylius/starter-menu
 
 Castor task to remove (and restore) Sylius admin menu items: `sylius:menu:remove`.
 
@@ -7,15 +7,15 @@ Castor task to remove (and restore) Sylius admin menu items: `sylius:menu:remove
 In your Castor project:
 
 ```bash
-castor composer require sylius-starter/menu
+castor composer require sylius/starter-menu
 ```
 
-Or install every Sylius Starter package at once with `sylius-starter/sylius-starter`.
+Or install every Sylius Starter package at once with `sylius/starter`.
 
-Read the [documentation](https://github.com/sylius-starter/sylius-starter#readme) for usage.
+Read the [documentation](https://github.com/Sylius/Starter#readme) for usage.
 
 ## Contributing
 
 This repository is a **read-only split** of the
-[sylius-starter/sylius-starter](https://github.com/sylius-starter/sylius-starter) monorepo.
+[sylius/starter](https://github.com/Sylius/Starter) monorepo.
 Please open issues and pull requests there.

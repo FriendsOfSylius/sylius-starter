@@ -1,14 +1,14 @@
 # Homepage hero slot
 
-The homepage hero is a slot owned by `sylius-starter/core`, so that themes and other packages (import...) can
+The homepage hero is a slot owned by `sylius/starter-core`, so that themes and other packages (import...) can
 all use it without overwriting each other.
 
-| Who        | Provides | How |
-|------------|----------|-----|
-| Core       | the slot | `SyliusStarter\Core\Storefront\Hero::install($app)` (idempotent) generates the `StorefrontHero` Twig component, disables the native `banner` hookable and registers `hero` on `sylius_shop.homepage.index` (`config/sylius/storefront/hero.yaml`). |
-| A theme    | markup   | ships `templates/shop/homepage/hero.html.twig`, picked up automatically. No hook config for the hero. |
-| A package  | data     | generates a service implementing `App\Storefront\Hero\HeroContributorInterface` (autoconfigured). |
-| The project| either   | its own contributor, or a custom template through the `template` prop of the `hero` hookable. |
+| Who         | Provides | How                                                                                                                                                                                                                                                 |
+|-------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Core        | the slot | `Sylius\Starter\Core\Storefront\Hero::install($app)` (idempotent) generates the `StorefrontHero` Twig component, disables the native `banner` hookable and registers `hero` on `sylius_shop.homepage.index` (`config/sylius/storefront/hero.yaml`). |
+| A theme     | markup   | ships `templates/shop/homepage/hero.html.twig`, picked up automatically. No hook config for the hero.                                                                                                                                               |
+| A package   | data     | generates a service implementing `App\Storefront\Hero\HeroContributorInterface` (autoconfigured).                                                                                                                                                   |
+| The project | either   | its own contributor, or a custom template through the `template` prop of the `hero` hookable.                                                                                                                                                       |
 
 Template resolution: `template` prop, then `shop/homepage/hero.html.twig` (theme), then
 `storefront/hero/default.html.twig` (core fallback, which renders the native Sylius banner when no data is contributed).
