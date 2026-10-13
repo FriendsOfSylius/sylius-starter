@@ -104,16 +104,16 @@ castor docker:service:install sylius
 
 ## 📦 Packages
 
-| Package                                                               | Namespace                | Tasks                                                                 |
-|-----------------------------------------------------------------------|--------------------------|-----------------------------------------------------------------------|
-| [`sylius/starter-core`](https://github.com/Sylius/starter-core)       | `Sylius\Starter\Core`    | Castor plugin: `SyliusService`, installer, `sylius:fixtures`, helpers |
-| [`sylius/starter-plugins`](https://github.com/Sylius/starter-plugins) | `Sylius\Starter\Plugins` | `sylius:plugin:add`, `sylius:plugin:remove`                           |
-| [`sylius/starter-themes`](https://github.com/Sylius/starter-themes)   | `Sylius\Starter\Themes`  | `sylius:theme:setup`                                                  |
-| [`sylius/starter-menu`](https://github.com/Sylius/starter-menu)       | `Sylius\Starter\Menu`    | `sylius:menu:remove`                                                  |
-| [`sylius/starter-b2b`](https://github.com/Sylius/starter-b2b)         | `Sylius\Starter\B2b`     | `sylius:b2b:enable`                                                   |
-| [`sylius/starter-import`](https://github.com/Sylius/starter-import)   | `Sylius\Starter\Import`  | `sylius:import:*`                                                     |
-| [`sylius/starter-upsun`](https://github.com/Sylius/starter-upsun)     | `Sylius\Starter\Upsun`   | `sylius:upsun:check`                                                  |
-| `sylius/starter`                                                      | —                        | All of the above (this repository)                                    |
+| Package                                                              | Namespace                | Tasks                                                                 |
+|----------------------------------------------------------------------|--------------------------|-----------------------------------------------------------------------|
+| [`sylius/starter-core`](https://github.com/Sylius/StarterCore)       | `Sylius\Starter\Core`    | Castor plugin: `SyliusService`, installer, `sylius:fixtures`, helpers |
+| [`sylius/starter-plugins`](https://github.com/Sylius/StarterPlugins) | `Sylius\Starter\Plugins` | `sylius:plugin:add`, `sylius:plugin:remove`                           |
+| [`sylius/starter-themes`](https://github.com/Sylius/StarterThemes)   | `Sylius\Starter\Themes`  | `sylius:theme:setup`                                                  |
+| [`sylius/starter-menu`](https://github.com/Sylius/StarterMenu)       | `Sylius\Starter\Menu`    | `sylius:menu:remove`                                                  |
+| [`sylius/starter-b2b`](https://github.com/Sylius/StarterB2b)         | `Sylius\Starter\B2b`     | `sylius:b2b:enable`                                                   |
+| [`sylius/starter-import`](https://github.com/Sylius/StarterImport)   | `Sylius\Starter\Import`  | `sylius:import:*`                                                     |
+| [`sylius/starter-upsun`](https://github.com/Sylius/StarterUpsun)     | `Sylius\Starter\Upsun`   | `sylius:upsun:check`                                                  |
+| `sylius/starter`                                                     | —                        | All of the above (this repository)                                    |
 
 The core is the Castor plugin itself. Every other package only contributes tasks: it registers them in the core
 from a file autoloaded by Composer, so installing a package is enough to get its tasks on your `SyliusService`.
@@ -737,8 +737,8 @@ castor monorepo:split core themes --push           # push the current branch of 
 castor monorepo:split --ref=refs/tags/v0.1.0 --push
 ```
 
-The remote of each package defaults to `git@github.com:{name}.git` (`{name}` = `sylius/starter-core`, `{short}` =
-`core`); override it with `--remote-pattern` or the `SPLIT_REMOTE_PATTERN` environment variable.
+The remote of each package defaults to `git@github.com:{repository}.git` (`{repository}` = `Sylius/StarterCore`,
+`{name}` = `sylius/starter-core`, `{short}` = `core`); override it with `--remote-pattern` or the `SPLIT_REMOTE_PATTERN` environment variable.
 
 ### Splitting packages in the CI
 
@@ -747,7 +747,7 @@ a matrix from `castor monorepo:packages --json` and runs `castor monorepo:split 
 
 Requirements:
 
-1. Create one empty repository per package (`sylius/starter-core`, `sylius/starter-themes`...).
+1. Create one empty repository per package (`Sylius/StarterCore`, `Sylius/StarterThemes`...).
 2. Add a `SPLIT_TOKEN` secret to this repository: a fine-grained personal access token (or a GitHub App token)
    with *Contents: read and write* on the package repositories.
 3. Register the package repositories on Packagist (and this one for `sylius/starter`).

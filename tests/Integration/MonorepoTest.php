@@ -46,6 +46,8 @@ final class MonorepoTest extends TestCase
     {
         static::assertSame('git@github.com:sylius/starter-core.git', Monorepo::remoteUrl('git@github.com:{name}.git', 'sylius/starter-core'));
         static::assertSame('https://github.com/acme/sylius-core.git', Monorepo::remoteUrl('https://github.com/acme/sylius-{short}.git', 'sylius/starter-core'));
+        static::assertSame('git@github.com:Sylius/StarterCore.git', Monorepo::remoteUrl('git@github.com:{repository}.git', 'sylius/starter-core'));
+        static::assertSame('git@github.com:Sylius/StarterB2b.git', Monorepo::remoteUrl('git@github.com:{repository}.git', 'sylius/starter-b2b'));
     }
 
     public function testItDetectsAnUnsyncedRootComposer(): void
