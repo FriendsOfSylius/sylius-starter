@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Tests\Integration;
+namespace Sylius\Starter\Tests\Integration;
 
 use PHPUnit\Framework\TestCase;
-use SyliusStarter\Monorepo\Monorepo;
+use Sylius\Starter\Monorepo\Monorepo;
 
 final class MonorepoTest extends TestCase
 {
@@ -23,7 +23,7 @@ final class MonorepoTest extends TestCase
 
     public function testCoreIsTheFirstPackage(): void
     {
-        static::assertSame('sylius-starter/core', $this->monorepo->packages()[0]['name']);
+        static::assertSame('sylius/starter-core', $this->monorepo->packages()[0]['name']);
     }
 
     public function testRootComposerReplacesEveryPackage(): void
@@ -39,19 +39,19 @@ final class MonorepoTest extends TestCase
     {
         static::assertSame('src/Themes', $this->monorepo->package('themes')['path']);
         static::assertSame('src/Themes', $this->monorepo->package('Themes')['path']);
-        static::assertSame('src/Themes', $this->monorepo->package('sylius-starter/themes')['path']);
+        static::assertSame('src/Themes', $this->monorepo->package('sylius/starter-themes')['path']);
     }
 
     public function testItBuildsRemoteUrls(): void
     {
-        static::assertSame('git@github.com:sylius-starter/core.git', Monorepo::remoteUrl('git@github.com:{name}.git', 'sylius-starter/core'));
-        static::assertSame('https://github.com/acme/sylius-core.git', Monorepo::remoteUrl('https://github.com/acme/sylius-{short}.git', 'sylius-starter/core'));
+        static::assertSame('git@github.com:sylius/starter-core.git', Monorepo::remoteUrl('git@github.com:{name}.git', 'sylius/starter-core'));
+        static::assertSame('https://github.com/acme/sylius-core.git', Monorepo::remoteUrl('https://github.com/acme/sylius-{short}.git', 'sylius/starter-core'));
     }
 
     public function testItDetectsAnUnsyncedRootComposer(): void
     {
         $root = $this->monorepo->rootComposer();
-        unset($root['replace']['sylius-starter/themes']);
+        unset($root['replace']['sylius/starter-themes']);
 
         static::assertNotSame($root, $this->monorepo->mergedRootComposer($root));
         static::assertSame($this->monorepo->rootComposer(), $this->monorepo->mergedRootComposer($root));

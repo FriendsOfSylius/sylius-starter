@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Monorepo;
+namespace Sylius\Starter\Monorepo;
 
 /**
  * Monorepo helper: every directory in src/ holding a composer.json is a
@@ -15,9 +15,10 @@ namespace SyliusStarter\Monorepo;
  */
 final class Monorepo
 {
-    public const string VENDOR = 'sylius-starter';
-    public const string NAMESPACE = 'SyliusStarter';
-    public const string CORE_PACKAGE = 'sylius-starter/core';
+    public const string VENDOR = 'sylius';
+    public const string PACKAGE_PREFIX = 'sylius/starter-';
+    public const string NAMESPACE = 'Sylius\\Starter';
+    public const string CORE_PACKAGE = 'sylius/starter-core';
 
     public function __construct(
         private readonly string $rootDir,
@@ -214,8 +215,8 @@ final class Monorepo
             $expectedNamespace = self::NAMESPACE . '\\' . $package['directory'] . '\\';
             $namespaces[$expectedNamespace] = $package['name'];
 
-            if (!str_starts_with($package['name'], self::VENDOR . '/')) {
-                $errors[] = \sprintf('%s: package name "%s" must start with "%s/".', $label, $package['name'], self::VENDOR);
+            if (!str_starts_with($package['name'], self::PACKAGE_PREFIX)) {
+                $errors[] = \sprintf('%s: package name "%s" must start with "%s".', $label, $package['name'], self::PACKAGE_PREFIX);
             }
 
             if (\count(array_keys($names, $package['name'], true)) > 1) {
@@ -283,7 +284,7 @@ final class Monorepo
 
     /**
      * Splitsh-lite / git remote URL of a package split repository.
-     * "{name}" is replaced by the package name (sylius-starter/core), "{short}" by its short name (core).
+     * "{name}" is replaced by the package name (sylius/starter-core), "{short}" by its short name (core).
      */
     public static function remoteUrl(string $pattern, string $packageName): string
     {
@@ -295,6 +296,10 @@ final class Monorepo
 
     public static function shortName(string $packageName): string
     {
+        if (str_starts_with($packageName, self::PACKAGE_PREFIX)) {
+            return substr($packageName, \strlen(self::PACKAGE_PREFIX));
+        }
+
         return substr($packageName, (int) strrpos($packageName, '/') + 1);
     }
 
@@ -339,7 +344,7 @@ final class Monorepo
                 continue;
             }
 
-            preg_match_all('/' . self::NAMESPACE . '\\\\([A-Za-z0-9]+)\\\\/', (string) file_get_contents($file->getPathname()), $matches);
+            preg_match_all('/' . preg_quote(self::NAMESPACE, '/') . '\\\\([A-Za-z0-9]+)\\\\/', (string) file_get_contents($file->getPathname()), $matches);
 
             foreach ($matches[1] as $namespace) {
                 $namespaces[self::NAMESPACE . '\\' . $namespace . '\\'] = true;
