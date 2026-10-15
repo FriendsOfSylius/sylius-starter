@@ -671,7 +671,7 @@ as their first argument:
 
 | Helper                                                           | What it does                                           |
 |------------------------------------------------------------------|--------------------------------------------------------|
-| `Docker::run($app, $command)`                                    | Runs a command in the application container            |
+| `Docker::run($app, $command)`                                    | Runs a command in the application container (see below) |
 | `Composer::allowContribRecipes($app)`                            | Allows contrib recipes before installing a package     |
 | `Composer::removeDevDependency($app, $package)`                  | Removes a `require-dev` dependency                     |
 | `Database::migrate($app)`                                        | Runs the Doctrine migrations                           |
@@ -688,6 +688,16 @@ as their first argument:
 | `Yaml::addImport($app, $file, $resource)`                        | Same as `Yaml::import()`                               |
 | `Yaml::addImportWithOptions($app, $file, $resource, $ignore)`    | Same, with `ignore_errors: not_found` on the import    |
 | `Yaml::appendToSection($app, $file, $section, $block)`           | Appends a block to a YAML section                      |
+
+`Docker::run()` (and the import tasks) run their commands in the `{app}-builder` Docker Compose service by default.
+Set `SYLIUS_STARTER_RUNNER=local` to run them directly in the application directory instead, for instance when Castor
+runs on a server without Docker or inside a container that already has the application runtime:
+
+| Variable                         | Default    | Description                                                  |
+|----------------------------------|------------|--------------------------------------------------------------|
+| `SYLIUS_STARTER_RUNNER`          | `docker`   | `docker` or `local`                                          |
+| `SYLIUS_STARTER_PHP_BINARY`      | `php`      | PHP binary used for `php …` and `bin/console …` commands     |
+| `SYLIUS_STARTER_COMPOSER_BINARY` | `composer` | Composer command used for `composer …` commands              |
 | `Yaml::uncommentBlock($app, $file, $block)`                      | Uncomments a block in a YAML file                      |
 | `Filesystem::createFile($app, $file, $body)`                     | Writes a file in the application                       |
 | `Filesystem::hasFile($app, $file)`                               | Tells whether a file exists                            |
