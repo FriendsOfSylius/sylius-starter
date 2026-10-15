@@ -460,7 +460,7 @@ The `--subdomain` option decides which channel receives the catalog:
 | `--subdomain`        | Channel                                         | Hostname                 | On load                                                       |
 |----------------------|-------------------------------------------------|--------------------------|---------------------------------------------------------------|
 | `""` (explicit)      | the default `WEB_STORE` channel                 | the app domain           | only the project's previously imported products/taxons are replaced; the channel, its orders and admins are kept |
-| omitted (slug) or e.g. `organic-kids` | a dedicated channel (`ORGANIC_KIDS`) + scoped admin user | `organic-kids.{domain}` | the dedicated channel is reset and recreated (demo shops) |
+| omitted (slug) or e.g. `organic-kids` | a dedicated channel (`ORGANIC_KIDS`)                     | `organic-kids.{domain}` | the dedicated channel is reset and recreated (demo shops) |
 
 The choice is stored in `.castor/import/var/{project-slug}/project.yaml` (`shop` key) and reused by `fixtures:load` and
 `sylius:import:delete`. Projects generated before keep their dedicated channel. Use `--subdomain=""` to import into
@@ -481,6 +481,49 @@ It requires a YAML import under `.castor/import/var/{project-slug}/` (products +
 castor sylius:import:fixtures:generate existing --project=example --limit=100
 castor sylius:import:fixtures:load --project=example
 ```
+
+### Extending the import
+
+The import only adds the catalog, its channel and a demo customer: it does not change your database schema. A project
+needing more (e.g. a sales kit giving each demo shop its own admin) registers an import extension from its `castor.php`:
+
+```php
+<?php
+
+use Sylius\Starter\Core\App;
+use Sylius\Starter\Import\Extension\ImportExtensionInterface;
+use Sylius\Starter\Import\Extension\ImportExtensions;
+
+ImportExtensions::register('demo_admins', new class implements ImportExtensionInterface {
+    public function scaffold(App $app): void
+    {
+        // Copy your own templates into the Sylius app, patch entities, run migrations…
+    }
+
+    public function buildFixtures(string $projectSlug, array $target): array
+    {
+        // Written to config/sylius/fixtures/import/{slug}/extensions/{name}.php, loaded after the catalog.
+        return ['demo_admin' => ['sylius_fixtures' => ['suites' => ['import' => ['fixtures' => [/* … */]]]]]];
+    }
+
+    public function describeShop(string $projectSlug, ?array $config): array
+    {
+        // Extra fields of the shop in `castor sylius:import:list`.
+        return [];
+    }
+});
+```
+
+| Hook             | Called when                                                                                |
+|------------------|--------------------------------------------------------------------------------------------|
+| `scaffold`       | each import task makes sure the import scaffold is in the Sylius app                       |
+| `buildFixtures`  | `sylius:import:fixtures:generate` writes the project's fixtures (`$target`: `channel`, `subdomain`, `shared`) |
+| `describeShop`   | `sylius:import:list` lists the shops (`$config` is the project's `project.yaml`)           |
+
+Keys you add to `project.yaml` are kept when the import rewrites it. To remove what you attached to an imported shop,
+listen to the `import.channel_reset` Symfony event in the Sylius app, dispatched by `sylius:import:channel:reset`
+(on `fixtures:load` and `sylius:import:delete`) with the channel code as subject and the `prefix` and `keep_channel`
+arguments.
 
 ## 🧩 Extending the plugin
 
