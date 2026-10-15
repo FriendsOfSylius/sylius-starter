@@ -20,7 +20,8 @@ permissions:
     contents: read
 
 env:
-    SPLITSH_VERSION: v2.0.0
+    # v2.0.0 ships no prebuilt binaries, v1.0.1 is the latest release with lite_linux_amd64.tar.gz
+    SPLITSH_VERSION: v1.0.1
 
 jobs:
     packages:
