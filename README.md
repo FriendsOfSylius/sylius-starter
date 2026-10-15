@@ -452,8 +452,11 @@ Import data is stored per project slug under `.castor/import/var/{project-slug}/
 #### Generate the Sylius fixtures files
 
 ```bash
-castor sylius:import:fixtures:generate ai --project="Organic Kids" --limit=100
+castor sylius:import:fixtures:generate --project="Organic Kids"
 ```
+
+The same command generates the same fixture files whether the YAML comes from the AI build or from an existing
+website: the catalog source is read from the project YAML. `--limit` caps the number of imported products.
 
 The `--subdomain` option decides which channel receives the catalog:
 
@@ -478,7 +481,7 @@ It requires a YAML import under `.castor/import/var/{project-slug}/` (products +
 `castor-php/sylius-import-fetch` plugin, run `sylius:import:existing:fetch` first; otherwise prepare the YAML yourself.
 
 ```bash
-castor sylius:import:fixtures:generate existing --project=example --limit=100
+castor sylius:import:fixtures:generate --project=example --limit=100
 castor sylius:import:fixtures:load --project=example
 ```
 
