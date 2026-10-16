@@ -18,15 +18,6 @@ Refined typography and soft palettes, for lifestyle and fashion shops.
 | <a href="canvas.md"><img src="../images/canvas-homepage-normal.webp" alt="Canvas storefront homepage" width="140"></a> | [Canvas](canvas.md) | Clean, editorial look with warm neutrals |
 | <a href="blush.md"><img src="../images/blush-homepage-normal.webp" alt="Blush storefront homepage" width="140"></a> | [Blush](blush.md) | White canvas, raspberry accents and a plum footer |
 
-## Terminal
-
-A developer-tool layout with monospaced accents, in a dark and a light variant.
-
-| Preview | Theme | Description |
-|---------|-------|-------------|
-| <a href="prompt_dark.md"><img src="../images/prompt-dark-homepage-normal.webp" alt="Prompt Dark storefront homepage" width="140"></a> | [Prompt Dark](prompt_dark.md) | Terminal-inspired dark workspace with green accents |
-| <a href="prompt_light.md"><img src="../images/prompt-light-homepage-normal.webp" alt="Prompt Light storefront homepage" width="140"></a> | [Prompt Light](prompt_light.md) | Terminal-inspired layout on soft green paper |
-
 ## Vibrant
 
 Bold colors and product-led pages, for sport and modern brands.
@@ -47,3 +38,12 @@ Looks built around one kind of shop, with their own typography and homepage.
 | <a href="retro_gaming.md"><img src="../images/retro-gaming-homepage-normal.webp" alt="Retro Gaming storefront homepage" width="140"></a> | [Retro Gaming](retro_gaming.md) | Night arcade gaming store: neon magenta and cyan, pixel font, HUD and CRT hero |
 | <a href="drive.md"><img src="../images/drive-homepage-normal.webp" alt="Drive storefront homepage" width="140"></a> | [Drive](drive.md) | Full-screen grocery click-and-collect store: basil green, lemon price stickers and a pick-up slot hero |
 | <a href="cellar.md"><img src="../images/cellar-homepage-normal.webp" alt="Cellar storefront homepage" width="140"></a> | [Cellar](cellar.md) | Fine wine merchant: night bordeaux, cream paper, Didone headings and a vaulted cellar-window hero |
+
+## Terminal
+
+A developer-tool layout with monospaced accents, in a dark and a light variant.
+
+| Preview | Theme | Description |
+|---------|-------|-------------|
+| <a href="prompt_dark.md"><img src="../images/prompt-dark-homepage-normal.webp" alt="Prompt Dark storefront homepage" width="140"></a> | [Prompt Dark](prompt_dark.md) | Terminal-inspired dark workspace with green accents |
+| <a href="prompt_light.md"><img src="../images/prompt-light-homepage-normal.webp" alt="Prompt Light storefront homepage" width="140"></a> | [Prompt Light](prompt_light.md) | Terminal-inspired layout on soft green paper |
