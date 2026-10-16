@@ -41,6 +41,8 @@ const themeSelectors = {
   aurora: '.aurora-logo',
   tech: '.tech-logo',
   retro_gaming: '.rg-logo',
+  drive: '.drive-logo',
+  cellar: '.cellar-logo',
 };
 
 // A git worktree runs its own stack on <slug>.app.localhost, the main checkout on app.test.
