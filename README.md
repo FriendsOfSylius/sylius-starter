@@ -469,6 +469,14 @@ The choice is stored in `.castor/import/var/{project-slug}/project.yaml` (`shop`
 `sylius:import:delete`. Projects generated before keep their dedicated channel. Use `--subdomain=""` to import into
 the default channel.
 
+The shop images of a project (logo, header, interstice, any of them optional, read from
+`.castor/import/var/{project-slug}/media/image_*`) are copied to the Sylius app as static files,
+`public/media/shops/{CHANNEL_CODE}/{role}.{hash}.{ext}`, and `config/import/shop_images.php` only lists their URLs per
+channel. The content hash changes the URL when an image changes, so browsers can cache them for good. Files no longer
+listed (older versions, deleted shops) are removed each time the config is regenerated, including by
+`sylius:import:delete`. `public/media` is git-ignored by Sylius Standard. On Upsun it is a storage mount, so the files
+do not come with a Git push: upload `public/media/shops/` to the `public/media` mount (`upsun mount:upload`), and add a `'/media/shops'` location with a long `expires` to `.upsun/config.yaml` to cache them.
+
 #### Load the fixture suite
 
 ```bash
