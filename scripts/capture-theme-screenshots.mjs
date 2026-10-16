@@ -22,6 +22,7 @@ const themeSelectors = {
   volt: '.volt-logo',
   lagoon: '.lagoon-logo',
   aurora: '.aurora-logo',
+  tech: '.tech-logo',
 };
 
 function printUsage() {

@@ -25,6 +25,7 @@ castor sylius:theme:setup canvas
 | <a href="../themes/volt.md"><img src="../images/volt-homepage.png" alt="Volt storefront homepage" width="140"></a>                       | [Volt](../themes/volt.md)                 | High-energy sport-tech look in electric violet                                                |
 | <a href="../themes/lagoon.md"><img src="../images/lagoon-homepage.png" alt="Lagoon storefront homepage" width="140"></a>                 | [Lagoon](../themes/lagoon.md)             | Airy, product-led look in teal and aqua                                |
 | <a href="../themes/aurora.md"><img src="../images/aurora-homepage.png" alt="Aurora storefront homepage" width="140"></a>                 | [Aurora](../themes/aurora.md)             | Lagoon's violet sibling, with a blue-to-violet gradient                                    |
+| <a href="../themes/tech.md"><img src="../images/tech-homepage.png" alt="Tech storefront homepage" width="140"></a>                     | [Tech](../themes/tech.md)                 | Electronics-store look in carbon, aluminium and signal orange                              |
 | —                                                                                                                                        | default                                  | No theme applied; rebuilds the application assets              |
 
 ## Your own themes
