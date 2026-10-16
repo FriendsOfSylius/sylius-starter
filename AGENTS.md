@@ -94,3 +94,8 @@ The code is split into packages under `src/<Package>/` (`composer.json`, `src/`,
 The homepage hero is a shared slot owned by core: themes ship `templates/shop/homepage/hero.html.twig`, packages feed
 data through `App\Storefront\Hero\HeroContributorInterface`, and only core configures the `banner`/`hero` hookables.
 Prefix any hookable a package adds with the package name. See `docs/storefront/hero.md`.
+
+The shop logo is a shared slot owned by core too: themes read `storefront_brand()` in
+`templates/shop/shared/layout/brand/identity.html.twig`, packages feed it through
+`App\Storefront\Brand\BrandContributorInterface`, and a package never ships a file at a path a theme ships. See
+`docs/storefront/brand.md`.
