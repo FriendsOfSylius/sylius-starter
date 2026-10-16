@@ -19,8 +19,8 @@ castor docs:screenshots all --restore=canvas   # every theme, then switch back t
 ```
 
 For each theme, the task runs `castor sylius:theme:setup <theme>` then the screenshot script with `--include-cart`
-(`--skip-cart` to leave the cart out), and stops at the first failure. Without `--restore`, the last captured theme
-stays active.
+(`--skip-cart` to leave the cart out, `--width`/`--height` to change the viewport), and stops at the first failure.
+Without `--restore`, the last captured theme stays active.
 
 ## One theme
 
@@ -36,6 +36,11 @@ node scripts/capture-theme-screenshots.mjs canvas --include-cart
 | `--product <slug>` | Force the captured product                                              |
 | `--base-url <url>` | Storefront URL (default: `https://app.test/en_US/`, or the [worktree stack](worktrees.md) one) |
 | `--output-dir <dir>` | Output directory (default: `docs/images`)                             |
+| `--width <px>`    | Browser viewport width (default: `1920`)                                 |
+| `--height <px>`   | Browser viewport height (default: `1080`)                                |
+
+The default 1920px width makes the difference between full-width and centered layouts visible. The
+screenshots are full-page: the height only matters for elements sized on the viewport (hero sections, for example).
 
 Without `--product`, the script picks the first product listed on the storefront that is in stock, has an
 add-to-cart button and a real image (preferring the Comet Pulse T-Shirt), and lists the skipped ones with the reason.
