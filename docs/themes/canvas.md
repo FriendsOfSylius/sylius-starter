@@ -1,4 +1,9 @@
-# Canvas theme
+---
+title: Canvas theme
+description: A clean, editorial storefront theme with warm neutrals and squared corners.
+sidebar:
+  order: 1
+---
 
 Canvas gives the storefront a clean, editorial look, with warm neutral colors,
 squared corners and a refined pairing of *Jost* (body) and *Cormorant Garamond*
