@@ -10,9 +10,23 @@ violet, soft-lavender accents, rounded components and bold Jost typography. Its
 custom homepage banner uses layered CSS artwork, so it needs no additional image
 assets.
 
-| Homepage                                                 | Product page                                        | Cart                                                       |
-|----------------------------------------------------------|-----------------------------------------------------|------------------------------------------------------------|
-| ![Volt storefront homepage](../images/volt-homepage.png) | ![Product page in Volt](../images/volt-product.png) | ![Volt cart containing a product](../images/volt-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Volt storefront homepage on desktop](../images/volt-homepage-normal.webp) | ![Product page in Volt on desktop](../images/volt-product-normal.webp) | ![Volt cart containing a product on desktop](../images/volt-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Volt storefront homepage on a wide screen](../images/volt-homepage-wide.webp) | ![Product page in Volt on a wide screen](../images/volt-product-wide.webp) | ![Volt cart containing a product on a wide screen](../images/volt-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Volt storefront homepage on mobile](../images/volt-homepage-mobile.webp) | ![Product page in Volt on mobile](../images/volt-product-mobile.webp) | ![Volt cart containing a product on mobile](../images/volt-cart-mobile.webp) |
 
 - **Palette** — plum ink (`#302B43`), electric violet (`#6554B8`) and soft
   lavender (`#E9E5F4`) over a subtle, near-white background.

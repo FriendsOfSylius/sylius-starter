@@ -7,7 +7,7 @@ application, run `castor sylius:theme:setup <theme>` (for example,
 `castor sylius:theme:setup canvas`). Theme setup switches the active theme; the
 screenshot script only captures the storefront and verifies its theme marker.
 
-To refresh the full-page homepage and product page screenshots for a theme, run:
+To refresh the full-page homepage and product page screenshots of a theme, at every screen size, run:
 
 ```bash
 node scripts/capture-theme-screenshots.mjs canvas
@@ -23,7 +23,13 @@ node scripts/capture-theme-screenshots.mjs drive
 node scripts/capture-theme-screenshots.mjs cellar
 ```
 
-The script saves the screenshots in `docs/images/` (`<theme>-homepage.png`, `<theme>-product.png` and `<theme>-cart.png`). Use `--base-url <url>` to capture from another storefront URL, or `--output-dir <dir>` to choose another output directory. Screenshots are taken in a 1920x1080 viewport, so full-width and centered layouts can be told apart; use `--width <px>` and `--height <px>` to change it. The default storefront is `https://app.test/en_US/` in the main checkout, and the worktree stack (see below) in a git worktree.
+Each page is captured at three screen sizes: `normal` (1440x900), `wide` (2560x1080, to tell full-width layouts from
+centered containers) and `mobile` (390x844, emulating a phone: mobile viewport, 2x pixel ratio, iPhone user agent and
+touch). The script saves WebP screenshots in `docs/images/`, named `<theme>-<page>-<viewport>.webp` (for example
+`canvas-homepage-mobile.webp`, pages `homepage`, `product` and `cart`); theme names use hyphens (`prompt-dark`). Use
+`--viewports normal,mobile` to capture some sizes only, or `--width <px>` / `--height <px>` for a single custom desktop
+viewport (saved with a `<width>x<height>` suffix). Use `--base-url <url>` to capture from another storefront URL, or
+`--output-dir <dir>` to choose another output directory. The default storefront is `https://app.test/en_US/` in the main checkout, and the worktree stack (see below) in a git worktree.
 
 Data fixtures differ between installs, so the script evaluates the products listed on the storefront
 (homepage, then category pages) and picks the first one that is in stock, has an add-to-cart button and a real
@@ -57,10 +63,13 @@ castor docs:screenshots all --restore=canvas   # every theme, then switch back t
 ```
 
 For each theme, the task runs `castor sylius:theme:setup <theme>` then the screenshot script with `--include-cart`
-(`--skip-cart` to leave the cart out, `--width`/`--height` to change the 1920x1080 viewport), and stops at the first
-failure. Without `--restore`, the last captured theme stays active.
+(`--skip-cart` to leave the cart out, `--viewports` or `--width`/`--height` to change the screen sizes), and stops at
+the first failure. Without `--restore`, the last captured theme stays active.
 
 The script hides the Symfony web debug toolbar, so the app can stay in the `dev` environment.
+
+Theme pages (`docs/themes/<theme>.md`) show one table per screen size (**Desktop**, **Wide screen**, **Mobile**), each
+with the homepage, product page and cart; the theme overview uses the `normal` homepage as thumbnail.
 
 The script requires Node.js 22+ and Google Chrome or Chromium. Set `CHROME_BIN` if the browser executable is not detected automatically. The selected theme must be active on the storefront.
 

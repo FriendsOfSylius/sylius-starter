@@ -10,9 +10,23 @@ storefront: deep-water teal panels, bright aqua calls to action, mint "foam"
 sections and a touch of iris violet, set in tightly-tracked *Inter* (already
 shipped by the Sylius shop, so no extra font file is needed).
 
-| Homepage                                                     | Product page                                            | Cart                                                           |
-|--------------------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------|
-| ![Lagoon storefront homepage](../images/lagoon-homepage.png) | ![Product page in Lagoon](../images/lagoon-product.png) | ![Lagoon cart containing a product](../images/lagoon-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Lagoon storefront homepage on desktop](../images/lagoon-homepage-normal.webp) | ![Product page in Lagoon on desktop](../images/lagoon-product-normal.webp) | ![Lagoon cart containing a product on desktop](../images/lagoon-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Lagoon storefront homepage on a wide screen](../images/lagoon-homepage-wide.webp) | ![Product page in Lagoon on a wide screen](../images/lagoon-product-wide.webp) | ![Lagoon cart containing a product on a wide screen](../images/lagoon-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Lagoon storefront homepage on mobile](../images/lagoon-homepage-mobile.webp) | ![Product page in Lagoon on mobile](../images/lagoon-product-mobile.webp) | ![Lagoon cart containing a product on mobile](../images/lagoon-cart-mobile.webp) |
 
 - **Palette** — abyss teal (`#0A3A3E`), teal (`#0E7C86`), aqua (`#14DFE6`),
   mint foam (`#E7F9F9`) and an iris accent (`#6B3FE0`) on a white background.

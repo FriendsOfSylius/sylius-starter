@@ -9,9 +9,23 @@ Prompt Light keeps the same terminal-inspired layout and compact visual language
 as Prompt, but swaps its dark workspace for a brighter palette: soft green paper,
 crisp dark typography and calmer contrast.
 
-| Homepage                                                                 | Product page                                                        | Cart                                                                       |
-|--------------------------------------------------------------------------|---------------------------------------------------------------------|----------------------------------------------------------------------------|
-| ![Prompt Light storefront homepage](../images/prompt-light-homepage.png) | ![Product page in Prompt Light](../images/prompt-light-product.png) | ![Prompt Light cart containing a product](../images/prompt-light-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Prompt Light storefront homepage on desktop](../images/prompt-light-homepage-normal.webp) | ![Product page in Prompt Light on desktop](../images/prompt-light-product-normal.webp) | ![Prompt Light cart containing a product on desktop](../images/prompt-light-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Prompt Light storefront homepage on a wide screen](../images/prompt-light-homepage-wide.webp) | ![Product page in Prompt Light on a wide screen](../images/prompt-light-product-wide.webp) | ![Prompt Light cart containing a product on a wide screen](../images/prompt-light-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Prompt Light storefront homepage on mobile](../images/prompt-light-homepage-mobile.webp) | ![Product page in Prompt Light on mobile](../images/prompt-light-product-mobile.webp) | ![Prompt Light cart containing a product on mobile](../images/prompt-light-cart-mobile.webp) |
 
 - **Palette** — pale moss backgrounds, forest-green accents and warm neutral text.
 - **Components** — the same monospaced terminal framing, but with airy light panels,

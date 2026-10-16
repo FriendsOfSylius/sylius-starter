@@ -11,9 +11,23 @@ corners, monospace spec labels and datasheet layouts make it read like a modern
 electronics shop. It is set in *Inter* (already shipped by the Sylius shop) with
 the system monospace font for labels, so no extra font file is needed.
 
-| Homepage                                                 | Product page                                        | Cart                                                       |
-|----------------------------------------------------------|-----------------------------------------------------|------------------------------------------------------------|
-| ![Tech storefront homepage](../images/tech-homepage.png) | ![Product page in Tech](../images/tech-product.png) | ![Tech cart containing a product](../images/tech-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Tech storefront homepage on desktop](../images/tech-homepage-normal.webp) | ![Product page in Tech on desktop](../images/tech-product-normal.webp) | ![Tech cart containing a product on desktop](../images/tech-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Tech storefront homepage on a wide screen](../images/tech-homepage-wide.webp) | ![Product page in Tech on a wide screen](../images/tech-product-wide.webp) | ![Tech cart containing a product on a wide screen](../images/tech-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Tech storefront homepage on mobile](../images/tech-homepage-mobile.webp) | ![Product page in Tech on mobile](../images/tech-product-mobile.webp) | ![Tech cart containing a product on mobile](../images/tech-cart-mobile.webp) |
 
 - **Palette** — carbon (`#0D0F12`), graphite (`#171A1F`), aluminium
   (`#F2F3F5`) and signal orange (`#FF5B14`) on a white background, with a
