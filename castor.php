@@ -5,9 +5,11 @@ declare(strict_types=1);
 defined('CASTOR_USE_CHDIR') || define('CASTOR_USE_CHDIR', true);
 
 use Castor\Attribute\AsArgument;
+use Castor\Attribute\AsContext;
 use Castor\Attribute\AsListener;
 use Castor\Attribute\AsOption;
 use Castor\Attribute\AsTask;
+use Castor\Context;
 use Castor\Docker\Event\RegisterServiceEvent;
 use Castor\Docker\Service\PhpMode;
 use Castor\Docker\Service\PostgresService;
@@ -23,9 +25,22 @@ use function Castor\import;
 use function Castor\PHPQa\phpstan;
 use function Castor\PHPQa\php_cs_fixer;
 use function Castor\run;
+use function worktree\domain;
+use function worktree\project_name;
+use function worktree\storefront_url;
 
 import(__DIR__ . '/.castor/app');
 import(__DIR__ . '/.castor/monorepo');
+import(__DIR__ . '/.castor/worktree');
+
+#[AsContext(default: true)]
+function default_context(): Context
+{
+    // A git worktree gets its own compose project, hence its own containers and volumes (see .castor/worktree).
+    $projectName = project_name();
+
+    return new Context(null === $projectName ? [] : ['project_name' => $projectName]);
+}
 
 #[AsTask(description: 'Fix CS', namespace: 'qa', name: 'cs', aliases: ['cs'])]
 function qa_phpcsfixer(bool $dryRun = false): int
@@ -96,7 +111,7 @@ function docs_screenshots(
         // Each theme must be active on the storefront before its screenshots are taken.
         run(['castor', 'sylius:theme:setup', $theme], context: $context);
 
-        $command = ['node', 'scripts/capture-theme-screenshots.mjs', $theme];
+        $command = ['node', 'scripts/capture-theme-screenshots.mjs', $theme, '--base-url', storefront_url()];
 
         if (!$skipCart) {
             $command[] = '--include-cart';
@@ -133,5 +148,5 @@ function register_service(RegisterServiceEvent $event): void
 {
     $postgres = (new PostgresService())->withVersion('16');
     $event->addService($postgres);
-    $event->addService((new SyliusService('app'))->withDirectory(__DIR__ . '/app')->withVersion('8.5')->withMode(PhpMode::FrankenPhp)->withPhpIni(['memory_limit' => '1G'])->withHttpAccess()->withDomain('app.test')->withDatabaseService($postgres));
+    $event->addService((new SyliusService('app'))->withDirectory(__DIR__ . '/app')->withVersion('8.5')->withMode(PhpMode::FrankenPhp)->withPhpIni(['memory_limit' => '1G'])->withHttpAccess()->withDomain(domain())->withDatabaseService($postgres));
 }

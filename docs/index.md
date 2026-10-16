@@ -64,4 +64,5 @@ The built-in plugins and themes are only a starting point. Register your own wit
 - [E-commerce import](import/index.md): generate a catalog with AI, or import an existing website.
 - [Extending](extending/index.md): register your own plugins, themes and tasks.
 - [Storefront slots](storefront/hero.md): how themes and packages share the homepage hero and the shop logo.
-- [Contributing](contributing/monorepo.md): the monorepo, its tasks and its release process.
+- [Contributing](contributing/monorepo.md): the monorepo, its tasks, its release process, and
+  [one Docker stack per worktree](contributing/worktrees.md).
