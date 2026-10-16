@@ -19,6 +19,8 @@ node scripts/capture-theme-screenshots.mjs lagoon
 node scripts/capture-theme-screenshots.mjs aurora
 node scripts/capture-theme-screenshots.mjs tech
 node scripts/capture-theme-screenshots.mjs retro_gaming
+node scripts/capture-theme-screenshots.mjs drive
+node scripts/capture-theme-screenshots.mjs cellar
 ```
 
 Each page is captured at three screen sizes: `normal` (1440x900), `wide` (2560x1080, to tell full-width layouts from
@@ -46,6 +48,8 @@ node scripts/capture-theme-screenshots.mjs lagoon --include-cart
 node scripts/capture-theme-screenshots.mjs aurora --include-cart
 node scripts/capture-theme-screenshots.mjs tech --include-cart
 node scripts/capture-theme-screenshots.mjs retro_gaming --include-cart
+node scripts/capture-theme-screenshots.mjs drive --include-cart
+node scripts/capture-theme-screenshots.mjs cellar --include-cart
 ```
 
 The cart uses an isolated temporary browser profile and does not alter another browser session's cart.
