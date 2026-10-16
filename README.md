@@ -12,23 +12,23 @@ menu or importing a catalog. That makes it a reliable interface for you and for 
 
 ## Quick start
 
-Start a new project with the [skeleton](https://github.com/sylius-starter/skeleton):
+Requires [Docker](https://docs.docker.com/get-docker/) with Compose and
+[Castor](https://castor.jolicode.com/getting-started/installation/). Create a new project with the
+[skeleton](https://github.com/sylius-starter/skeleton):
 
 ```bash
 git clone --depth=1 https://github.com/sylius-starter/skeleton.git my-shop
 cd my-shop
+rm -rf .git && git init
+
 castor sylius:init
 ```
 
-Or add Sylius Starter to an existing Castor project:
+`castor sylius:init` asks a few questions (name, PHP version, domain, database, theme, payment gateways…), then builds
+and starts everything.
 
-```bash
-echo '{}' > castor.composer.json
-castor composer require sylius-starter/sylius-starter "@dev"
-castor docker:service:install sylius
-```
-
-See [Installation](docs/getting-started/installation.md) for the details.
+See [Installation](docs/getting-started/installation.md) for the unattended install, or to add Sylius Starter to an
+existing Castor project.
 
 ## What you get
 
