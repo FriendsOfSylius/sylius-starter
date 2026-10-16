@@ -23,7 +23,7 @@ node scripts/capture-theme-screenshots.mjs drive
 node scripts/capture-theme-screenshots.mjs cellar
 ```
 
-The script saves the screenshots in `docs/images/` (`<theme>-homepage.png`, `<theme>-product.png` and `<theme>-cart.png`). Use `--base-url <url>` to capture from another storefront URL, or `--output-dir <dir>` to choose another output directory. The default storefront is `https://app.test/en_US/` in the main checkout, and the worktree stack (see below) in a git worktree.
+The script saves the screenshots in `docs/images/` (`<theme>-homepage.png`, `<theme>-product.png` and `<theme>-cart.png`). Use `--base-url <url>` to capture from another storefront URL, or `--output-dir <dir>` to choose another output directory. Screenshots are taken in a 1920x1080 viewport, so full-width and centered layouts can be told apart; use `--width <px>` and `--height <px>` to change it. The default storefront is `https://app.test/en_US/` in the main checkout, and the worktree stack (see below) in a git worktree.
 
 Data fixtures differ between installs, so the script evaluates the products listed on the storefront
 (homepage, then category pages) and picks the first one that is in stock, has an add-to-cart button and a real
@@ -57,8 +57,8 @@ castor docs:screenshots all --restore=canvas   # every theme, then switch back t
 ```
 
 For each theme, the task runs `castor sylius:theme:setup <theme>` then the screenshot script with `--include-cart`
-(`--skip-cart` to leave the cart out), and stops at the first failure. Without `--restore`, the last captured theme
-stays active.
+(`--skip-cart` to leave the cart out, `--width`/`--height` to change the 1920x1080 viewport), and stops at the first
+failure. Without `--restore`, the last captured theme stays active.
 
 The script hides the Symfony web debug toolbar, so the app can stay in the `dev` environment.
 
