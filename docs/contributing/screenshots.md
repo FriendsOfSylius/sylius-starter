@@ -1,12 +1,21 @@
 ---
 title: Theme screenshots
-description: Refresh the homepage, product and cart screenshots of the storefront themes.
+description: Refresh the homepage, product and cart screenshots of the storefront themes, on desktop, wide screen and mobile.
 sidebar:
   order: 3
 ---
 
-The screenshots of the [theme pages](../themes/index.md) live in `docs/images/` (`<theme>-homepage.png`,
-`<theme>-product.png` and `<theme>-cart.png`).
+The screenshots of the [theme pages](../themes/index.md) live in `docs/images/`, as WebP files named
+`<theme>-<page>-<viewport>.webp`: pages `homepage`, `product` and `cart`, theme names with hyphens
+(`prompt-dark-cart-mobile.webp`).
+
+| Viewport | Size     | Purpose                                                                           |
+|----------|----------|-----------------------------------------------------------------------------------|
+| `normal` | 1440x900 | A usual laptop or desktop screen                                                  |
+| `wide`   | 2560x1080 | An ultra-wide screen: tells full-width layouts from centered containers         |
+| `mobile` | 390x844  | A phone, emulated: mobile viewport, 2x pixel ratio, iPhone user agent and touch   |
+
+Every theme page shows one table per viewport (desktop, wide screen, mobile).
 
 ## Every theme at once
 
@@ -19,8 +28,8 @@ castor docs:screenshots all --restore=canvas   # every theme, then switch back t
 ```
 
 For each theme, the task runs `castor sylius:theme:setup <theme>` then the screenshot script with `--include-cart`
-(`--skip-cart` to leave the cart out, `--width`/`--height` to change the viewport), and stops at the first failure.
-Without `--restore`, the last captured theme stays active.
+(`--skip-cart` to leave the cart out, `--viewports` or `--width`/`--height` to change the screen sizes), and stops at
+the first failure. Without `--restore`, the last captured theme stays active.
 
 ## One theme
 
@@ -36,11 +45,12 @@ node scripts/capture-theme-screenshots.mjs canvas --include-cart
 | `--product <slug>` | Force the captured product                                              |
 | `--base-url <url>` | Storefront URL (default: `https://app.test/en_US/`, or the [worktree stack](worktrees.md) one) |
 | `--output-dir <dir>` | Output directory (default: `docs/images`)                             |
-| `--width <px>`    | Browser viewport width (default: `1920`)                                 |
-| `--height <px>`   | Browser viewport height (default: `1080`)                                |
+| `--viewports <list>` | Comma-separated viewports to capture (default: `normal,wide,mobile`)  |
+| `--width <px>`    | Capture a single custom desktop viewport instead, saved with a `<width>x<height>` suffix |
+| `--height <px>`   | Height of that custom viewport (default: `900`)                          |
 
-The default 1920px width makes the difference between full-width and centered layouts visible. The
-screenshots are full-page: the height only matters for elements sized on the viewport (hero sections, for example).
+The screenshots are full-page: the viewport height only matters for elements sized on it (hero sections, for
+example). Very long pages are scaled down to stay within the WebP size limit (16383 pixels).
 
 Without `--product`, the script picks the first product listed on the storefront that is in stock, has an
 add-to-cart button and a real image (preferring the Comet Pulse T-Shirt), and lists the skipped ones with the reason.

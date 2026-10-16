@@ -10,9 +10,23 @@ Blush adapts the visual language of the
 page into a storefront: a crisp white canvas, expressive raspberry accents,
 soft rose panels and a deep plum footer.
 
-| Homepage                                                   | Product page                                          | Cart                                                         |
-|------------------------------------------------------------|-------------------------------------------------------|--------------------------------------------------------------|
-| ![Blush storefront homepage](../images/blush-homepage.png) | ![Product page in Blush](../images/blush-product.png) | ![Blush cart containing a product](../images/blush-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Blush storefront homepage on desktop](../images/blush-homepage-normal.webp) | ![Product page in Blush on desktop](../images/blush-product-normal.webp) | ![Blush cart containing a product on desktop](../images/blush-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Blush storefront homepage on a wide screen](../images/blush-homepage-wide.webp) | ![Product page in Blush on a wide screen](../images/blush-product-wide.webp) | ![Blush cart containing a product on a wide screen](../images/blush-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Blush storefront homepage on mobile](../images/blush-homepage-mobile.webp) | ![Product page in Blush on mobile](../images/blush-product-mobile.webp) | ![Blush cart containing a product on mobile](../images/blush-cart-mobile.webp) |
 
 - **Palette** — white and pale rose surfaces (`#FFFFFF`, `#FBF6F8`), raspberry
   (`#B54878`) accents and plum (`#2D141F`) typography and footer.

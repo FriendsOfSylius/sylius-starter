@@ -46,7 +46,7 @@ Every package relies on `sylius-starter/core`; `sylius-starter/sylius-starter` i
 
 | [Canvas](docs/themes/canvas.md) | [Lagoon](docs/themes/lagoon.md) | [Prompt Dark](docs/themes/prompt_dark.md) | [Volt](docs/themes/volt.md) |
 |---|---|---|---|
-| <img src="docs/images/canvas-homepage.png" alt="Canvas storefront homepage" width="180"> | <img src="docs/images/lagoon-homepage.png" alt="Lagoon storefront homepage" width="180"> | <img src="docs/images/prompt-dark-homepage.png" alt="Prompt Dark storefront homepage" width="180"> | <img src="docs/images/volt-homepage.png" alt="Volt storefront homepage" width="180"> |
+| <img src="docs/images/canvas-homepage-normal.webp" alt="Canvas storefront homepage" width="180"> | <img src="docs/images/lagoon-homepage-normal.webp" alt="Lagoon storefront homepage" width="180"> | <img src="docs/images/prompt-dark-homepage-normal.webp" alt="Prompt Dark storefront homepage" width="180"> | <img src="docs/images/volt-homepage-normal.webp" alt="Volt storefront homepage" width="180"> |
 
 [All the themes](docs/themes/index.md)
 

@@ -11,9 +11,23 @@ set in *Pixel Quest*, an original 5x7 bitmap font drawn for this theme (uppercas
 accents, 3 KB, shipped in `assets/shop/fonts/`); body copy stays in *Inter*, already shipped by the
 Sylius shop, so that descriptions and forms remain easy to read.
 
-| Homepage                                                             | Product page                                                    | Cart                                                                   |
-|----------------------------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------|
-| ![Retro Gaming storefront homepage](../images/retro-gaming-homepage.png) | ![Product page in Retro Gaming](../images/retro-gaming-product.png) | ![Retro Gaming cart containing a product](../images/retro-gaming-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Retro Gaming storefront homepage on desktop](../images/retro-gaming-homepage-normal.webp) | ![Product page in Retro Gaming on desktop](../images/retro-gaming-product-normal.webp) | ![Retro Gaming cart containing a product on desktop](../images/retro-gaming-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Retro Gaming storefront homepage on a wide screen](../images/retro-gaming-homepage-wide.webp) | ![Product page in Retro Gaming on a wide screen](../images/retro-gaming-product-wide.webp) | ![Retro Gaming cart containing a product on a wide screen](../images/retro-gaming-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Retro Gaming storefront homepage on mobile](../images/retro-gaming-homepage-mobile.webp) | ![Product page in Retro Gaming on mobile](../images/retro-gaming-product-mobile.webp) | ![Retro Gaming cart containing a product on mobile](../images/retro-gaming-cart-mobile.webp) |
 
 - **Palette** — deep console blue (`#0B0D1C`, panels `#141833`), neon magenta (`#FF3D8B`), cyan
   (`#3BE2F0`), coin gold (`#FFC93C`) and health-bar lime (`#8CF26B`). The storefront is dark end to
