@@ -17,6 +17,8 @@ use Symfony\Component\Finder\Finder;
 #[CoversNothing]
 final class StorefrontBrandContractTest extends TestCase
 {
+    private const CORE_SLOT_DIR = 'src/Core/resources/storefront/brand';
+
     private const IMPORT_APPLICATION_DIR = 'src/Import/resources/templates/application';
 
     public function testImportShipsNoFileAThemeAlsoShips(): void
@@ -42,21 +44,28 @@ final class StorefrontBrandContractTest extends TestCase
         static::assertSame([], $collisions, 'Themes overwrite and remove these paths: use a core slot (hero, brand) or a path of your own.');
     }
 
-    public function testOnlyCoreOverridesTheSyliusLogo(): void
+    public function testNoPackageOverridesTheSyliusLogo(): void
     {
         $offenders = [];
 
-        $files = (new Finder())
-            ->files()
-            ->in(\dirname(__DIR__, 2) . '/src/*/resources')
-            ->path('#templates/bundles/SyliusShopBundle/shared/logo\.html\.twig$#')
-            ->notPath('#^storefront/brand/#');
-
-        foreach ($files as $file) {
+        foreach ($this->packageResources()->path('#templates/bundles/SyliusShopBundle/shared/logo\.html\.twig$#') as $file) {
             $offenders[] = $file->getRelativePathname();
         }
 
-        static::assertSame([], $offenders, 'The Sylius logo template belongs to core: contribute a logo with a BrandContributorInterface.');
+        static::assertSame([], $offenders, 'Contribute a logo with a BrandContributorInterface instead of overriding the Sylius logo.');
+    }
+
+    public function testOnlyCoreConfiguresTheHeaderLogoContentHook(): void
+    {
+        $offenders = [];
+
+        foreach ($this->packageResources()->path('#config/sylius/#')->name(['*.php', '*.yaml', '*.yml']) as $file) {
+            if (str_contains($file->getContents(), 'sylius_shop.base.header.content.logo')) {
+                $offenders[] = $file->getRelativePathname();
+            }
+        }
+
+        static::assertSame([], $offenders, 'The "sylius_shop.base.header.content.logo" hook belongs to core (config/sylius/storefront/brand.yaml).');
     }
 
     /**
@@ -87,5 +96,13 @@ final class StorefrontBrandContractTest extends TestCase
         foreach ($installers as $installer) {
             static::assertStringContainsString('Brand::install($app)', $installer->getContents(), $installer->getFilename());
         }
+    }
+
+    private function packageResources(): Finder
+    {
+        return (new Finder())
+            ->files()
+            ->in(\dirname(__DIR__, 2) . '/src/*/resources')
+            ->notPath('#^' . preg_quote(substr(self::CORE_SLOT_DIR, \strlen('src/Core/resources/')), '#') . '#');
     }
 }
