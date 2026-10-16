@@ -1,41 +1,91 @@
 ---
 title: Installation
-description: Start a new Sylius project with the skeleton, or add Sylius Starter to an existing Castor project.
+description: Create a new Sylius project with the Sylius Starter skeleton, in one command.
 sidebar:
   order: 1
 ---
 
-## Start a new project
+The [Sylius Starter skeleton](https://github.com/sylius-starter/skeleton) creates a new Sylius project, ready to
+develop: [Castor](https://castor.jolicode.com) installs Sylius-Standard, its Docker stack (FrankenPHP, PostgreSQL,
+HTTPS router), the assets and the fixtures, then hands you the tasks to shape your store.
 
-The quickest way is the [Sylius Starter skeleton](https://github.com/sylius-starter/skeleton): it installs
-Sylius-Standard, its Docker stack, the assets and the fixtures in one command (`castor sylius:init`). See its README
-for the available options.
+## Requirements
 
-## Add Sylius Starter to a Castor project
+- [Docker](https://docs.docker.com/get-docker/) with Compose
+- [Castor](https://castor.jolicode.com/getting-started/installation/)
 
-1. In a Castor project (a `castor.php` file at its root), create a composer file for Castor:
+## Create your project
 
-   ```bash
-   echo '{}' > castor.composer.json
-   ```
+```bash
+git clone --depth=1 https://github.com/sylius-starter/skeleton.git my-shop
+cd my-shop
+rm -rf .git && git init
 
-2. Install Sylius Starter (every package at once):
+castor sylius:init
+```
 
-   ```bash
-   castor composer require sylius-starter/sylius-starter "@dev"
-   ```
+On GitHub, **Use this template** on the [skeleton repository](https://github.com/sylius-starter/skeleton) gives you a
+fresh repository without cloning the history.
 
-   Or pick only what you need: `sylius-starter/core` is always required, then add the
-   [task packages](packages.md) you want, e.g.
+`castor sylius:init` asks a few questions (application name, PHP version, domain, database, theme, payment
+gateways…), then builds and starts everything. Once done, it removes the skeleton-only files: the README is replaced by
+the one of your project, and `.github.dist/` becomes your CI.
 
-   ```bash
-   castor composer require sylius-starter/core sylius-starter/themes sylius-starter/plugins "@dev"
-   ```
+## Unattended install
 
-3. Set up a new Sylius application:
+Every question can be answered upfront:
 
-   ```bash
-   castor docker:service:install sylius
-   ```
+```bash
+castor sylius:init --no-interaction \
+    --with-name=app \
+    --with-domain=my-shop.test \
+    --with-database=postgres \
+    --with-theme=canvas \
+    --with-payment-gateways=stripe
+```
+
+| Option                    | Description                                                                                 | Default      |
+|---------------------------|---------------------------------------------------------------------------------------------|--------------|
+| `--with-name`             | Name of the application (and of its tasks)                                                  | `app`        |
+| `--with-directory`        | Directory of the application                                                                | the name     |
+| `--with-version`          | PHP version                                                                                 | `8.5`        |
+| `--with-mode`             | Runtime: `frankenphp` or `fpm`                                                              | `frankenphp` |
+| `--with-domain`           | Domain of the store                                                                         | `app.test`   |
+| `--with-sylius-version`   | Sylius-Standard version                                                                     | latest       |
+| `--with-database`         | `postgres`, `mysql`, `mariadb` or `none`                                                    | `postgres`   |
+| `--with-theme`            | `default`, `aurora`, `blush`, `canvas`, `lagoon`, `prompt_dark`, `prompt_light` or `volt`   | `default`    |
+| `--with-payment-gateways` | `mollie`, `paypal`, `stripe` (repeat the option for several)                                | all          |
+
+`castor docker:service:install` (without argument) prints the options of every installable service.
+
+## What's inside
+
+| File                     | Role                                                                 |
+|--------------------------|----------------------------------------------------------------------|
+| `castor.php`             | Your stack: Castor context, and the services `sylius:init` registers |
+| `castor.composer.json`   | The Castor plugins of the project (`sylius-starter/sylius-starter`)  |
+| `.castor/tasks/qa.php`   | `castor qa`: audit, linters, ECS, PHPStan, PHPUnit (and Behat)       |
+| `.github.dist/`          | CI of the project: quality checks, Docker build cache, Dependabot    |
+| `AGENTS.md`              | Guidance for the AI agents working on the project                    |
+
+## Next steps
+
+Shape your store with the commands: [add plugins](../commands/plugins.md), [switch the theme](../commands/themes.md),
+[enable B2B features](../commands/b2b.md), [clean up the Admin menu](../commands/admin-menu.md), or
+[import a catalog](../import/index.md).
+
+## In an existing Castor project
+
+Without the skeleton, add Sylius Starter to a Castor project (a `castor.php` file at its root), then install Sylius:
+
+```bash
+echo '{}' > castor.composer.json
+castor composer require sylius-starter/sylius-starter "@dev"
+castor docker:service:install sylius
+```
+
+`sylius-starter/sylius-starter` brings every package. To pick only what you need, require `sylius-starter/core` and
+the [task packages](packages.md) you want, e.g.
+`castor composer require sylius-starter/core sylius-starter/themes sylius-starter/plugins "@dev"`.
 
 Coming from the `castor-php/sylius` plugin? Follow the [upgrade guide](upgrading.md).
