@@ -19,6 +19,7 @@ node scripts/capture-theme-screenshots.mjs lagoon
 node scripts/capture-theme-screenshots.mjs aurora
 node scripts/capture-theme-screenshots.mjs tech
 node scripts/capture-theme-screenshots.mjs retro_gaming
+node scripts/capture-theme-screenshots.mjs drive
 ```
 
 The script saves the screenshots in `docs/images/` (`<theme>-homepage.png`, `<theme>-product.png` and `<theme>-cart.png`). Use `--base-url <url>` to capture from another storefront URL, or `--output-dir <dir>` to choose another output directory. The default storefront is `https://app.test/en_US/` in the main checkout, and the worktree stack (see below) in a git worktree.
@@ -40,6 +41,7 @@ node scripts/capture-theme-screenshots.mjs lagoon --include-cart
 node scripts/capture-theme-screenshots.mjs aurora --include-cart
 node scripts/capture-theme-screenshots.mjs tech --include-cart
 node scripts/capture-theme-screenshots.mjs retro_gaming --include-cart
+node scripts/capture-theme-screenshots.mjs drive --include-cart
 ```
 
 The cart uses an isolated temporary browser profile and does not alter another browser session's cart.
