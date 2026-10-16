@@ -1,4 +1,9 @@
-# Prompt Light theme
+---
+title: Prompt Light theme
+description: The terminal-inspired Prompt layout on a brighter, soft green palette.
+sidebar:
+  order: 4
+---
 
 Prompt Light keeps the same terminal-inspired layout and compact visual language
 as Prompt, but swaps its dark workspace for a brighter palette: soft green paper,
