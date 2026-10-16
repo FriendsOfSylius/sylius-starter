@@ -21,7 +21,7 @@ node scripts/capture-theme-screenshots.mjs tech
 node scripts/capture-theme-screenshots.mjs retro_gaming
 ```
 
-The script saves the screenshots in `docs/images/` (`<theme>-homepage.png`, `<theme>-product.png` and `<theme>-cart.png`). Use `--base-url <url>` to capture from another storefront URL, or `--output-dir <dir>` to choose another output directory. The default storefront is `https://app.test/en_US/`.
+The script saves the screenshots in `docs/images/` (`<theme>-homepage.png`, `<theme>-product.png` and `<theme>-cart.png`). Use `--base-url <url>` to capture from another storefront URL, or `--output-dir <dir>` to choose another output directory. The default storefront is `https://app.test/en_US/` in the main checkout, and the worktree stack (see below) in a git worktree.
 
 Data fixtures differ between installs, so the script evaluates the products listed on the storefront
 (homepage, then category pages) and picks the first one that is in stock, has an add-to-cart button and a real
@@ -59,6 +59,26 @@ stays active.
 The script hides the Symfony web debug toolbar, so the app can stay in the `dev` environment.
 
 The script requires Node.js 22+ and Google Chrome or Chromium. Set `CHROME_BIN` if the browser executable is not detected automatically. The selected theme must be active on the storefront.
+
+## One Docker stack per git worktree
+
+Every git worktree of this repository gets its own Sylius app, database and domain, so sessions working on different
+branches never share (or switch the theme of) the same app. The main checkout keeps the `app` compose project and
+`https://app.test`; a worktree uses the `app-<slug>` project and `https://<slug>.app.localhost/` (slug: the worktree
+directory name, e.g. `tech-theme-fc3548`). Nothing to configure: every `castor` task run from a worktree targets its
+own stack.
+
+```bash
+castor worktree:install     # once: copies the main checkout app/, builds, starts, migrates, loads the fixtures
+castor sylius:theme:setup volt
+castor about                # lists the URLs of the stack
+castor stop                 # stop it, keep the database
+castor destroy --force      # before "git worktree remove": drop its containers, database volume and images
+```
+
+`*.localhost` resolves to the loopback without `/etc/hosts`, and the shared Castor router serves it over HTTPS. Never
+run `castor up` from a worktree checked out before this setup existed without updating it first: it would reuse the
+`app` project of the main checkout. See `docs/contributing/worktrees.md`.
 
 ## Running commands in the Sylius app
 
