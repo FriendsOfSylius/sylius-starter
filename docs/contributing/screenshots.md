@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-The screenshots of the [theme pages](../commands/themes.md) live in `docs/images/` (`<theme>-homepage.png`,
+The screenshots of the [theme pages](../themes/index.md) live in `docs/images/` (`<theme>-homepage.png`,
 `<theme>-product.png` and `<theme>-cart.png`).
 
 ## Every theme at once
