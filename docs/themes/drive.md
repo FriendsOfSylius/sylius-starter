@@ -11,9 +11,23 @@ like the shelves of a supermarket. Basil-green aisles, lemon price stickers and
 tomato promo badges sit on a light shelf-grey background. It is set in heavy
 *Inter* (already shipped by the Sylius shop), so no extra font file is needed.
 
-| Homepage                                                   | Product page                                          | Cart                                                         |
-|------------------------------------------------------------|-------------------------------------------------------|--------------------------------------------------------------|
-| ![Drive storefront homepage](../images/drive-homepage.png) | ![Product page in Drive](../images/drive-product.png) | ![Drive cart containing a product](../images/drive-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Drive storefront homepage on desktop](../images/drive-homepage-normal.webp) | ![Product page in Drive on desktop](../images/drive-product-normal.webp) | ![Drive cart containing a product on desktop](../images/drive-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Drive storefront homepage on a wide screen](../images/drive-homepage-wide.webp) | ![Product page in Drive on a wide screen](../images/drive-product-wide.webp) | ![Drive cart containing a product on a wide screen](../images/drive-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Drive storefront homepage on mobile](../images/drive-homepage-mobile.webp) | ![Product page in Drive on mobile](../images/drive-product-mobile.webp) | ![Drive cart containing a product on mobile](../images/drive-cart-mobile.webp) |
 
 - **Layout** — full screen: every container spans the viewport with a fluid
   gutter (`$gutter`), and the pages are built from white "shelves" on a

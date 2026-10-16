@@ -9,9 +9,23 @@ Prompt Dark is the terminal-inspired storefront direction: a dark workspace,
 terminal-green accents, monospaced typography and a command-inspired homepage
 panel.
 
-| Homepage                                                               | Product page                                                      | Cart                                                                     |
-|------------------------------------------------------------------------|-------------------------------------------------------------------|--------------------------------------------------------------------------|
-| ![Prompt Dark storefront homepage](../images/prompt-dark-homepage.png) | ![Product page in Prompt Dark](../images/prompt-dark-product.png) | ![Prompt Dark cart containing a product](../images/prompt-dark-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Prompt Dark storefront homepage on desktop](../images/prompt-dark-homepage-normal.webp) | ![Product page in Prompt Dark on desktop](../images/prompt-dark-product-normal.webp) | ![Prompt Dark cart containing a product on desktop](../images/prompt-dark-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Prompt Dark storefront homepage on a wide screen](../images/prompt-dark-homepage-wide.webp) | ![Product page in Prompt Dark on a wide screen](../images/prompt-dark-product-wide.webp) | ![Prompt Dark cart containing a product on a wide screen](../images/prompt-dark-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Prompt Dark storefront homepage on mobile](../images/prompt-dark-homepage-mobile.webp) | ![Product page in Prompt Dark on mobile](../images/prompt-dark-product-mobile.webp) | ![Prompt Dark cart containing a product on mobile](../images/prompt-dark-cart-mobile.webp) |
 
 - **Palette** — deep green-black surfaces, terminal green highlights and muted
   neutral text.

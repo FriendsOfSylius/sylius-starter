@@ -10,9 +10,23 @@ storefront in night bordeaux and cream paper, set with a high-contrast Didone an
 with antique gold fillets, like a château label. Generous whitespace, spaced small
 capitals and portrait product niches keep the bottles at the centre.
 
-| Homepage                                                     | Product page                                          | Cart                                                         |
-|--------------------------------------------------------------|-------------------------------------------------------|--------------------------------------------------------------|
-| ![Cellar storefront homepage](../images/cellar-homepage.png) | ![Product page in Cellar](../images/cellar-product.png) | ![Cellar cart containing a product](../images/cellar-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Cellar storefront homepage on desktop](../images/cellar-homepage-normal.webp) | ![Product page in Cellar on desktop](../images/cellar-product-normal.webp) | ![Cellar cart containing a product on desktop](../images/cellar-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Cellar storefront homepage on a wide screen](../images/cellar-homepage-wide.webp) | ![Product page in Cellar on a wide screen](../images/cellar-product-wide.webp) | ![Cellar cart containing a product on a wide screen](../images/cellar-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Cellar storefront homepage on mobile](../images/cellar-homepage-mobile.webp) | ![Product page in Cellar on mobile](../images/cellar-product-mobile.webp) | ![Cellar cart containing a product on mobile](../images/cellar-cart-mobile.webp) |
 
 - **Palette** — night bordeaux (`#22080F`), bordeaux (`#5E1626`) and claret
   (`#7A1C30`) on cream paper (`#F7F2E9`) and ivory (`#FFFCF6`), with an antique

@@ -9,8 +9,22 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { get } from 'node:http';
 import { get as getHttps } from 'node:https';
 
-// Wide enough to tell full-width layouts from centered containers.
-const defaultViewport = { width: 1920, height: 1080 };
+// Named screen sizes, each one saved as <theme>-<page>-<name>.webp. "wide" tells
+// full-width layouts from centered containers, "mobile" emulates a phone.
+const viewportPresets = {
+  normal: { width: 1440, height: 900 },
+  wide: { width: 2560, height: 1080 },
+  mobile: {
+    width: 390,
+    height: 844,
+    deviceScaleFactor: 2,
+    mobile: true,
+    userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1',
+  },
+};
+// Chrome cannot encode a WebP image taller or wider than this.
+const maxWebpSize = 16383;
+const webpQuality = 85;
 const defaultBaseUrl = `https://${storefrontDomain()}/en_US/`;
 // Data fixtures differ from one install to another: the product is discovered on
 // the storefront. This one is only preferred when it exists and can be bought,
@@ -48,9 +62,11 @@ function storefrontDomain() {
 function printUsage() {
   console.log(`Usage: node scripts/capture-theme-screenshots.mjs <theme> [options]
 
-Capture full-page screenshots of the homepage and of a product page.
-Screenshots are saved as docs/images/<theme>-homepage.png and
-docs/images/<theme>-product.png.
+Capture full-page screenshots of the homepage and of a product page, for each
+screen size. Screenshots are saved as docs/images/<theme>-<page>-<viewport>.webp,
+for example docs/images/canvas-homepage-mobile.webp.
+
+Screen sizes: ${Object.entries(viewportPresets).map(([name, { width, height }]) => `${name} (${width}x${height})`).join(', ')}.
 
 The product is chosen among the products listed on the storefront (homepage,
 then category pages): the first one that is in stock, has an add-to-cart button
@@ -62,8 +78,10 @@ Options:
   --product <slug>     Use this product instead of discovering one
   --base-url <url>    Storefront base URL (default: ${defaultBaseUrl})
   --output-dir <dir>  Screenshot output directory (default: docs/images)
-  --width <px>        Browser viewport width (default: ${defaultViewport.width})
-  --height <px>       Browser viewport height (default: ${defaultViewport.height})
+  --viewports <list>  Comma-separated screen sizes (default: ${Object.keys(viewportPresets).join(',')})
+  --width <px>        Capture a single desktop viewport of this width instead,
+                      saved with a <width>x<height> suffix
+  --height <px>       Height of that viewport (default: ${viewportPresets.normal.height})
   --help              Show this help
 
 Requires Node.js 22+ and Google Chrome or Chromium. Set CHROME_BIN to use a
@@ -76,7 +94,9 @@ function parseArguments(args) {
   let productSlug;
   let baseUrl = defaultBaseUrl;
   let outputDir = 'docs/images';
-  const viewport = { ...defaultViewport };
+  let viewportNames;
+  let width;
+  let height;
 
   while (args.length > 0) {
     const argument = args.shift();
@@ -95,7 +115,19 @@ function parseArguments(args) {
       if (!value || !/^[1-9][0-9]*$/.test(value)) {
         throw new Error(`${argument} requires a positive number of pixels`);
       }
-      viewport[argument.slice(2)] = Number(value);
+      if (argument === '--width') width = Number(value);
+      else height = Number(value);
+      continue;
+    }
+
+    if (argument === '--viewports') {
+      const value = args.shift();
+      if (!value || value.startsWith('--')) throw new Error('--viewports requires a value');
+      viewportNames = [...new Set(value.split(',').map(name => name.trim()).filter(Boolean))];
+      const unknown = viewportNames.filter(name => !Object.hasOwn(viewportPresets, name));
+      if (unknown.length > 0 || viewportNames.length === 0) {
+        throw new Error(`Unknown viewport(s): ${unknown.join(', ')}. Available: ${Object.keys(viewportPresets).join(', ')}`);
+      }
       continue;
     }
 
@@ -119,13 +151,22 @@ function parseArguments(args) {
   if (!/^[a-zA-Z0-9_-]+$/.test(theme)) throw new Error('The theme name may only contain letters, numbers, hyphens, and underscores');
   if (productSlug !== undefined && !/^[a-zA-Z0-9_-]+$/.test(productSlug)) throw new Error('The product slug may only contain letters, numbers, hyphens, and underscores');
 
+  if ((width || height) && viewportNames) throw new Error('--viewports cannot be combined with --width or --height');
+  let viewports;
+  if (width || height) {
+    const custom = { width: width ?? viewportPresets.normal.width, height: height ?? viewportPresets.normal.height };
+    viewports = [{ name: `${custom.width}x${custom.height}`, ...custom }];
+  } else {
+    viewports = (viewportNames ?? Object.keys(viewportPresets)).map(name => ({ name, ...viewportPresets[name] }));
+  }
+
   const parsedBaseUrl = new URL(baseUrl);
   if (!['http:', 'https:'].includes(parsedBaseUrl.protocol)) {
     throw new Error('The base URL must use HTTP or HTTPS');
   }
   parsedBaseUrl.pathname = `${parsedBaseUrl.pathname.replace(/\/+$/, '')}/`;
 
-  return { theme, includeCart, productSlug, baseUrl: parsedBaseUrl, outputDir: resolve(outputDir), viewport };
+  return { theme, includeCart, productSlug, baseUrl: parsedBaseUrl, outputDir: resolve(outputDir), viewports };
 }
 
 function findChrome() {
@@ -194,7 +235,7 @@ async function waitForEvent(events, method) {
 }
 
 async function main() {
-  const { theme, includeCart, productSlug, baseUrl, outputDir, viewport } = parseArguments(process.argv.slice(2));
+  const { theme, includeCart, productSlug, baseUrl, outputDir, viewports } = parseArguments(process.argv.slice(2));
   const chrome = findChrome();
   if (!chrome) throw new Error('Could not find Chrome or Chromium; set CHROME_BIN to its executable');
 
@@ -205,7 +246,8 @@ async function main() {
     '--disable-gpu',
     '--hide-scrollbars',
     '--ignore-certificate-errors',
-    `--window-size=${viewport.width},${viewport.height}`,
+    // The page viewport is emulated for each screen size, the window only needs to hold the largest one.
+    `--window-size=${Math.max(...viewports.map(viewport => viewport.width))},${Math.max(...viewports.map(viewport => viewport.height))}`,
     '--remote-debugging-port=0',
     `--user-data-dir=${profileDir}`,
     'about:blank',
@@ -295,20 +337,40 @@ async function main() {
       }
     };
 
+    let defaultUserAgent;
+    let viewport;
+    const useViewport = async next => {
+      viewport = next;
+      defaultUserAgent ??= (await send('Browser.getVersion')).userAgent.replace('HeadlessChrome', 'Chrome');
+      await send('Emulation.setDeviceMetricsOverride', {
+        width: viewport.width,
+        height: viewport.height,
+        deviceScaleFactor: viewport.deviceScaleFactor ?? 1,
+        mobile: viewport.mobile ?? false,
+      });
+      await send('Emulation.setTouchEmulationEnabled', { enabled: viewport.mobile ?? false, maxTouchPoints: 5 });
+      await send('Emulation.setUserAgentOverride', { userAgent: viewport.userAgent ?? defaultUserAgent });
+    };
+
     const outputTheme = theme.replace(/_/g, '-');
     const capture = async (url, name) => {
       const metrics = await send('Page.getLayoutMetrics');
       const size = metrics.cssContentSize;
+      const pixelRatio = viewport.deviceScaleFactor ?? 1;
+      // Very long pages are scaled down to fit the WebP size limit.
+      const scale = Math.min(1, maxWebpSize / (Math.max(size.width, size.height) * pixelRatio));
       const screenshot = await send('Page.captureScreenshot', {
-        format: 'png',
+        format: 'webp',
+        quality: webpQuality,
         captureBeyondViewport: true,
         fromSurface: true,
-        clip: { x: 0, y: 0, width: size.width, height: size.height, scale: 1 },
+        clip: { x: 0, y: 0, width: size.width, height: size.height, scale },
       });
-      const path = join(outputDir, `${outputTheme}-${name}.png`);
+      const path = join(outputDir, `${outputTheme}-${name}-${viewport.name}.webp`);
       mkdirSync(outputDir, { recursive: true });
       writeFileSync(path, Buffer.from(screenshot.data, 'base64'));
-      console.log(`${url.href} -> ${path} (${size.width}x${size.height})`);
+      const pixels = `${Math.round(size.width * pixelRatio * scale)}x${Math.round(size.height * pixelRatio * scale)}`;
+      console.log(`${url.href} -> ${path} (${pixels})`);
     };
 
     // Product links of the current page, as absolute URLs, without duplicates.
@@ -343,9 +405,9 @@ async function main() {
     await send('Page.enable');
     await send('Runtime.enable');
 
+    await useViewport(viewports[0]);
     const homepageUrl = new URL('./', baseUrl);
     await navigate(homepageUrl);
-    await capture(homepageUrl, 'homepage');
 
     let candidates;
     if (productSlug) {
@@ -394,11 +456,21 @@ async function main() {
     console.log(`Selected product: ${product.name} (${product.url})`);
 
     const productUrl = new URL(product.url);
-    await navigate(productUrl);
-    await capture(productUrl, 'product');
+    const productName = JSON.stringify(product.name);
+    const cartUrl = new URL('cart/', baseUrl);
+
+    // The homepage and product page are captured with an empty cart.
+    for (const next of viewports) {
+      await useViewport(next);
+      await navigate(homepageUrl);
+      await capture(homepageUrl, 'homepage');
+      await navigate(productUrl);
+      await capture(productUrl, 'product');
+    }
 
     if (includeCart) {
-      const productName = JSON.stringify(product.name);
+      await useViewport(viewports[0]);
+      await navigate(productUrl);
       await evaluate(`(() => {
         const button = document.querySelector('#add-to-cart-button');
         if (!button) throw new Error('The add-to-cart button was not found for ' + ${productName});
@@ -422,12 +494,14 @@ async function main() {
       }
       if (!cartHasProduct) throw new Error(`${product.name} did not appear in the cart after adding it`);
 
-      const cartUrl = new URL('cart/', baseUrl);
-      await navigate(cartUrl);
-      if (!await evaluate(`document.body.innerText.includes(${productName})`)) {
-        throw new Error(`The cart page did not render ${product.name}`);
+      for (const next of viewports) {
+        await useViewport(next);
+        await navigate(cartUrl);
+        if (!await evaluate(`document.body.innerText.includes(${productName})`)) {
+          throw new Error(`The cart page did not render ${product.name}`);
+        }
+        await capture(cartUrl, 'cart');
       }
-      await capture(cartUrl, 'cart');
     }
   } finally {
     ws?.close();
