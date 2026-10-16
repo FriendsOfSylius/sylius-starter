@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\B2b\Tests\Unit;
+namespace SyliusStarter\B2b\Tests\Unit;
 
 use Castor\Container;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Sylius\Starter\B2b\B2bResourceCopier;
-use Sylius\Starter\Core\App;
+use SyliusStarter\B2b\B2bResourceCopier;
+use SyliusStarter\Core\App;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Style\SymfonyStyle;

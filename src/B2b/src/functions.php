@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\B2b;
+namespace SyliusStarter\B2b;
 
-use Sylius\Starter\B2b\Tasks\B2bTasks;
-use Sylius\Starter\Core\Service\SyliusService;
-use Sylius\Starter\Core\Task\TaskProviderRegistry;
+use SyliusStarter\B2b\Tasks\B2bTasks;
+use SyliusStarter\Core\Service\SyliusService;
+use SyliusStarter\Core\Task\TaskProviderRegistry;
 
 TaskProviderRegistry::register(
     'b2b',
