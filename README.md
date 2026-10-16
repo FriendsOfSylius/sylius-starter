@@ -48,7 +48,7 @@ Every package relies on `sylius-starter/core`; `sylius-starter/sylius-starter` i
 |---|---|---|---|
 | <img src="docs/images/canvas-homepage.png" alt="Canvas storefront homepage" width="180"> | <img src="docs/images/lagoon-homepage.png" alt="Lagoon storefront homepage" width="180"> | <img src="docs/images/prompt-dark-homepage.png" alt="Prompt Dark storefront homepage" width="180"> | <img src="docs/images/volt-homepage.png" alt="Volt storefront homepage" width="180"> |
 
-[All the themes](docs/commands/themes.md)
+[All the themes](docs/themes/index.md)
 
 ## Documentation
 
