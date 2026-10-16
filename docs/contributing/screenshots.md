@@ -34,7 +34,7 @@ node scripts/capture-theme-screenshots.mjs canvas --include-cart
 |-------------------|--------------------------------------------------------------------------|
 | `--include-cart`  | Also add the product to a fresh cart (isolated browser profile) and capture the cart page |
 | `--product <slug>` | Force the captured product                                              |
-| `--base-url <url>` | Storefront URL (default: `https://app.test/en_US/`)                     |
+| `--base-url <url>` | Storefront URL (default: `https://app.test/en_US/`, or the [worktree stack](worktrees.md) one) |
 | `--output-dir <dir>` | Output directory (default: `docs/images`)                             |
 
 Without `--product`, the script picks the first product listed on the storefront that is in stock, has an
