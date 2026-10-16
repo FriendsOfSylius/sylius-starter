@@ -11,7 +11,6 @@ use Castor\Attribute\AsOption;
 use Castor\Attribute\AsTask;
 use Castor\Context;
 use Castor\Docker\Event\RegisterServiceEvent;
-use Castor\Docker\Service\PhpIniScope;
 use Castor\Docker\Service\PhpMode;
 use Castor\Docker\Service\PostgresService;
 use SyliusStarter\Core\Service\SyliusService;
@@ -149,13 +148,5 @@ function register_service(RegisterServiceEvent $event): void
 {
     $postgres = (new PostgresService())->withVersion('16');
     $event->addService($postgres);
-    $event->addService((new SyliusService('app'))->withDirectory(__DIR__ . '/app')->withVersion('8.5')->withMode(PhpMode::FrankenPhp)->withPhpIni(['memory_limit' => '1G'])->withPhpIni([
-        // An opcache restart crashes FrankenPHP ("zend_mm_heap corrupted"): "app:cache-clear" restarts the server to
-        // free the scripts of the old cache (see SyliusService), and this leaves room for the cache rebuilds that do
-        // not go through it. The 256 MB default was full after 3 or 4 theme switches.
-        'opcache.memory_consumption' => '1024',
-        // 8 MB (the default) is already full after one storefront page.
-        'opcache.interned_strings_buffer' => '64',
-        'opcache.max_accelerated_files' => '100000',
-    ], PhpIniScope::Web)->withHttpAccess()->withDomain(domain())->withDatabaseService($postgres));
+    $event->addService((new SyliusService('app'))->withDirectory(__DIR__ . '/app')->withVersion('8.5')->withMode(PhpMode::FrankenPhp)->withPhpIni(['memory_limit' => '1G', 'opcache.memory_consumption' => '1024', 'opcache.interned_strings_buffer' => '64', 'opcache.max_accelerated_files' => '100000'])->withHttpAccess()->withDomain(domain())->withDatabaseService($postgres));
 }
