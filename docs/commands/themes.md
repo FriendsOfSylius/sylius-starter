@@ -26,6 +26,7 @@ castor sylius:theme:setup canvas
 | <a href="../themes/lagoon.md"><img src="../images/lagoon-homepage.png" alt="Lagoon storefront homepage" width="140"></a>                 | [Lagoon](../themes/lagoon.md)             | Airy, product-led look in teal and aqua                                |
 | <a href="../themes/aurora.md"><img src="../images/aurora-homepage.png" alt="Aurora storefront homepage" width="140"></a>                 | [Aurora](../themes/aurora.md)             | Lagoon's violet sibling, with a blue-to-violet gradient                                    |
 | <a href="../themes/tech.md"><img src="../images/tech-homepage.png" alt="Tech storefront homepage" width="140"></a>                     | [Tech](../themes/tech.md)                 | Electronics-store look in carbon, aluminium and signal orange                              |
+| <a href="../themes/retro_gaming.md"><img src="../images/retro-gaming-homepage.png" alt="Retro Gaming storefront homepage" width="140"></a>     | [Retro Gaming](../themes/retro_gaming.md)     | Night arcade gaming store: neon magenta and cyan, pixel font, HUD and CRT hero          |
 | —                                                                                                                                        | default                                  | No theme applied; rebuilds the application assets              |
 
 ## Your own themes
