@@ -9,3 +9,4 @@ parameters:
         - src/Themes/src
         - src/Upsun/src
         - .castor/monorepo
+        - .castor/worktree

@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 
 import { spawn, spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join, resolve } from 'node:path';
+import { basename, dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { setTimeout as delay } from 'node:timers/promises';
 import { get } from 'node:http';
 import { get as getHttps } from 'node:https';
 
 const viewport = { width: 1440, height: 1000 };
+const defaultBaseUrl = `https://${storefrontDomain()}/en_US/`;
 // Data fixtures differ from one install to another: the product is discovered on
 // the storefront. This one is only preferred when it exists and can be bought,
 // so that screenshots stay comparable between themes.
@@ -27,6 +29,20 @@ const themeSelectors = {
   drive: '.drive-logo',
 };
 
+// A git worktree runs its own stack on <slug>.app.localhost, the main checkout on app.test.
+// Keep in sync with slug() in .castor/worktree/tasks.php.
+function storefrontDomain() {
+  const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+  // A linked worktree has a ".git" file, the main checkout a ".git" directory.
+  if (!existsSync(join(root, '.git')) || !statSync(join(root, '.git')).isFile()) {
+    return 'app.test';
+  }
+
+  const slug = basename(root).replace(/[^A-Za-z0-9]+/g, '-').toLowerCase().slice(0, 40).replace(/^-+|-+$/g, '');
+
+  return slug === '' ? 'app.test' : `${slug}.app.localhost`;
+}
+
 function printUsage() {
   console.log(`Usage: node scripts/capture-theme-screenshots.mjs <theme> [options]
 
@@ -42,7 +58,7 @@ when it qualifies.
 Options:
   --include-cart       Add the selected product and capture the cart page
   --product <slug>     Use this product instead of discovering one
-  --base-url <url>    Storefront base URL (default: https://app.test/en_US/)
+  --base-url <url>    Storefront base URL (default: ${defaultBaseUrl})
   --output-dir <dir>  Screenshot output directory (default: docs/images)
   --help              Show this help
 
@@ -54,7 +70,7 @@ function parseArguments(args) {
   let theme;
   let includeCart = false;
   let productSlug;
-  let baseUrl = 'https://app.test/en_US/';
+  let baseUrl = defaultBaseUrl;
   let outputDir = 'docs/images';
 
   while (args.length > 0) {
