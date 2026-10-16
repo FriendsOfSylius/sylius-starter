@@ -253,6 +253,8 @@ jobs:
                         value: "castor sylius:theme:setup retro_gaming"
                     -   name: Drive theme
                         value: "castor sylius:theme:setup drive"
+                    -   name: Cellar theme
+                        value: "castor sylius:theme:setup cellar"
                     -   name: B2B
                         value: 'castor sylius:b2b:enable -n hide_prices hide_checkout customer_validation'
                     -   name: Remove Menu items
