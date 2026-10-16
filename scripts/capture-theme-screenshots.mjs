@@ -23,6 +23,7 @@ const themeSelectors = {
   lagoon: '.lagoon-logo',
   aurora: '.aurora-logo',
   tech: '.tech-logo',
+  retro_gaming: '.rg-logo',
 };
 
 function printUsage() {
