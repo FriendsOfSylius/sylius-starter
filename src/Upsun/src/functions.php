@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Upsun;
+namespace SyliusStarter\Upsun;
 
-use Sylius\Starter\Core\Service\SyliusService;
-use Sylius\Starter\Core\Task\TaskProviderRegistry;
-use Sylius\Starter\Upsun\Tasks\UpsunTasks;
+use SyliusStarter\Core\Service\SyliusService;
+use SyliusStarter\Core\Task\TaskProviderRegistry;
+use SyliusStarter\Upsun\Tasks\UpsunTasks;
 
 TaskProviderRegistry::register(
     'upsun',

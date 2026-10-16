@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\B2b;
+namespace SyliusStarter\B2b;
 
-use Sylius\Starter\Core\App;
+use SyliusStarter\Core\App;
 use Symfony\Component\Yaml\Yaml;
 
 use function Castor\finder;

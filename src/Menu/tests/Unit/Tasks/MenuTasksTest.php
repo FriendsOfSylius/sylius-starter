@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Menu\Tests\Unit\Tasks;
+namespace SyliusStarter\Menu\Tests\Unit\Tasks;
 
 use Castor\Container;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Sylius\Starter\Core\PhpFile;
-use Sylius\Starter\Menu\Tasks\MenuTasks;
+use SyliusStarter\Core\PhpFile;
+use SyliusStarter\Menu\Tasks\MenuTasks;
 use Symfony\Component\Console\Exception\MissingInputException;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\B2b\Feature;
+namespace SyliusStarter\B2b\Feature;
 
-use Sylius\Starter\B2b\B2bResourceCopier;
-use Sylius\Starter\Core\App;
-use Sylius\Starter\Core\Feature\FeatureInterface;
-use Sylius\Starter\Core\Util\Composer;
+use SyliusStarter\B2b\B2bResourceCopier;
+use SyliusStarter\Core\App;
+use SyliusStarter\Core\Feature\FeatureInterface;
+use SyliusStarter\Core\Util\Composer;
 
 use function Castor\io;
 

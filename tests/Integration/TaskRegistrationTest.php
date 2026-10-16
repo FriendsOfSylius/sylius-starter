@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Tests\Integration;
+namespace SyliusStarter\Tests\Integration;
 
 use Castor\Attribute\AsTask;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Sylius\Starter\Core\Installer\SyliusInstallerExtensions;
-use Sylius\Starter\Core\Service\SyliusService;
-use Sylius\Starter\Core\Task\TaskProviderRegistry;
-use Sylius\Starter\Themes\Installer\ThemesSyliusInstallerExtension;
+use SyliusStarter\Core\Installer\SyliusInstallerExtensions;
+use SyliusStarter\Core\Service\SyliusService;
+use SyliusStarter\Core\Task\TaskProviderRegistry;
+use SyliusStarter\Themes\Installer\ThemesSyliusInstallerExtension;
 
 /**
  * Every package registers its tasks in the core TaskProviderRegistry from a

@@ -11,10 +11,10 @@ use Castor\Attribute\AsTask;
 use Castor\Docker\Event\RegisterServiceEvent;
 use Castor\Docker\Service\PhpMode;
 use Castor\Docker\Service\PostgresService;
-use Sylius\Starter\Core\Service\SyliusService;
-use Sylius\Starter\Plugins\Attribute\AsPluginInstaller;
-use Sylius\Starter\Plugins\Attribute\AsPluginRemover;
-use Sylius\Starter\Themes\Themes;
+use SyliusStarter\Core\Service\SyliusService;
+use SyliusStarter\Plugins\Attribute\AsPluginInstaller;
+use SyliusStarter\Plugins\Attribute\AsPluginRemover;
+use SyliusStarter\Themes\Themes;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 
 use function Castor\io;
