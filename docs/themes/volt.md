@@ -36,4 +36,8 @@ assets.
 - **Checkout** — the checkout header uses the Volt wordmark and responsive
   category navigation.
 
-Install it with `castor sylius:theme:setup volt`.
+Install it with:
+
+```bash
+castor sylius:theme:setup volt
+```

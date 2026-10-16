@@ -46,4 +46,8 @@ Sylius shop, so that descriptions and forms remain easy to read.
   focus rings, decorative HUD and stats hidden from assistive technologies, and no blinking or motion
   for visitors who prefer reduced motion.
 
-Install it with `castor sylius:theme:setup retro_gaming`.
+Install it with:
+
+```bash
+castor sylius:theme:setup retro_gaming
+```
