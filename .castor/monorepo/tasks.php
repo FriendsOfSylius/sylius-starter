@@ -7,7 +7,7 @@ namespace monorepo;
 use Castor\Attribute\AsArgument;
 use Castor\Attribute\AsOption;
 use Castor\Attribute\AsTask;
-use Sylius\Starter\Monorepo\Monorepo;
+use SyliusStarter\Monorepo\Monorepo;
 
 use function Castor\capture;
 use function Castor\context;

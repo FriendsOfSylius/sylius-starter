@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Menu\Tasks;
+namespace SyliusStarter\Menu\Tasks;
 
 use Castor\Attribute\AsOption;
 use Castor\Attribute\AsRawTokens;
 use Castor\Attribute\AsTask;
-use Sylius\Starter\Core\App;
-use Sylius\Starter\Core\PhpFile;
+use SyliusStarter\Core\App;
+use SyliusStarter\Core\PhpFile;
 
 use function Castor\fs;
 use function Castor\io;

@@ -1,5 +1,5 @@
 {
-    "name": "sylius/starter-menu",
+    "name": "sylius-starter/menu",
     "description": "Castor tasks to remove and restore Sylius admin menu items",
     "type": "library",
     "license": "MIT",
@@ -17,11 +17,11 @@
     ],
     "require": {
         "php": ">=8.3",
-        "sylius/starter-core": "self.version"
+        "sylius-starter/core": "self.version"
     },
     "autoload": {
         "psr-4": {
-            "Sylius\\Starter\\Menu\\": "src/"
+            "SyliusStarter\\Menu\\": "src/"
         },
         "files": [
             "src/functions.php"
@@ -29,7 +29,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Sylius\\Starter\\Menu\\Tests\\": "tests/"
+            "SyliusStarter\\Menu\\Tests\\": "tests/"
         }
     },
     "extra": {

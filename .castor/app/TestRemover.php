@@ -1,7 +1,7 @@
 <?php
 
-use Sylius\Starter\Core\App;
-use Sylius\Starter\Plugins\Attribute\AsPluginRemover;
+use SyliusStarter\Core\App;
+use SyliusStarter\Plugins\Attribute\AsPluginRemover;
 use function Castor\io;
 
 #[AsPluginRemover(name: 'test_remover_with_class')]
