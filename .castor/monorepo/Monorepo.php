@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Monorepo;
+namespace SyliusStarter\Monorepo;
 
 /**
  * Monorepo helper: every directory in src/ holding a composer.json is a
@@ -15,11 +15,11 @@ namespace Sylius\Starter\Monorepo;
  */
 final class Monorepo
 {
-    public const string VENDOR = 'sylius';
-    public const string PACKAGE_PREFIX = 'sylius/starter-';
+    public const string VENDOR = 'sylius-starter';
+    public const string PACKAGE_PREFIX = 'sylius-starter/';
     public const string REPOSITORY_OWNER = 'sylius-starter';
-    public const string NAMESPACE = 'Sylius\\Starter';
-    public const string CORE_PACKAGE = 'sylius/starter-core';
+    public const string NAMESPACE = 'SyliusStarter';
+    public const string CORE_PACKAGE = 'sylius-starter/core';
 
     public function __construct(
         private readonly string $rootDir,
@@ -285,7 +285,7 @@ final class Monorepo
 
     /**
      * Splitsh-lite / git remote URL of a package split repository.
-     * "{name}" is replaced by the package name (sylius/starter-core), "{short}" by its short name (core)
+     * "{name}" is replaced by the package name (sylius-starter/core), "{short}" by its short name (core)
      * and "{repository}" by its GitHub repository (sylius-starter/sylius-starter-core).
      */
     public static function remoteUrl(string $pattern, string $packageName): string
@@ -298,7 +298,7 @@ final class Monorepo
     }
 
     /**
-     * GitHub repository of a package split: sylius/starter-core => sylius-starter/sylius-starter-core.
+     * GitHub repository of a package split: sylius-starter/core => sylius-starter/sylius-starter-core.
      */
     public static function repositoryName(string $packageName): string
     {

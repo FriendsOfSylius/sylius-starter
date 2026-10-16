@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Upsun\Util;
+namespace SyliusStarter\Upsun\Util;
 
-use Sylius\Starter\Core\App;
+use SyliusStarter\Core\App;
 use Symfony\Component\Yaml\Yaml as SymfonyYaml;
 
 final readonly class Upsun

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Menu;
+namespace SyliusStarter\Menu;
 
-use Sylius\Starter\Core\Service\SyliusService;
-use Sylius\Starter\Core\Task\TaskProviderRegistry;
-use Sylius\Starter\Menu\Tasks\MenuTasks;
+use SyliusStarter\Core\Service\SyliusService;
+use SyliusStarter\Core\Task\TaskProviderRegistry;
+use SyliusStarter\Menu\Tasks\MenuTasks;
 
 TaskProviderRegistry::register(
     'menu',

@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Tests\Integration;
+namespace SyliusStarter\Tests\Integration;
 
 use Castor\Exception\FunctionConfigurationException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Sylius\Starter\Core\App;
-use Sylius\Starter\Plugins\Attribute\AsPluginInstaller;
-use Sylius\Starter\Plugins\Attribute\AsPluginRemover;
-use Sylius\Starter\Themes\Attribute\AsThemeInstaller;
-use Sylius\Starter\Themes\Attribute\AsThemeRemover;
+use SyliusStarter\Core\App;
+use SyliusStarter\Plugins\Attribute\AsPluginInstaller;
+use SyliusStarter\Plugins\Attribute\AsPluginRemover;
+use SyliusStarter\Themes\Attribute\AsThemeInstaller;
+use SyliusStarter\Themes\Attribute\AsThemeRemover;
 
-use function Sylius\Starter\Plugins\resolve_plugin_installer;
-use function Sylius\Starter\Plugins\resolve_plugin_remover;
-use function Sylius\Starter\Themes\resolve_theme_installer;
-use function Sylius\Starter\Themes\resolve_theme_remover;
+use function SyliusStarter\Plugins\resolve_plugin_installer;
+use function SyliusStarter\Plugins\resolve_plugin_remover;
+use function SyliusStarter\Themes\resolve_theme_installer;
+use function SyliusStarter\Themes\resolve_theme_remover;
 
 #[CoversClass(App::class)]
 final class CustomComponentAttributesTest extends TestCase
