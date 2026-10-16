@@ -52,6 +52,8 @@ Every package relies on `sylius-starter/core`; `sylius-starter/sylius-starter` i
 
 ## Documentation
 
+Read it online at [sylius-starter.github.io/docs](https://sylius-starter.github.io/docs/), or here on GitHub:
+
 - **Getting started**: [Introduction](docs/index.md), [Installation](docs/getting-started/installation.md),
   [Packages](docs/getting-started/packages.md), [Upgrading from `castor-php/sylius`](docs/getting-started/upgrading.md)
 - **Commands**: [Plugins](docs/commands/plugins.md), [Themes](docs/commands/themes.md),
