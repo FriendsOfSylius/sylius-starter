@@ -9,9 +9,23 @@ Canvas gives the storefront a clean, editorial look, with warm neutral colors,
 squared corners and a refined pairing of *Jost* (body) and *Cormorant Garamond*
 (headings).
 
-| Homepage                                                     | Product page                                            | Cart                                                           |
-|--------------------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------|
-| ![Canvas storefront homepage](../images/canvas-homepage.png) | ![Product page in Canvas](../images/canvas-product.png) | ![Canvas cart containing a product](../images/canvas-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Canvas storefront homepage on desktop](../images/canvas-homepage-normal.webp) | ![Product page in Canvas on desktop](../images/canvas-product-normal.webp) | ![Canvas cart containing a product on desktop](../images/canvas-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Canvas storefront homepage on a wide screen](../images/canvas-homepage-wide.webp) | ![Product page in Canvas on a wide screen](../images/canvas-product-wide.webp) | ![Canvas cart containing a product on a wide screen](../images/canvas-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Canvas storefront homepage on mobile](../images/canvas-homepage-mobile.webp) | ![Product page in Canvas on mobile](../images/canvas-product-mobile.webp) | ![Canvas cart containing a product on mobile](../images/canvas-cart-mobile.webp) |
 
 The theme restyles the shop through SCSS overrides and Sylius Twig hooks:
 

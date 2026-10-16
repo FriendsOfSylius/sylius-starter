@@ -77,9 +77,11 @@ function docs_screenshots(
     bool $skipCart = false,
     #[AsOption(description: 'Theme to activate once the screenshots are taken')]
     ?string $restore = null,
-    #[AsOption(description: 'Browser viewport width in pixels (default: the screenshot script one, 1920)')]
+    #[AsOption(description: 'Comma-separated screen sizes: normal, wide, mobile (default: all of them)')]
+    ?string $viewports = null,
+    #[AsOption(description: 'Capture a single desktop viewport of this width instead of the screen sizes')]
     ?int $width = null,
-    #[AsOption(description: 'Browser viewport height in pixels (default: the screenshot script one, 1080)')]
+    #[AsOption(description: 'Height of that viewport (default: 900)')]
     ?int $height = null,
 ): int {
     $available = array_keys(Themes::installers());
@@ -119,6 +121,10 @@ function docs_screenshots(
 
         if (!$skipCart) {
             $command[] = '--include-cart';
+        }
+
+        if (null !== $viewports) {
+            array_push($command, '--viewports', $viewports);
         }
 
         if (null !== $width) {

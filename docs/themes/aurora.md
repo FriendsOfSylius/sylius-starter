@@ -10,9 +10,23 @@ landing-page structure, but lit by an electric-blue-to-violet gradient over
 lavender sections and midnight panels. It is set in tightly-tracked *Inter*
 (already shipped by the Sylius shop, so no extra font file is needed).
 
-| Homepage                                                     | Product page                                            | Cart                                                           |
-|--------------------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------|
-| ![Aurora storefront homepage](../images/aurora-homepage.png) | ![Product page in Aurora](../images/aurora-product.png) | ![Aurora cart containing a product](../images/aurora-cart.png) |
+**Desktop** (1440 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Aurora storefront homepage on desktop](../images/aurora-homepage-normal.webp) | ![Product page in Aurora on desktop](../images/aurora-product-normal.webp) | ![Aurora cart containing a product on desktop](../images/aurora-cart-normal.webp) |
+
+**Wide screen** (2560 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Aurora storefront homepage on a wide screen](../images/aurora-homepage-wide.webp) | ![Product page in Aurora on a wide screen](../images/aurora-product-wide.webp) | ![Aurora cart containing a product on a wide screen](../images/aurora-cart-wide.webp) |
+
+**Mobile** (390 px)
+
+| Homepage | Product page | Cart |
+|---|---|---|
+| ![Aurora storefront homepage on mobile](../images/aurora-homepage-mobile.webp) | ![Product page in Aurora on mobile](../images/aurora-product-mobile.webp) | ![Aurora cart containing a product on mobile](../images/aurora-cart-mobile.webp) |
 
 - **Palette** — electric blue (`#2F55E8`), violet (`#6D35D6`), midnight
   (`#1A1830`) and lavender (`#F4F2FD`) on a white background. The blue-to-violet gradient is the theme signature
