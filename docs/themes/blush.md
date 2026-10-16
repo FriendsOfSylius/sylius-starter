@@ -1,4 +1,9 @@
-# Blush theme
+---
+title: Blush theme
+description: A storefront theme with a white canvas, raspberry accents, rose panels and a plum footer.
+sidebar:
+  order: 2
+---
 
 Blush adapts the visual language of the
 [JoliCode Sylius Starter](https://jolicode.github.io/sylius-starter/fr/) landing
