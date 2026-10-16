@@ -1,4 +1,9 @@
-# Shop identity slot (logo)
+---
+title: Shop identity slot (logo)
+description: How themes and packages share the shop logo without overwriting each other.
+sidebar:
+  order: 2
+---
 
 The shop logo is a slot owned by `sylius-starter/core`, so that themes and other packages (import...) can all use it
 without overwriting each other. Before it, the import shipped `templates/shop/shared/layout/header/logo.html.twig`: a

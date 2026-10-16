@@ -1,4 +1,9 @@
-# Prompt Dark theme
+---
+title: Prompt Dark theme
+description: A terminal-inspired storefront theme with a dark workspace and green accents.
+sidebar:
+  order: 3
+---
 
 Prompt Dark is the terminal-inspired storefront direction: a dark workspace,
 terminal-green accents, monospaced typography and a command-inspired homepage

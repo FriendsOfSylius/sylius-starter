@@ -1,4 +1,9 @@
-# Homepage hero slot
+---
+title: Homepage hero slot
+description: How themes and packages share the homepage hero without overwriting each other.
+sidebar:
+  order: 1
+---
 
 The homepage hero is a slot owned by `sylius-starter/core`, so that themes and other packages (import...) can
 all use it without overwriting each other.

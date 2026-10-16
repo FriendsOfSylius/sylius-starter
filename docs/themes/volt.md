@@ -1,4 +1,9 @@
-# Volt theme
+---
+title: Volt theme
+description: A high-energy, sport-tech storefront theme in electric violet.
+sidebar:
+  order: 5
+---
 
 Volt takes the opposite route: a high-energy, sport-tech storefront with electric
 violet, soft-lavender accents, rounded components and bold Jost typography. Its

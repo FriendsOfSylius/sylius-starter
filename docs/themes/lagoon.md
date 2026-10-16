@@ -1,4 +1,9 @@
-# Lagoon theme
+---
+title: Lagoon theme
+description: An airy, product-led storefront theme in deep-water teal and aqua.
+sidebar:
+  order: 6
+---
 
 Lagoon brings the airy, product-led look of a modern SaaS landing page to the
 storefront: deep-water teal panels, bright aqua calls to action, mint "foam"

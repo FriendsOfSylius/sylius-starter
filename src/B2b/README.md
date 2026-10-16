@@ -12,7 +12,7 @@ castor composer require sylius-starter/b2b
 
 Or install every Sylius Starter package at once with `sylius-starter/sylius-starter`.
 
-Read the [documentation](https://github.com/sylius-starter/sylius-starter#readme) for usage.
+Read the [documentation](https://github.com/sylius-starter/sylius-starter/blob/main/docs/commands/b2b.md) for usage.
 
 ## Contributing
 
