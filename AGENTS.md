@@ -84,6 +84,13 @@ castor destroy --force      # before "git worktree remove": drop its containers,
 run `castor up` from a worktree checked out before this setup existed without updating it first: it would reuse the
 `app` project of the main checkout. See `docs/contributing/worktrees.md`.
 
+## Documentation website
+
+The `docs/` pages are published by the sylius-starter/docs Starlight website, cloned next to the main checkout
+(`DOCS_SITE_DIR` otherwise). Preview the `docs/` of the current checkout or worktree with `castor docs:up`
+(http://localhost:4321/docs/, `--port` to change it) and stop it with `castor docs:stop`. One server runs at a time.
+See `docs/contributing/documentation.md`.
+
 ## Running commands in the Sylius app
 
 Run Symfony console commands through the Castor app container from the repository
