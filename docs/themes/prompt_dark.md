@@ -30,4 +30,8 @@ panel.
 - **Translations** — the homepage texts live in a `prompt` translation domain
   (`translations/prompt.en.yaml` and `prompt.fr.yaml`).
 
-Install it with `castor sylius:theme:setup prompt_dark`.
+Install it with:
+
+```bash
+castor sylius:theme:setup prompt_dark
+```

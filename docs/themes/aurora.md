@@ -58,4 +58,8 @@ lavender sections and midnight panels. It is set in tightly-tracked *Inter*
 | Footer | dark band with "how it works" steps | lavender services rows with calls to action |
 | Product cards | white cards, mint image well | white cards, lavender image well, violet title on hover |
 
-Install it with `castor sylius:theme:setup aurora`.
+Install it with:
+
+```bash
+castor sylius:theme:setup aurora
+```
