@@ -48,4 +48,8 @@ the system monospace font for labels, so no extra font file is needed.
   hidden from assistive technologies, and no motion (blinking LED included)
   for visitors who prefer reduced motion.
 
-Install it with `castor sylius:theme:setup tech`.
+Install it with:
+
+```bash
+castor sylius:theme:setup tech
+```

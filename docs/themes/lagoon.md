@@ -40,4 +40,8 @@ shipped by the Sylius shop, so no extra font file is needed).
 - **Accessibility** — visible aqua focus rings and no motion for visitors who
   prefer reduced motion.
 
-Install it with `castor sylius:theme:setup lagoon`.
+Install it with:
+
+```bash
+castor sylius:theme:setup lagoon
+```

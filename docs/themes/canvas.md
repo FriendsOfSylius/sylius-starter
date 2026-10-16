@@ -45,4 +45,8 @@ The theme restyles the shop through SCSS overrides and Sylius Twig hooks:
 - **Login page** — a split-screen layout with a full-height image beside the
   login/register panel.
 
-Install it with `castor sylius:theme:setup canvas`.
+Install it with:
+
+```bash
+castor sylius:theme:setup canvas
+```

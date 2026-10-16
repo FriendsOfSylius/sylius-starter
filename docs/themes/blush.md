@@ -31,4 +31,8 @@ soft rose panels and a deep plum footer.
 - **Translations** — the homepage texts live in a `blush` translation domain
   (`translations/blush.en.yaml` and `blush.fr.yaml`).
 
-Install it with `castor sylius:theme:setup blush`.
+Install it with:
+
+```bash
+castor sylius:theme:setup blush
+```
