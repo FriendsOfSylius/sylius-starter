@@ -47,7 +47,9 @@ tomato promo badges sit on a light shelf-grey background. It is set in heavy
 - **Category page** — the sub-categories are listed in a white sidebar card.
 - **Product page** — the price sits right below the product name as a lemon
   shelf label, a full-width basil add-to-cart button, and a **pick-up promise**
-  under it (drive pick-up, home delivery, satisfied or refunded).
+  under it (drive pick-up, home delivery, satisfied or refunded). The main
+  image never grows past the screen height; from 1600 px the page reads as
+  three columns (gallery, details, buy box) instead of one oversized image.
 - **Cart and checkout** — basil side-basket header, white summary panels; the
   checkout header uses the Drive wordmark and responsive category navigation.
 - **Footer** — a white band of drive services (pick-up, shopping lists,
