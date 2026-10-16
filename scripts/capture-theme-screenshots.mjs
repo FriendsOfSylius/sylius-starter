@@ -24,6 +24,7 @@ const themeSelectors = {
   aurora: '.aurora-logo',
   tech: '.tech-logo',
   retro_gaming: '.rg-logo',
+  drive: '.drive-logo',
 };
 
 function printUsage() {

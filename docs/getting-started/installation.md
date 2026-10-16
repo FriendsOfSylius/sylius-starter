@@ -44,17 +44,17 @@ castor sylius:init --no-interaction \
     --with-payment-gateways=stripe
 ```
 
-| Option                    | Description                                                                                                       | Default      |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------|--------------|
-| `--with-name`             | Name of the application (and of its tasks)                                                                        | `app`        |
-| `--with-directory`        | Directory of the application                                                                                      | the name     |
-| `--with-version`          | PHP version                                                                                                       | `8.5`        |
-| `--with-mode`             | Runtime: `frankenphp` or `fpm`                                                                                    | `frankenphp` |
-| `--with-domain`           | Domain of the store                                                                                               | `app.test`   |
-| `--with-sylius-version`   | Sylius-Standard version                                                                                           | latest       |
-| `--with-database`         | `postgres`, `mysql`, `mariadb` or `none`                                                                          | `postgres`   |
-| `--with-theme`            | `default`, `aurora`, `blush`, `canvas`, `lagoon`, `prompt_dark`, `prompt_light`, `retro_gaming`, `tech` or `volt` | `default`    |
-| `--with-payment-gateways` | `mollie`, `paypal`, `stripe` (repeat the option for several)                                                      | all          |
+| Option                    | Description                                                                                                                | Default      |
+|---------------------------|----------------------------------------------------------------------------------------------------------------------------|--------------|
+| `--with-name`             | Name of the application (and of its tasks)                                                                                 | `app`        |
+| `--with-directory`        | Directory of the application                                                                                               | the name     |
+| `--with-version`          | PHP version                                                                                                                | `8.5`        |
+| `--with-mode`             | Runtime: `frankenphp` or `fpm`                                                                                             | `frankenphp` |
+| `--with-domain`           | Domain of the store                                                                                                        | `app.test`   |
+| `--with-sylius-version`   | Sylius-Standard version                                                                                                    | latest       |
+| `--with-database`         | `postgres`, `mysql`, `mariadb` or `none`                                                                                   | `postgres`   |
+| `--with-theme`            | `default`, `aurora`, `blush`, `canvas`, `drive`, `lagoon`, `prompt_dark`, `prompt_light`, `retro_gaming`, `tech` or `volt` | `default`    |
+| `--with-payment-gateways` | `mollie`, `paypal`, `stripe` (repeat the option for several)                                                               | all          |
 
 `castor docker:service:install` (without argument) prints the options of every installable service.
 
