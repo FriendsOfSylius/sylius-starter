@@ -26,6 +26,7 @@ use function Castor\PHPQa\phpstan;
 use function Castor\PHPQa\php_cs_fixer;
 use function Castor\run;
 use function worktree\domain;
+use function worktree\main_checkout;
 use function worktree\project_name;
 use function worktree\storefront_url;
 
@@ -141,6 +142,54 @@ function docs_screenshots(
     io()->success(sprintf('Screenshots refreshed in docs/images for: %s.', implode(', ', $themes)));
 
     return 0;
+}
+
+#[AsTask(description: 'Serve the documentation website on the docs/ of this checkout', namespace: 'docs', name: 'up')]
+function docs_up(
+    #[AsOption(description: 'Port of the documentation website')]
+    int $port = 4321,
+): int {
+    $site = docs_site();
+
+    if (!is_dir($site)) {
+        io()->error(sprintf('The documentation website is not in %s. Clone it with "git clone git@github.com:sylius-starter/docs.git %s", or set DOCS_SITE_DIR.', $site, $site));
+
+        return 1;
+    }
+
+    $context = context()->withWorkingDirectory($site);
+
+    if (!is_dir($site . '/node_modules')) {
+        run(['npm', 'ci'], context: $context);
+    }
+
+    // One background server per website: restart it so it serves the docs/ of this checkout, even from another worktree.
+    run(['npx', 'astro', 'dev', 'stop'], context: $context->withAllowFailure()->withQuiet());
+    run(['npx', 'astro', 'dev', '--background', '--port', (string) $port], context: $context->withEnvironment(['DOCS_DIR' => __DIR__ . '/docs']));
+
+    io()->success(sprintf('The documentation of %s is served on http://localhost:%d/docs/ and follows its changes. Run "castor docs:stop" to stop it.', __DIR__, $port));
+
+    return 0;
+}
+
+#[AsTask(description: 'Stop the documentation website', namespace: 'docs', name: 'stop')]
+function docs_stop(): int
+{
+    if (!is_dir($site = docs_site())) {
+        io()->error(sprintf('The documentation website is not in %s. Set DOCS_SITE_DIR.', $site));
+
+        return 1;
+    }
+
+    return run(['npx', 'astro', 'dev', 'stop'], context: context()->withWorkingDirectory($site))->getExitCode();
+}
+
+/**
+ * The sylius-starter/docs repository, cloned next to the main checkout unless DOCS_SITE_DIR says otherwise.
+ */
+function docs_site(): string
+{
+    return getenv('DOCS_SITE_DIR') ?: dirname(main_checkout()) . '/docs';
 }
 
 #[AsPluginInstaller(name: 'test_installer_with_function')]
