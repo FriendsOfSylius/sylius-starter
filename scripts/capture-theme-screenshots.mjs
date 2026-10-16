@@ -9,7 +9,8 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { get } from 'node:http';
 import { get as getHttps } from 'node:https';
 
-const viewport = { width: 1440, height: 1000 };
+// Wide enough to tell full-width layouts from centered containers.
+const defaultViewport = { width: 1920, height: 1080 };
 const defaultBaseUrl = `https://${storefrontDomain()}/en_US/`;
 // Data fixtures differ from one install to another: the product is discovered on
 // the storefront. This one is only preferred when it exists and can be bought,
@@ -61,6 +62,8 @@ Options:
   --product <slug>     Use this product instead of discovering one
   --base-url <url>    Storefront base URL (default: ${defaultBaseUrl})
   --output-dir <dir>  Screenshot output directory (default: docs/images)
+  --width <px>        Browser viewport width (default: ${defaultViewport.width})
+  --height <px>       Browser viewport height (default: ${defaultViewport.height})
   --help              Show this help
 
 Requires Node.js 22+ and Google Chrome or Chromium. Set CHROME_BIN to use a
@@ -73,6 +76,7 @@ function parseArguments(args) {
   let productSlug;
   let baseUrl = defaultBaseUrl;
   let outputDir = 'docs/images';
+  const viewport = { ...defaultViewport };
 
   while (args.length > 0) {
     const argument = args.shift();
@@ -83,6 +87,15 @@ function parseArguments(args) {
 
     if (argument === '--include-cart') {
       includeCart = true;
+      continue;
+    }
+
+    if (argument === '--width' || argument === '--height') {
+      const value = args.shift();
+      if (!value || !/^[1-9][0-9]*$/.test(value)) {
+        throw new Error(`${argument} requires a positive number of pixels`);
+      }
+      viewport[argument.slice(2)] = Number(value);
       continue;
     }
 
@@ -112,7 +125,7 @@ function parseArguments(args) {
   }
   parsedBaseUrl.pathname = `${parsedBaseUrl.pathname.replace(/\/+$/, '')}/`;
 
-  return { theme, includeCart, productSlug, baseUrl: parsedBaseUrl, outputDir: resolve(outputDir) };
+  return { theme, includeCart, productSlug, baseUrl: parsedBaseUrl, outputDir: resolve(outputDir), viewport };
 }
 
 function findChrome() {
@@ -181,7 +194,7 @@ async function waitForEvent(events, method) {
 }
 
 async function main() {
-  const { theme, includeCart, productSlug, baseUrl, outputDir } = parseArguments(process.argv.slice(2));
+  const { theme, includeCart, productSlug, baseUrl, outputDir, viewport } = parseArguments(process.argv.slice(2));
   const chrome = findChrome();
   if (!chrome) throw new Error('Could not find Chrome or Chromium; set CHROME_BIN to its executable');
 
