@@ -255,6 +255,10 @@ jobs:
                         value: "castor sylius:theme:setup drive"
                     -   name: Cellar theme
                         value: "castor sylius:theme:setup cellar"
+                    -   name: Arena Dark theme
+                        value: "castor sylius:theme:setup arena_dark"
+                    -   name: Arena Light theme
+                        value: "castor sylius:theme:setup arena_light"
                     -   name: B2B
                         value: 'castor sylius:b2b:enable -n hide_prices hide_checkout customer_validation'
                     -   name: Remove Menu items

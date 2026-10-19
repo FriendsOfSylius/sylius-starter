@@ -38,6 +38,8 @@ Looks built around one kind of shop, with their own typography and homepage.
 | <a href="retro_gaming.md"><img src="../images/retro-gaming-homepage-normal.webp" alt="Retro Gaming storefront homepage" width="140"></a> | [Retro Gaming](retro_gaming.md) | Night arcade gaming store: neon magenta and cyan, pixel font, HUD and CRT hero |
 | <a href="drive.md"><img src="../images/drive-homepage-normal.webp" alt="Drive storefront homepage" width="140"></a> | [Drive](drive.md) | Full-screen grocery click-and-collect store: basil green, lemon price stickers and a pick-up slot hero |
 | <a href="cellar.md"><img src="../images/cellar-homepage-normal.webp" alt="Cellar storefront homepage" width="140"></a> | [Cellar](cellar.md) | Fine wine merchant: night bordeaux, cream paper, Didone headings and a vaulted cellar-window hero |
+| <a href="arena_dark.md"><img src="../images/arena-dark-homepage-normal.webp" alt="Arena Dark storefront homepage" width="140"></a> | [Arena Dark](arena_dark.md) | Modern video game store: night launcher, acid lime, wide display type and a cinematic key-art hero |
+| <a href="arena_light.md"><img src="../images/arena-light-homepage-normal.webp" alt="Arena Light storefront homepage" width="140"></a> | [Arena Light](arena_light.md) | Arena's daylight variant: frost-white glass, ink type, lime fills with olive accents and a sunrise key art |
 
 ## Terminal
 
