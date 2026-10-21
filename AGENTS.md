@@ -122,6 +122,14 @@ castor sylius:theme:setup <theme>
 
 ## Theme styling
 
+Every theme must meet WCAG 2.1 AA contrast: 4.5:1 for text, 3:1 for large text (24px, or 18.66px bold), UI
+components and focus indicators. This includes the Bootstrap utilities core templates use (`text-body-tertiary`,
+`text-black-50`, `text-muted`…), whose colors the theme owns. Keep a bold palette by darkening the accent behind
+text or switching the text on it to a dark color, rather than lowering contrast. Before committing a theme, run
+`castor qa:a11y <theme>` on your own stack and fix every violation it reports (violations from core Sylius templates
+are listed apart and do not fail it); check focus rings and hover states by hand. See
+`docs/contributing/accessibility.md`.
+
 Never rely on `data-test-*` attributes in CSS selectors. They are testing
 helpers and may not be present in the production storefront; target stable
 classes or semantic structure instead.
