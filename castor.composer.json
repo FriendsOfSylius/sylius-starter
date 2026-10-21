@@ -1,6 +1,6 @@
 {
     "require": {
-        "castor-php/docker": "^0.6.0",
+        "castor-php/docker": "^0.10",
         "castor-php/php-qa": "^0.3.0",
         "sylius-starter/sylius-starter": "@dev",
         "nikic/php-parser": "^5.8"
