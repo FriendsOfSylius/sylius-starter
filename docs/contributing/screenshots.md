@@ -17,6 +17,9 @@ The screenshots of the [theme pages](../themes/index.md) live in `docs/images/`,
 
 Every theme page shows one table per viewport (desktop, wide screen, mobile).
 
+Before capturing a new or changed theme, check that it passes the [accessibility check](accessibility.md)
+(`castor qa:a11y <theme>`).
+
 ## Every theme at once
 
 From the repository root:

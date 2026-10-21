@@ -198,6 +198,79 @@ function docs_site(): string
     return getenv('DOCS_SITE_DIR') ?: dirname(main_checkout()) . '/docs';
 }
 
+/**
+ * @param list<string> $themes
+ */
+#[AsTask(description: 'Check the accessibility (WCAG 2.1 AA) of the storefront themes', namespace: 'qa', name: 'a11y', aliases: ['a11y'])]
+function qa_a11y(
+    #[AsArgument(description: 'Themes to check (the active one when omitted, "all" for every theme)')]
+    array $themes = [],
+    #[AsOption(description: 'Only check this viewport (desktop or mobile)')]
+    ?string $viewport = null,
+    #[AsOption(description: 'Directory where a JSON report is written for each theme')]
+    ?string $reportDir = null,
+    #[AsOption(description: 'Theme to activate once the themes are checked')]
+    ?string $restore = null,
+): int {
+    $available = array_keys(Themes::installers());
+    sort($available);
+
+    $themes = in_array('all', $themes, true) ? $available : array_values(array_unique($themes));
+
+    if ([] !== $unknown = array_diff($themes, $available)) {
+        io()->error(sprintf('Unknown theme(s): %s. Available: %s.', implode(', ', $unknown), implode(', ', $available)));
+
+        return 1;
+    }
+
+    if (null !== $restore && 'default' !== $restore && !in_array($restore, $available, true)) {
+        io()->error(sprintf('Unknown theme "%s" to restore. Available: default, %s.', $restore, implode(', ', $available)));
+
+        return 1;
+    }
+
+    $context = context()->withWorkingDirectory(__DIR__)->withAllowFailure();
+    $failed = [];
+
+    // Without theme, the active one is checked as is.
+    foreach ([] === $themes ? [null] : $themes as $theme) {
+        $command = ['node', 'scripts/check-theme-accessibility.mjs', '--base-url', storefront_url()];
+
+        if (null !== $theme) {
+            io()->section(sprintf('Theme "%s"', $theme));
+            run(['castor', 'sylius:theme:setup', $theme], context: $context->withAllowFailure(false));
+            $command[] = $theme;
+        }
+
+        if (null !== $viewport) {
+            array_push($command, '--viewport', $viewport);
+        }
+
+        if (null !== $reportDir) {
+            array_push($command, '--json', sprintf('%s/%s.json', rtrim($reportDir, '/'), $theme ?? 'active'));
+        }
+
+        // Every theme is checked, even after a failure, to get the whole picture.
+        if (!run($command, context: $context)->isSuccessful()) {
+            $failed[] = $theme ?? 'active theme';
+        }
+    }
+
+    if (null !== $restore) {
+        run(['castor', 'sylius:theme:setup', $restore], context: $context->withAllowFailure(false));
+    }
+
+    if ([] !== $failed) {
+        io()->error(sprintf('Accessibility violations in: %s.', implode(', ', $failed)));
+
+        return 1;
+    }
+
+    io()->success('No accessibility violation found.');
+
+    return 0;
+}
+
 #[AsPluginInstaller(name: 'test_installer_with_function')]
 function test_installer(): void
 {
