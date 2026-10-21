@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SyliusStarter\B2b\Tests\Unit;
 
 use Castor\Container;
+use Castor\Runner\Parallel\JobRegistry;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use SyliusStarter\B2b\B2bResourceCopier;
@@ -31,6 +32,11 @@ final class B2bResourceCopierTest extends TestCase
         $property->setValue($container, $this->filesystem);
         $property = new \ReflectionProperty(Container::class, 'symfonyStyle');
         $property->setValue($container, new SymfonyStyle(new ArrayInput([]), new BufferedOutput()));
+        // Castor 1.9+ resolves io() and output() through the job registry of parallel().
+        if (property_exists(Container::class, 'jobRegistry')) {
+            (new \ReflectionProperty(Container::class, 'jobRegistry'))->setValue($container, new JobRegistry(new ArrayInput([])));
+        }
+
         Container::set($container);
     }
 

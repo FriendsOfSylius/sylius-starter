@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SyliusStarter\Tests\Integration;
 
 use Castor\Exception\FunctionConfigurationException;
+use Castor\Helper\PathHelper;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use SyliusStarter\Core\App;
@@ -115,6 +116,12 @@ final class CustomComponentAttributesTest extends TestCase
 
     public function testItRejectsAnAttributeOnANonCallableClass(): void
     {
+        // Castor 1.9+ resolves the root directory when the application boots, and the exception makes paths relative to it.
+        if (method_exists(PathHelper::class, 'initialize')) {
+            $root = \dirname(__DIR__, 2);
+            PathHelper::initialize($root, $root . '/vendor/jolicode/castor', $root);
+        }
+
         $this->expectException(FunctionConfigurationException::class);
 
         resolve_plugin_installer(new \ReflectionClass(NotCallableInstaller::class));
