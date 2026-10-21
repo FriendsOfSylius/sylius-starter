@@ -65,7 +65,7 @@ Read it online at [sylius-starter.github.io/docs](https://sylius-starter.github.
   [Custom tasks](docs/extending/tasks.md)
 - **Storefront slots**: [Homepage hero](docs/storefront/hero.md), [Shop logo](docs/storefront/brand.md)
 - **Contributing**: [Monorepo](docs/contributing/monorepo.md), [Releasing](docs/contributing/releasing.md),
-  [Theme screenshots](docs/contributing/screenshots.md)
+  [Theme screenshots](docs/contributing/screenshots.md), [Theme accessibility](docs/contributing/accessibility.md)
 
 ## Contributing
 
