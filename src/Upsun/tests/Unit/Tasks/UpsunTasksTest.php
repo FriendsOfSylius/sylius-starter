@@ -6,6 +6,7 @@ namespace SyliusStarter\Upsun\Tests\Unit\Tasks;
 
 use Castor\Attribute\AsTask;
 use Castor\Container;
+use Castor\Runner\Parallel\JobRegistry;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use SyliusStarter\Upsun\Tasks\UpsunTasks;
@@ -36,6 +37,11 @@ final class UpsunTasksTest extends TestCase
             $container,
             new SymfonyStyle(new ArrayInput([]), $this->output),
         );
+        // Castor 1.9+ resolves io() and output() through the job registry of parallel().
+        if (property_exists(Container::class, 'jobRegistry')) {
+            (new \ReflectionProperty(Container::class, 'jobRegistry'))->setValue($container, new JobRegistry(new ArrayInput([])));
+        }
+
         Container::set($container);
     }
 

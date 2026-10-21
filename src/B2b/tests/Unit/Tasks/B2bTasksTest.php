@@ -7,6 +7,7 @@ namespace SyliusStarter\B2b\Tests\Unit\Tasks;
 use Castor\Attribute\AsRawTokens;
 use Castor\Attribute\AsTask;
 use Castor\Container;
+use Castor\Runner\Parallel\JobRegistry;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use SyliusStarter\B2b\Tasks\B2bTasks;
@@ -36,6 +37,11 @@ final class B2bTasksTest extends TestCase
         };
 
         $setProperty($container, 'symfonyStyle', $symfonyStyle ?? new SymfonyStyle(new ArrayInput([]), new BufferedOutput()));
+
+        // Castor 1.9+ resolves io() and output() through the job registry of parallel().
+        if (property_exists(Container::class, 'jobRegistry')) {
+            (new \ReflectionProperty(Container::class, 'jobRegistry'))->setValue($container, new JobRegistry(new ArrayInput([])));
+        }
 
         Container::set($container);
     }

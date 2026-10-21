@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SyliusStarter\Menu\Tests\Unit\Tasks;
 
 use Castor\Container;
+use Castor\Runner\Parallel\JobRegistry;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use SyliusStarter\Core\PhpFile;
@@ -48,6 +49,11 @@ final class MenuTasksTest extends TestCase
 
         $setProperty($container, 'fs', $this->filesystem);
         $setProperty($container, 'symfonyStyle', $symfonyStyle ?? new SymfonyStyle(new ArrayInput([]), $this->output));
+
+        // Castor 1.9+ resolves io() and output() through the job registry of parallel().
+        if (property_exists(Container::class, 'jobRegistry')) {
+            (new \ReflectionProperty(Container::class, 'jobRegistry'))->setValue($container, new JobRegistry(new ArrayInput([])));
+        }
 
         Container::set($container);
     }
