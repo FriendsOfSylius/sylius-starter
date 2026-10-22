@@ -13,26 +13,33 @@ Sylius shop, so that descriptions and forms remain easy to read.
 
 **Desktop** (1440 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Retro Gaming storefront homepage on desktop](../images/retro-gaming-homepage-normal.webp) | ![Product page in Retro Gaming on desktop](../images/retro-gaming-product-normal.webp) | ![Retro Gaming cart containing a product on desktop](../images/retro-gaming-cart-normal.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Retro Gaming storefront homepage on desktop, light scheme](../images/retro-gaming-homepage-normal-light.webp) | ![Product page in Retro Gaming on desktop, light scheme](../images/retro-gaming-product-normal-light.webp) | ![Retro Gaming cart containing a product on desktop, light scheme](../images/retro-gaming-cart-normal-light.webp) |
+| Dark | ![Retro Gaming storefront homepage on desktop, dark scheme](../images/retro-gaming-homepage-normal-dark.webp) | ![Product page in Retro Gaming on desktop, dark scheme](../images/retro-gaming-product-normal-dark.webp) | ![Retro Gaming cart containing a product on desktop, dark scheme](../images/retro-gaming-cart-normal-dark.webp) |
 
 **Wide screen** (2560 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Retro Gaming storefront homepage on a wide screen](../images/retro-gaming-homepage-wide.webp) | ![Product page in Retro Gaming on a wide screen](../images/retro-gaming-product-wide.webp) | ![Retro Gaming cart containing a product on a wide screen](../images/retro-gaming-cart-wide.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Retro Gaming storefront homepage on a wide screen, light scheme](../images/retro-gaming-homepage-wide-light.webp) | ![Product page in Retro Gaming on a wide screen, light scheme](../images/retro-gaming-product-wide-light.webp) | ![Retro Gaming cart containing a product on a wide screen, light scheme](../images/retro-gaming-cart-wide-light.webp) |
+| Dark | ![Retro Gaming storefront homepage on a wide screen, dark scheme](../images/retro-gaming-homepage-wide-dark.webp) | ![Product page in Retro Gaming on a wide screen, dark scheme](../images/retro-gaming-product-wide-dark.webp) | ![Retro Gaming cart containing a product on a wide screen, dark scheme](../images/retro-gaming-cart-wide-dark.webp) |
 
 **Mobile** (390 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Retro Gaming storefront homepage on mobile](../images/retro-gaming-homepage-mobile.webp) | ![Product page in Retro Gaming on mobile](../images/retro-gaming-product-mobile.webp) | ![Retro Gaming cart containing a product on mobile](../images/retro-gaming-cart-mobile.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Retro Gaming storefront homepage on mobile, light scheme](../images/retro-gaming-homepage-mobile-light.webp) | ![Product page in Retro Gaming on mobile, light scheme](../images/retro-gaming-product-mobile-light.webp) | ![Retro Gaming cart containing a product on mobile, light scheme](../images/retro-gaming-cart-mobile-light.webp) |
+| Dark | ![Retro Gaming storefront homepage on mobile, dark scheme](../images/retro-gaming-homepage-mobile-dark.webp) | ![Product page in Retro Gaming on mobile, dark scheme](../images/retro-gaming-product-mobile-dark.webp) | ![Retro Gaming cart containing a product on mobile, dark scheme](../images/retro-gaming-cart-mobile-dark.webp) |
 
 - **Palette** — deep console blue (`#0B0D1C`, panels `#141833`), neon magenta (`#FF3D8B`), cyan
   (`#3BE2F0`), coin gold (`#FFC93C`) and health-bar lime (`#8CF26B`). The storefront is dark end to
   end: Bootstrap's runtime variables are remapped, so native Sylius components (tables, dropdowns,
   offcanvas, forms, checkout sidebar) follow the palette.
+- **Light scheme** — a daylight arcade, like a handheld console: lilac console-plastic shell
+  (`#E9E6F5`) around a pale page, navy ink type, the neon colours kept as fills under ink text and
+  deep shades of the same hues for text and icons (magenta `#C0135C`, cyan `#006570`); the CRT
+  screen of the hero stays dark inside a light bezel.
 - **Components** — square arcade buttons with stepped "pixel" corners and a darker bottom edge that
   is pushed in on click (magenta for primary actions, console blue for secondary ones), a gold coin
   counter as cart button, product cards framed like cartridges that light up in cyan on hover, with

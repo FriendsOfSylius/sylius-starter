@@ -13,25 +13,31 @@ the system monospace font for labels, so no extra font file is needed.
 
 **Desktop** (1440 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Tech storefront homepage on desktop](../images/tech-homepage-normal.webp) | ![Product page in Tech on desktop](../images/tech-product-normal.webp) | ![Tech cart containing a product on desktop](../images/tech-cart-normal.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Tech storefront homepage on desktop, light scheme](../images/tech-homepage-normal-light.webp) | ![Product page in Tech on desktop, light scheme](../images/tech-product-normal-light.webp) | ![Tech cart containing a product on desktop, light scheme](../images/tech-cart-normal-light.webp) |
+| Dark | ![Tech storefront homepage on desktop, dark scheme](../images/tech-homepage-normal-dark.webp) | ![Product page in Tech on desktop, dark scheme](../images/tech-product-normal-dark.webp) | ![Tech cart containing a product on desktop, dark scheme](../images/tech-cart-normal-dark.webp) |
 
 **Wide screen** (2560 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Tech storefront homepage on a wide screen](../images/tech-homepage-wide.webp) | ![Product page in Tech on a wide screen](../images/tech-product-wide.webp) | ![Tech cart containing a product on a wide screen](../images/tech-cart-wide.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Tech storefront homepage on a wide screen, light scheme](../images/tech-homepage-wide-light.webp) | ![Product page in Tech on a wide screen, light scheme](../images/tech-product-wide-light.webp) | ![Tech cart containing a product on a wide screen, light scheme](../images/tech-cart-wide-light.webp) |
+| Dark | ![Tech storefront homepage on a wide screen, dark scheme](../images/tech-homepage-wide-dark.webp) | ![Product page in Tech on a wide screen, dark scheme](../images/tech-product-wide-dark.webp) | ![Tech cart containing a product on a wide screen, dark scheme](../images/tech-cart-wide-dark.webp) |
 
 **Mobile** (390 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Tech storefront homepage on mobile](../images/tech-homepage-mobile.webp) | ![Product page in Tech on mobile](../images/tech-product-mobile.webp) | ![Tech cart containing a product on mobile](../images/tech-cart-mobile.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Tech storefront homepage on mobile, light scheme](../images/tech-homepage-mobile-light.webp) | ![Product page in Tech on mobile, light scheme](../images/tech-product-mobile-light.webp) | ![Tech cart containing a product on mobile, light scheme](../images/tech-cart-mobile-light.webp) |
+| Dark | ![Tech storefront homepage on mobile, dark scheme](../images/tech-homepage-mobile-dark.webp) | ![Product page in Tech on mobile, dark scheme](../images/tech-product-mobile-dark.webp) | ![Tech cart containing a product on mobile, dark scheme](../images/tech-cart-mobile-dark.webp) |
 
 - **Palette** — carbon (`#0D0F12`), graphite (`#171A1F`), aluminium
   (`#F2F3F5`) and signal orange (`#FF5B14`) on a white background, with a
   green status LED (`#2ED47A`) for "in stock" indicators.
+- **Dark scheme** — an anodised graphite case: gunmetal panels (page `#111318`, cards `#171A1F`),
+  cool white text, the same signal orange and LED (orange text lifted to `#FF7A3D`), and the carbon
+  hero, benchmark panel and footer edged with a hairline.
 - **Typography** — tightly-tracked *Inter* for headings and prices (tabular
   figures), uppercase monospace for eyebrows, breadcrumbs and spec labels.
 - **Components** — square-cornered signal-orange buttons (outlined carbon for
