@@ -1,0 +1,15 @@
+{# Groove promise: four commitments of the shop, numbered like the chapters of a catalogue, between two hairlines. #}
+<section id="groove-promise" class="groove-promise" aria-labelledby="groove-promise-title">
+    <div class="container">
+        <h2 id="groove-promise-title" class="visually-hidden">{{ 'groove.promise.title'|trans({}, 'groove') }}</h2>
+        <ol class="groove-promise__items" role="list">
+            {% for key in ['graded', 'cleaned', 'shipping', 'listening'] %}
+                <li class="groove-promise__item">
+                    <span class="groove-promise__number" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span>
+                    <p class="groove-promise__name">{{ ('groove.promise.' ~ key ~ '.title')|trans({}, 'groove') }}</p>
+                    <p class="groove-promise__text">{{ ('groove.promise.' ~ key ~ '.text')|trans({}, 'groove') }}</p>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>

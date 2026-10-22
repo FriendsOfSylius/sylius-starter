@@ -1,0 +1,163 @@
+groove:
+    brand:
+        tagline: 'Records & hi-fi'
+    top_bar:
+        delivery: 'Insured delivery worldwide · records shipped double-boxed'
+        fridays: 'Listening room <strong>by appointment</strong>'
+    hero:
+        eyebrow: 'Independent record store'
+        title: 'Music you can <em>hold.</em>'
+        lead: 'New releases every Friday, audiophile pressings, coloured vinyl and rare first editions, picked one by one and graded by hand — with the turntables worthy of them.'
+        cta: 'Discover the new arrivals'
+        secondary_cta: 'Pressing of the month'
+        illustration: 'Two graphic record sleeves fanned out, in electric blue, hot pink, acid yellow and tangerine, the front one with its record pulled out and a “500 copies” sticker.'
+        caption:
+            title: 'Groove Sessions, Vol. 3'
+            ref: 'GRV-003 · 180 g · half-speed master'
+        sticker: 'Limited<strong>500</strong>copies'
+        ticker:
+            arrivals: 'New arrivals every Friday'
+            half_speed: 'Half-speed masters'
+            first_pressings: 'First pressings'
+            coloured: 'Coloured vinyl'
+            hifi: 'Turntables & hi-fi'
+        formats:
+            half_speed: 'Half-speed masters'
+            one_step: 'One-step'
+            first_pressings: 'First pressings'
+            hifi: 'Hi-fi'
+    genres:
+        eyebrow: 'Shop by genre'
+        title: 'Dig the <em>crates</em>'
+        cta: 'All the new arrivals'
+        jazz:
+            name: 'Jazz'
+            styles: 'Bebop · modal · spiritual'
+        soul:
+            name: 'Soul & funk'
+            styles: 'Northern · disco · boogie'
+        rock:
+            name: 'Rock'
+            styles: 'Punk · indie · krautrock'
+        electronic:
+            name: 'Electronic'
+            styles: 'House · techno · ambient'
+        hiphop:
+            name: 'Hip-hop'
+            styles: 'Boom bap · jazz rap · beats'
+        world:
+            name: 'World'
+            styles: 'Afrobeat · tropical · bossa'
+    products:
+        eyebrow: 'New arrivals'
+        title: 'Fresh off <em>the press</em>'
+        lead: 'Reissues, first pressings and new releases that entered the shop this week, each one inspected before it reaches the crates.'
+        cta: 'Pressing of the month'
+    promise:
+        title: 'Our promise'
+        graded:
+            title: 'Graded by hand'
+            text: 'Every second-hand record is play-graded to the Goldmine standard, and sold VG+ or better.'
+        cleaned:
+            title: 'Cleaned and resleeved'
+            text: 'Ultrasonic cleaning, then an anti-static inner sleeve and an outer protective sleeve.'
+        shipping:
+            title: 'Insured, double-boxed'
+            text: 'Shipped flat in a double box, insured to its full value, worldwide.'
+        listening:
+            title: 'Listening room'
+            text: 'Audition any pressing on our reference system, by appointment.'
+    release:
+        eyebrow: 'Pressing of the month'
+        title: 'The Marlowe Quartet, <em>Blue Hours</em>'
+        lead: 'A 1961 session cut again from the original analogue tapes, at 45 rpm on two records. Every record page reads like this sheet: the pressing references as attributes, one variant per edition, and what to play it on.'
+        illustration: 'The Blue Hours sleeve in electric blue and mint, its translucent blue record pulled out.'
+        caption: 'Translucent blue edition'
+        number: 'No.<strong>0412</strong>of 3,000'
+        specs:
+            label:
+                label: 'Label'
+                value: 'Lowtide Records, Archive series'
+            catalogue:
+                label: 'Catalogue no.'
+                value: 'LTA-1961-45'
+            matrix:
+                label: 'Matrix'
+                value: 'LTA-1961-A1 · KG'
+            mastering:
+                label: 'Mastering'
+                value: 'Half-speed, from the original analogue tapes'
+            plant:
+                label: 'Pressed at'
+                value: 'Optimal Media, Germany'
+            format:
+                label: 'Format'
+                value: '2 × LP, 45 rpm, 180 g, tip-on gatefold'
+            edition:
+                label: 'Edition'
+                value: '3,000 numbered copies'
+            condition:
+                label: 'Condition'
+                value: 'New, sealed'
+        side_a: 'Side A'
+        side_b: 'Side B'
+        tracks:
+            a1:
+                title: 'Blue Hours'
+                time: '7:12'
+            a2:
+                title: 'Lantern Street'
+                time: '5:48'
+            a3:
+                title: 'A Quiet Room'
+                time: '6:05'
+            b1:
+                title: 'Half Past Midnight'
+                time: '8:21'
+            b2:
+                title: 'Marlowe’s Waltz'
+                time: '4:57'
+            b3:
+                title: 'The Last Set'
+                time: '6:40'
+        editions: 'Editions'
+        edition:
+            black:
+                name: 'Black, 180 g'
+                meta: 'In stock'
+            clear:
+                name: 'Clarity UHQR, 200 g'
+                meta: '2 copies left'
+            blue:
+                name: 'Translucent blue'
+                meta: 'Numbered, in stock'
+        pairs: 'To play it on'
+        pair:
+            turntable:
+                name: 'Belt-drive turntable'
+                meta: 'Acrylic platter, carbon arm'
+            phono:
+                name: 'MC phono stage'
+                meta: 'Low-noise, adjustable loading'
+            cleaning:
+                name: 'Record care kit'
+                meta: 'Carbon brush and stylus cleaner'
+        cta: 'Reserve a copy'
+    footer:
+        tagline: 'Independent record store: audiophile pressings, rare first editions and the hi-fi to play them.'
+        notice: 'Prices include VAT. Records are graded by hand and shipped double-boxed, insured to their full value.'
+        services:
+            eyebrow: 'At the shop'
+            title: 'Come for one record, <em>leave with three.</em>'
+            booth:
+                title: 'Listening room'
+                text: 'Book an hour on our reference system to audition a pressing or compare two editions side by side.'
+                cta: 'Book a session'
+            finder:
+                title: 'Record sourcing'
+                text: 'A first pressing, a specific matrix, a sealed copy: send us your want list and we search our network of dealers.'
+                cta: 'Send a want list'
+            buyback:
+                title: 'Appraisal & buy-back'
+                text: 'We grade, value and buy whole collections, and advise on the records worth keeping.'
+                cta: 'Request an appraisal'
