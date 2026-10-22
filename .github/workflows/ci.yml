@@ -257,6 +257,8 @@ jobs:
                         value: "castor sylius:theme:setup roastery"
                     -   name: Summit theme
                         value: "castor sylius:theme:setup summit"
+                    -   name: Groove theme
+                        value: "castor sylius:theme:setup groove"
                     -   name: Arena theme
                         value: "castor sylius:theme:setup arena"
                     -   name: B2B
