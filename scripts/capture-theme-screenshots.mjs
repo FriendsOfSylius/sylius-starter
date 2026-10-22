@@ -47,6 +47,7 @@ const themeSelectors = {
   cellar: '.cellar-logo',
   roastery: '.roastery-logo',
   summit: '.summit-logo',
+  groove: '.groove-logo',
   arena: '.arena-logo',
 };
 
