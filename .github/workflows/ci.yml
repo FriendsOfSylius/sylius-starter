@@ -253,6 +253,8 @@ jobs:
                         value: "castor sylius:theme:setup drive"
                     -   name: Cellar theme
                         value: "castor sylius:theme:setup cellar"
+                    -   name: Roastery theme
+                        value: "castor sylius:theme:setup roastery"
                     -   name: Arena theme
                         value: "castor sylius:theme:setup arena"
                     -   name: B2B
