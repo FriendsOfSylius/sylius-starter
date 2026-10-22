@@ -13,21 +13,24 @@ tomato promo badges sit on a light shelf-grey background. It is set in heavy
 
 **Desktop** (1440 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Drive storefront homepage on desktop](../images/drive-homepage-normal.webp) | ![Product page in Drive on desktop](../images/drive-product-normal.webp) | ![Drive cart containing a product on desktop](../images/drive-cart-normal.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Drive storefront homepage on desktop, light scheme](../images/drive-homepage-normal-light.webp) | ![Product page in Drive on desktop, light scheme](../images/drive-product-normal-light.webp) | ![Drive cart containing a product on desktop, light scheme](../images/drive-cart-normal-light.webp) |
+| Dark | ![Drive storefront homepage on desktop, dark scheme](../images/drive-homepage-normal-dark.webp) | ![Product page in Drive on desktop, dark scheme](../images/drive-product-normal-dark.webp) | ![Drive cart containing a product on desktop, dark scheme](../images/drive-cart-normal-dark.webp) |
 
 **Wide screen** (2560 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Drive storefront homepage on a wide screen](../images/drive-homepage-wide.webp) | ![Product page in Drive on a wide screen](../images/drive-product-wide.webp) | ![Drive cart containing a product on a wide screen](../images/drive-cart-wide.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Drive storefront homepage on a wide screen, light scheme](../images/drive-homepage-wide-light.webp) | ![Product page in Drive on a wide screen, light scheme](../images/drive-product-wide-light.webp) | ![Drive cart containing a product on a wide screen, light scheme](../images/drive-cart-wide-light.webp) |
+| Dark | ![Drive storefront homepage on a wide screen, dark scheme](../images/drive-homepage-wide-dark.webp) | ![Product page in Drive on a wide screen, dark scheme](../images/drive-product-wide-dark.webp) | ![Drive cart containing a product on a wide screen, dark scheme](../images/drive-cart-wide-dark.webp) |
 
 **Mobile** (390 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Drive storefront homepage on mobile](../images/drive-homepage-mobile.webp) | ![Product page in Drive on mobile](../images/drive-product-mobile.webp) | ![Drive cart containing a product on mobile](../images/drive-cart-mobile.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Drive storefront homepage on mobile, light scheme](../images/drive-homepage-mobile-light.webp) | ![Product page in Drive on mobile, light scheme](../images/drive-product-mobile-light.webp) | ![Drive cart containing a product on mobile, light scheme](../images/drive-cart-mobile-light.webp) |
+| Dark | ![Drive storefront homepage on mobile, dark scheme](../images/drive-homepage-mobile-dark.webp) | ![Product page in Drive on mobile, dark scheme](../images/drive-product-mobile-dark.webp) | ![Drive cart containing a product on mobile, dark scheme](../images/drive-cart-mobile-dark.webp) |
 
 - **Layout** — full screen: every container spans the viewport with a fluid
   gutter (`$gutter`), and the pages are built from white "shelves" on a
@@ -36,6 +39,9 @@ tomato promo badges sit on a light shelf-grey background. It is set in heavy
 - **Palette** — basil green (`#0E7C3A`), forest (`#083A22`), lemon
   (`#FFD43B`) and tomato (`#E23B2E`) on shelf grey (`#F2F4F1`), with mint
   (`#E5F4E9`) for soft highlights.
+- **Dark scheme** — the drive after closing time: green-tinted night grey (page `#0E1511`, panels
+  `#16201A`), the pastel tints turned into deep washes of the same hues, a lighter leaf green
+  (`#5DC98A`) for green text and links, and the basil, lemon and tomato fills kept as they are.
 - **Typography** — heavy, tightly-tracked *Inter* (800–900) for headings and
   prices, like a weekly flyer; tabular figures for prices and pick-up times.
 - **Header** — a forest service strip (free pick-up, freshness, store prices)

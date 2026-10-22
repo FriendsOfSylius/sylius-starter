@@ -12,24 +12,31 @@ assets.
 
 **Desktop** (1440 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Volt storefront homepage on desktop](../images/volt-homepage-normal.webp) | ![Product page in Volt on desktop](../images/volt-product-normal.webp) | ![Volt cart containing a product on desktop](../images/volt-cart-normal.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Volt storefront homepage on desktop, light scheme](../images/volt-homepage-normal-light.webp) | ![Product page in Volt on desktop, light scheme](../images/volt-product-normal-light.webp) | ![Volt cart containing a product on desktop, light scheme](../images/volt-cart-normal-light.webp) |
+| Dark | ![Volt storefront homepage on desktop, dark scheme](../images/volt-homepage-normal-dark.webp) | ![Product page in Volt on desktop, dark scheme](../images/volt-product-normal-dark.webp) | ![Volt cart containing a product on desktop, dark scheme](../images/volt-cart-normal-dark.webp) |
 
 **Wide screen** (2560 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Volt storefront homepage on a wide screen](../images/volt-homepage-wide.webp) | ![Product page in Volt on a wide screen](../images/volt-product-wide.webp) | ![Volt cart containing a product on a wide screen](../images/volt-cart-wide.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Volt storefront homepage on a wide screen, light scheme](../images/volt-homepage-wide-light.webp) | ![Product page in Volt on a wide screen, light scheme](../images/volt-product-wide-light.webp) | ![Volt cart containing a product on a wide screen, light scheme](../images/volt-cart-wide-light.webp) |
+| Dark | ![Volt storefront homepage on a wide screen, dark scheme](../images/volt-homepage-wide-dark.webp) | ![Product page in Volt on a wide screen, dark scheme](../images/volt-product-wide-dark.webp) | ![Volt cart containing a product on a wide screen, dark scheme](../images/volt-cart-wide-dark.webp) |
 
 **Mobile** (390 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Volt storefront homepage on mobile](../images/volt-homepage-mobile.webp) | ![Product page in Volt on mobile](../images/volt-product-mobile.webp) | ![Volt cart containing a product on mobile](../images/volt-cart-mobile.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Volt storefront homepage on mobile, light scheme](../images/volt-homepage-mobile-light.webp) | ![Product page in Volt on mobile, light scheme](../images/volt-product-mobile-light.webp) | ![Volt cart containing a product on mobile, light scheme](../images/volt-cart-mobile-light.webp) |
+| Dark | ![Volt storefront homepage on mobile, dark scheme](../images/volt-homepage-mobile-dark.webp) | ![Product page in Volt on mobile, dark scheme](../images/volt-product-mobile-dark.webp) | ![Volt cart containing a product on mobile, dark scheme](../images/volt-cart-mobile-dark.webp) |
 
 - **Palette** — plum ink (`#302B43`), electric violet (`#6554B8`) and soft
   lavender (`#E9E5F4`) over a subtle, near-white background.
+- **Dark scheme** — the same store at night: violet-tinted blacks (page `#13111C`, cards `#1D1A2A`),
+  the electric violet kept for fills and lifted to `#B0A5F7` for links, prices and focus rings, deep
+  lavender washes (`#2C2650`) for image wells and soft panels, and the lavender pills kept as
+  signature accents.
 - **Components** — pill-shaped buttons, soft rounded cards, pale high-contrast
   breadcrumbs, a custom Volt logo and a responsive category menu in the header,
   a dark footer with white links and light-backed payment logos, a full-width

@@ -17,6 +17,7 @@ import { gunzipSync } from 'node:zlib';
 const axeVersion = '4.13.0';
 const axeIntegrity = 'sha512-UzGt8zg7Ny8djbYMhxl2zuEevVa7r2gJjYY5Lwr1xM7+XU2nd6CkIWFTVcCIbAP63vSz71NaVyyuSk9lHKcy0A==';
 
+const colorSchemes = ['light', 'dark'];
 const viewports = {
   desktop: { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false },
   mobile: { width: 390, height: 844, deviceScaleFactor: 2, mobile: true },
@@ -66,8 +67,8 @@ function printUsage() {
 
 Run axe-core ${axeVersion} (WCAG 2.1 A/AA, landmarks, headings) on the homepage, a category
 page, a product page and the cart of the active storefront theme, at desktop
-(${viewports.desktop.width}px) and mobile (${viewports.mobile.width}px) widths, and report the violations
-with their selectors (and contrast ratios for color-contrast).
+(${viewports.desktop.width}px) and mobile (${viewports.mobile.width}px) widths, in its light and dark color
+schemes, and report the violations with their selectors (and contrast ratios for color-contrast).
 
 The theme argument only labels the report: activate the theme first with
 "castor sylius:theme:setup <theme>".
@@ -75,6 +76,8 @@ The theme argument only labels the report: activate the theme first with
 Options:
   --base-url <url>     Storefront base URL (default: ${defaultBaseUrl})
   --viewport <name>    Only check this viewport (desktop or mobile)
+  --color-scheme <name>
+                       Only check this color scheme (${colorSchemes.join(' or ')})
   --product <slug>     Check this product instead of discovering one
   --json <file>        Also write the full report as JSON
   --max-nodes <n>      Elements listed per violation (default: 8, 0 for all)
@@ -89,7 +92,7 @@ specific browser executable.`);
 }
 
 function parseArguments(args) {
-  const options = { theme: undefined, baseUrl: defaultBaseUrl, viewports: Object.keys(viewports), productSlug: undefined, json: undefined, maxNodes: 8 };
+  const options = { theme: undefined, baseUrl: defaultBaseUrl, viewports: Object.keys(viewports), colorSchemes, productSlug: undefined, json: undefined, maxNodes: 8 };
 
   while (args.length > 0) {
     const argument = args.shift();
@@ -98,10 +101,14 @@ function parseArguments(args) {
       process.exit(0);
     }
 
-    if (['--base-url', '--viewport', '--product', '--json', '--max-nodes'].includes(argument)) {
+    if (['--base-url', '--viewport', '--color-scheme', '--product', '--json', '--max-nodes'].includes(argument)) {
       const value = args.shift();
       if (!value || value.startsWith('--')) throw new Error(`${argument} requires a value`);
       if (argument === '--base-url') options.baseUrl = value;
+      else if (argument === '--color-scheme') {
+        if (!colorSchemes.includes(value)) throw new Error(`Unknown color scheme "${value}" (${colorSchemes.join(', ')})`);
+        options.colorSchemes = [value];
+      }
       else if (argument === '--product') options.productSlug = value;
       else if (argument === '--json') options.json = resolve(value);
       else if (argument === '--max-nodes') options.maxNodes = Number.parseInt(value, 10);
@@ -517,15 +524,19 @@ async function main() {
     ];
 
     const report = { theme: options.theme ?? null, axeVersion, baseUrl: options.baseUrl.href, pages: [] };
-    for (const viewportName of options.viewports) {
-      const viewport = viewports[viewportName];
-      await send('Emulation.setDeviceMetricsOverride', viewport);
-      await send('Emulation.setTouchEmulationEnabled', { enabled: viewport.mobile });
-      for (const page of pages) {
-        await navigate(page.url);
-        await evaluate(axeSource);
-        const result = await evaluate(`(${auditPage})(${JSON.stringify(axeTags)}, ${JSON.stringify(extraRules)})`, { awaitPromise: true });
-        report.pages.push({ page: page.name, viewport: viewportName, url: page.url.href, ...splitCoreIssues(result) });
+    // Every theme ships both color schemes: the system preference picks one, the switcher staying in "Auto" mode.
+    for (const colorScheme of options.colorSchemes) {
+      await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: colorScheme }] });
+      for (const viewportName of options.viewports) {
+        const viewport = viewports[viewportName];
+        await send('Emulation.setDeviceMetricsOverride', viewport);
+        await send('Emulation.setTouchEmulationEnabled', { enabled: viewport.mobile });
+        for (const page of pages) {
+          await navigate(page.url);
+          await evaluate(axeSource);
+          const result = await evaluate(`(${auditPage})(${JSON.stringify(axeTags)}, ${JSON.stringify(extraRules)})`, { awaitPromise: true });
+          report.pages.push({ page: page.name, viewport: `${viewportName}, ${colorScheme}`, url: page.url.href, ...splitCoreIssues(result) });
+        }
       }
     }
 
