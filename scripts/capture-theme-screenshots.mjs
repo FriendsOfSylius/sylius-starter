@@ -45,6 +45,7 @@ const themeSelectors = {
   retro_gaming: '.rg-logo',
   drive: '.drive-logo',
   cellar: '.cellar-logo',
+  roastery: '.roastery-logo',
   arena: '.arena-logo',
 };
 
