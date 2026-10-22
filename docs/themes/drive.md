@@ -83,7 +83,29 @@ tomato promo badges sit on a light shelf-grey background. It is set in heavy
   slots announced to assistive technologies, and no motion for visitors who
   prefer reduced motion.
 
-Install it with:
+## Demo catalog
+
+The screenshots above show a demo catalog of twenty-four groceries in six aisles (Fruits & Vegetables, Dairy & Eggs,
+Bakery, Pantry, Breakfast, Drinks), shipped in `src/Themes/demo/drive/` (`products.yaml`, `collections.yaml`, and in
+`media/` a flat illustration of each product, its packaging carrying the *drive.* house brand or a product name,
+on a transparent background and drawn inside the central square, so it stays whole in the square tiles). The import
+sets a 3.00 minimum price, so the cheapest groceries come in packs (milk by six, spaghetti by three…). Load it with
+the [import package](../import/fixtures.md), into the default channel:
+
+```bash
+cp -R src/Themes/demo/drive .castor/import/var/drive
+printf 'slug: drive\nname: Drive Groceries\nmode: ai\nshop_password: %s\n' "$(openssl rand -hex 12)" > .castor/import/var/drive/project.yaml
+castor sylius:import:fixtures:generate --project=drive --subdomain=""
+castor sylius:import:fixtures:load --project=drive
+```
+
+No AI call is made: the pictures are already in `media/`, under the code of each product. The shop menu then lists
+the six aisles; `castor sylius:import:delete drive` removes the catalog. The import keeps the products already in
+the channel and gives the groceries creation dates in the past, so on a store loaded with the default fixtures the
+latest products may still show clothing: run `castor app:db:fixtures app` first to start from a store without
+products.
+
+Install the theme with:
 
 ```bash
 castor sylius:theme:setup drive

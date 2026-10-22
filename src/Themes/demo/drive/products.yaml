@@ -1,0 +1,127 @@
+# Drive demo catalog: twenty-four groceries for the import package (castor sylius:import:fixtures:*).
+# The pictures are shipped in media/ under the code of each product; the image URLs below are placeholders that the
+# import never downloads, since a picture with that code is already there. The import sets a 3.00 minimum price, so
+# the cheapest groceries come in packs. See docs/themes/drive.md.
+mode: ai
+name: Drive Groceries
+products:
+    -   title: 'Organic Gala apples, 1 kg'
+        collection_name: Fruits & Vegetables
+        price_eur: 3.49
+        image: 'https://example.com/drive/organic-gala-apples-1-kg.webp'
+        description: 'Crunchy, sweet Gala apples from an organic orchard in the Loire valley. Category I, about 6 apples per kilo. Keep in the fridge crisper.'
+    -   title: 'Organic bananas, 1 kg'
+        collection_name: Fruits & Vegetables
+        price_eur: 3.19
+        image: 'https://example.com/drive/organic-bananas-1-kg.webp'
+        description: 'Fair trade organic bananas from the Dominican Republic, picked at the right stage to ripen at home in two to three days.'
+    -   title: 'Vine tomatoes, 1 kg'
+        collection_name: Fruits & Vegetables
+        price_eur: 3.99
+        image: 'https://example.com/drive/vine-tomatoes-1-kg.webp'
+        description: 'Tomatoes ripened on the vine in Brittany, sold on the branch for their scent. Keep them out of the fridge.'
+    -   title: 'Ripe Hass avocados, pack of 2'
+        collection_name: Fruits & Vegetables
+        price_eur: 3.29
+        image: 'https://example.com/drive/ripe-hass-avocados-pack-of-2.webp'
+        description: 'Ready-to-eat Hass avocados from Spain, creamy and nutty. Eat within two days, or keep in the fridge to slow them down.'
+    -   title: 'Organic bunch of carrots'
+        collection_name: Fruits & Vegetables
+        price_eur: 3.15
+        image: 'https://example.com/drive/organic-bunch-of-carrots.webp'
+        description: 'New season carrots sold with their tops, from a market garden near Nantes. Remove the tops at home to keep the carrots crunchy.'
+    -   title: 'Organic unwaxed lemons, 500 g'
+        collection_name: Fruits & Vegetables
+        price_eur: 3.25
+        image: 'https://example.com/drive/organic-unwaxed-lemons-500-g.webp'
+        description: 'Untreated after harvest: the zest can be grated into desserts and dressings. From Sicily, about 4 lemons.'
+    -   title: 'Baby spinach, 400 g'
+        collection_name: Fruits & Vegetables
+        price_eur: 3.49
+        image: 'https://example.com/drive/baby-spinach-400-g.webp'
+        description: 'Tender young spinach leaves, washed and ready to eat, for salads or wilted in a pan in one minute.'
+    -   title: 'Semi-skimmed milk, pack of 6'
+        collection_name: Dairy & Eggs
+        price_eur: 6.9
+        image: 'https://example.com/drive/semi-skimmed-milk-pack-of-6.webp'
+        description: 'drive. UHT semi-skimmed milk from French farms, 6 cartons of 1 L. Keeps 3 days in the fridge once opened.'
+    -   title: 'Free-range eggs, box of 6'
+        collection_name: Dairy & Eggs
+        price_eur: 3.4
+        image: 'https://example.com/drive/free-range-eggs-box-of-6.webp'
+        description: 'Large eggs from hens raised outdoors in Normandy, laid less than five days before your pick-up.'
+    -   title: 'Greek yogurt, 4 pots of 125 g'
+        collection_name: Dairy & Eggs
+        price_eur: 3.15
+        image: 'https://example.com/drive/greek-yogurt-4-pots-of-125-g.webp'
+        description: 'Thick, creamy strained yogurt with 10 % fat, plain and unsweetened, for breakfast, sauces or with honey.'
+    -   title: 'Comté AOP, aged 18 months, 250 g'
+        collection_name: Dairy & Eggs
+        price_eur: 5.9
+        image: 'https://example.com/drive/comte-aop-aged-18-months-250-g.webp'
+        description: 'Raw milk Comté matured 18 months in the Jura: fruity, nutty, with crunchy crystals. Cut to order at the cheese counter.'
+    -   title: 'Salted butter AOP, 250 g'
+        collection_name: Dairy & Eggs
+        price_eur: 3.49
+        image: 'https://example.com/drive/salted-butter-aop-250-g.webp'
+        description: 'Churned butter from Charentes-Poitou, with sea salt crystals from Noirmoutier.'
+    -   title: 'Traditional baguettes, pack of 3'
+        collection_name: Bakery
+        price_eur: 3.6
+        image: 'https://example.com/drive/traditional-baguettes-pack-of-3.webp'
+        description: 'Baguettes de tradition baked in store the morning of your pick-up: crisp crust, creamy crumb, long fermentation.'
+    -   title: 'Organic sourdough loaf, 800 g'
+        collection_name: Bakery
+        price_eur: 4.9
+        image: 'https://example.com/drive/organic-sourdough-loaf-800-g.webp'
+        description: 'A round country loaf of stone-ground organic flour and natural leaven. Keeps four days wrapped in a cloth.'
+    -   title: 'Butter croissants, pack of 4'
+        collection_name: Bakery
+        price_eur: 4.2
+        image: 'https://example.com/drive/butter-croissants-pack-of-4.webp'
+        description: 'Croissants made with AOP butter, baked in store every morning. Warm them three minutes in the oven.'
+    -   title: 'Spaghetti, pack of 3'
+        collection_name: Pantry
+        price_eur: 3.29
+        image: 'https://example.com/drive/spaghetti-pack-of-3.webp'
+        description: 'drive. durum wheat spaghetti n°5, bronze-drawn for sauces that cling, 3 packs of 500 g. Cooks in 9 minutes.'
+    -   title: 'Extra virgin olive oil, 75 cl'
+        collection_name: Pantry
+        price_eur: 8.9
+        image: 'https://example.com/drive/extra-virgin-olive-oil-75-cl.webp'
+        description: 'Cold-extracted olive oil from Andalusian picual olives, green and peppery. For dressings and finishing dishes.'
+    -   title: 'Basmati rice, 1 kg'
+        collection_name: Pantry
+        price_eur: 3.19
+        image: 'https://example.com/drive/basmati-rice-1-kg.webp'
+        description: 'drive. long grain basmati rice from the foothills of the Himalayas, fragrant and fluffy. Cooks in 11 minutes.'
+    -   title: 'Tomato passata, pack of 2'
+        collection_name: Pantry
+        price_eur: 3.3
+        image: 'https://example.com/drive/tomato-passata-pack-of-2.webp'
+        description: 'Sieved Italian tomatoes in glass bottles, 2 × 690 g, for sauces, soups and pizzas.'
+    -   title: 'Espresso ground coffee, 250 g'
+        collection_name: Breakfast
+        price_eur: 4.29
+        image: 'https://example.com/drive/espresso-ground-coffee-250-g.webp'
+        description: 'A blend of arabica and robusta, slowly roasted for a dense, chocolatey espresso. Intensity 9 out of 10.'
+    -   title: 'Organic crunchy muesli, 500 g'
+        collection_name: Breakfast
+        price_eur: 3.95
+        image: 'https://example.com/drive/organic-crunchy-muesli-500-g.webp'
+        description: 'Oat clusters baked with honey, almonds and freeze-dried red fruits, organic and with no palm oil.'
+    -   title: 'Strawberry extra jam, 370 g'
+        collection_name: Breakfast
+        price_eur: 3.1
+        image: 'https://example.com/drive/strawberry-extra-jam-370-g.webp'
+        description: 'Gariguette strawberries cooked in a copper pan, 55 g of fruit for 100 g of jam.'
+    -   title: 'Pure orange juice, 1 L'
+        collection_name: Drinks
+        price_eur: 3.2
+        image: 'https://example.com/drive/pure-orange-juice-1-l.webp'
+        description: 'drive. not-from-concentrate orange juice, pressed from Valencia oranges, with pulp. Keep chilled.'
+    -   title: 'Sparkling mineral water, pack of 6'
+        collection_name: Drinks
+        price_eur: 3.9
+        image: 'https://example.com/drive/sparkling-mineral-water-pack-of-6.webp'
+        description: 'Naturally sparkling mineral water from the Massif Central, fine bubbles, 6 bottles of 1 L.'

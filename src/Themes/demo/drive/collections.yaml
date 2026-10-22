@@ -1,0 +1,8 @@
+# Drive demo catalog: the aisles the groceries are sorted by (see products.yaml).
+collections:
+    -   name: Fruits & Vegetables
+    -   name: Dairy & Eggs
+    -   name: Bakery
+    -   name: Pantry
+    -   name: Breakfast
+    -   name: Drinks
