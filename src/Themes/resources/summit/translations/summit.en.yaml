@@ -1,0 +1,105 @@
+summit:
+    brand:
+        tagline: 'Outdoor gear'
+    top_bar:
+        delivery: 'Free delivery from €60 · shipped within 24 h'
+        returns: '60-day returns · free repairs on our gear'
+    hero:
+        eyebrow: 'Outdoor gear'
+        title: 'Go further.'
+        lead: 'Equipment for the places that stay with you.'
+        cta: 'Explore the collection'
+    products:
+        eyebrow: 'Featured gear'
+        title: 'Trusted by explorers'
+        lead: 'Premium gear for your next adventure, tested in the field by mountain guides. Built to perform, made to last.'
+        cta: 'See the spec sheet'
+    promise:
+        title: 'Our promise'
+        tested:
+            title: 'Tested in the field'
+            text: 'Every product is worn on the trail by our mountain guides before it reaches the store.'
+        dispatch:
+            title: 'Shipped within 24 h'
+            text: 'Monday to Saturday, free delivery from €60.'
+        returns:
+            title: '60-day returns'
+            text: 'Try your gear outside, not only in the living room.'
+        repair:
+            title: 'Repairs for life'
+            text: 'Our workshop mends the gear we sell, two-year warranty included.'
+    activities:
+        title: 'Shop by activity'
+        hiking:
+            name: 'Hiking'
+            level: 'Trails · day hikes'
+        trail:
+            name: 'Trail running'
+            level: 'Fast · light'
+        climbing:
+            name: 'Climbing'
+            level: 'Crag · multi-pitch'
+        bivouac:
+            name: 'Camping'
+            level: 'Nights out'
+    gear:
+        eyebrow: 'Spec sheet'
+        title: 'Ridge 38, <em>built for the long day.</em>'
+        lead: 'Every product page lists the technical specs, the colours and sizes in stock and the gear that goes with it.'
+        illustration: 'The Ridge 38 technical backpack, in forest green with orange zips, with four numbered call-outs.'
+        callout_1: 'Roll-top lid, 20,000 mm waterproof'
+        callout_2: 'Load lifters and adjustable back length'
+        callout_3: 'Stretch front pocket for a shell'
+        callout_4: 'Side pocket for a 1 L water bottle'
+        specs:
+            volume:
+                label: 'Volume'
+                value: '38 L + 4 L lid extension'
+            weight:
+                label: 'Weight'
+                value: '1.18 kg (size M)'
+            fabric:
+                label: 'Fabric'
+                value: '210D recycled ripstop nylon'
+            waterproof:
+                label: 'Waterproofing'
+                value: 'PU coating, 3,000 mm'
+            back:
+                label: 'Back length'
+                value: '42 to 52 cm, three sizes'
+        colours: 'Colours'
+        colour:
+            forest: 'Forest green, selected'
+            granite: 'Granite grey'
+            signal: 'Signal orange'
+        sizes: 'Sizes'
+        pairs: 'Goes well with'
+        pair:
+            cover:
+                name: 'Rain cover 30–40 L'
+                meta: 'Packs into its pocket'
+            bladder:
+                name: 'Hydration bladder 2 L'
+                meta: 'Fits the inner sleeve'
+            poles:
+                name: 'Carbon poles'
+                meta: 'Folding, 290 g a pair'
+        cta: 'See all packs'
+    footer:
+        tagline: 'Technical outdoor gear, tested in the field by mountain guides.'
+        notice: 'Prices include VAT. Every product carries a two-year warranty, and our workshop repairs the gear we sell for life.'
+        services:
+            eyebrow: 'Out there with you'
+            title: 'Gear that goes <em>the distance.</em>'
+            advice:
+                title: 'Field advice'
+                text: 'A route to prepare, a size to choose, a layering system to build: our guides answer you personally.'
+                cta: 'Ask a guide'
+            returns:
+                title: '60-day returns'
+                text: 'Try your gear on the trail, not only in the living room: returns are free for sixty days.'
+                cta: 'My orders'
+            repair:
+                title: 'Repair workshop'
+                text: 'A torn shell, a broken buckle, a worn zip: our workshop repairs the gear we sell, for life.'
+                cta: 'Request a repair'
