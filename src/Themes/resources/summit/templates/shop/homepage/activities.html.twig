@@ -1,0 +1,17 @@
+{# Summit activities: shop by activity, four photo tiles (photographs set by _sections.scss). #}
+<section id="summit-activities" class="summit-activities" aria-labelledby="summit-activities-title">
+    <div class="container">
+        <h2 id="summit-activities-title" class="visually-hidden">{{ 'summit.activities.title'|trans({}, 'summit') }}</h2>
+
+        <ul class="summit-activities__items" role="list">
+            {% for activity in ['hiking', 'trail', 'climbing', 'bivouac'] %}
+                <li class="summit-activity summit-activity--{{ activity }}">
+                    <a class="summit-activity__link" href="#summit-latest-products">
+                        <span class="summit-activity__level">{{ ('summit.activities.' ~ activity ~ '.level')|trans({}, 'summit') }}</span>
+                        <span class="summit-activity__name">{{ ('summit.activities.' ~ activity ~ '.name')|trans({}, 'summit') }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback.
+   The default photograph (a hiker on a ridge at sunset) is set by _hero.scss. #}
+<section class="summit-hero" aria-labelledby="summit-hero-title">
+    {% if hero.image %}
+        <img class="summit-hero__photo" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+    {% endif %}
+
+    <div class="container summit-hero__inner">
+        <div class="summit-hero__copy">
+            <p class="summit-eyebrow summit-eyebrow--light">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'summit.hero.eyebrow'|trans({}, 'summit') }}{% endif %}</p>
+            <h1 id="summit-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'summit.hero.title'|trans({}, 'summit')|raw }}{% endif %}</h1>
+            <p class="summit-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'summit.hero.lead'|trans({}, 'summit')|raw }}{% endif %}</p>
+
+            <a class="btn btn-primary summit-btn-arrow" href="{{ hero.ctaUrl ?? '#summit-latest-products' }}">
+                {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'summit.hero.cta'|trans({}, 'summit') }}{% endif %}
+            </a>
+        </div>
+    </div>
+</section>

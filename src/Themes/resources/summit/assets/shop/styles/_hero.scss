@@ -1,0 +1,100 @@
+// Photographic hero: a hiker on a ridge at sunset, full bleed, with condensed capitals and a single orange call to
+// action on the shaded side. The photograph stays the same in both schemes; the dark scheme only deepens the shade.
+
+.summit-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: $forest-night;
+  // Photograph by Adrià Sánchez Roqué on Unsplash (Unsplash License).
+  background-image: url("../images/hero-1280.webp");
+  background-position: 62% 60%;
+  background-size: cover;
+  color: $text-on-dark;
+
+  @media (min-width: 1281px), (min-resolution: 1.5dppx) {
+    background-image: url("../images/hero-2560.webp");
+  }
+
+  // The copy side is shaded, so the white type keeps its contrast on the bright sky.
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba($forest-night, if($dark, 0.92, 0.86)) 0%, rgba($forest-night, if($dark, 0.7, 0.55)) 40%, rgba($forest-night, if($dark, 0.35, 0)) 72%),
+      linear-gradient(0deg, rgba($forest-night, if($dark, 0.6, 0.35)) 0%, rgba($forest-night, 0) 35%);
+    content: "";
+  }
+}
+
+// A photograph contributed through the hero slot replaces the default one.
+.summit-hero__photo {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.summit-hero__inner {
+  display: flex;
+  min-height: clamp(30rem, 68vh, 42rem);
+  align-items: center;
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+}
+
+.summit-hero__copy {
+  max-width: 40rem;
+}
+
+.summit-hero h1 {
+  margin: 0 0 1.4rem;
+  color: $snow;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 0.9;
+
+  em {
+    color: $snow;
+    font-style: normal;
+  }
+}
+
+.summit-hero__lead {
+  max-width: 26rem;
+  margin-bottom: 2.25rem;
+  color: #EEF2EF;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.55;
+}
+
+// Arrow closing the hero call to action.
+.summit-btn-arrow::after {
+  margin-left: 0.85rem;
+  content: "→";
+  font-family: $font-family-sans-serif;
+  transition: transform 220ms $ease;
+}
+
+.summit-btn-arrow:hover::after {
+  display: inline-block;
+  transform: translateX(4px);
+}
+
+@media (max-width: 767.98px) {
+  .summit-hero {
+    background-position: 58% 60%;
+
+    &::before {
+      background: linear-gradient(0deg, rgba($forest-night, 0.92) 0%, rgba($forest-night, 0.6) 55%, rgba($forest-night, 0.3) 100%);
+    }
+  }
+
+  .summit-hero__inner {
+    min-height: 34rem;
+    align-items: flex-end;
+  }
+}

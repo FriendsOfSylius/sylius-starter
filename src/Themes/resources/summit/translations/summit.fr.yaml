@@ -1,0 +1,105 @@
+summit:
+    brand:
+        tagline: 'Équipement outdoor'
+    top_bar:
+        delivery: 'Livraison offerte dès 60 € · expédition sous 24 h'
+        returns: 'Retours 60 jours · réparation offerte sur notre matériel'
+    hero:
+        eyebrow: 'Équipement outdoor'
+        title: 'Allez plus loin.'
+        lead: 'De l’équipement pour les lieux qui vous marquent.'
+        cta: 'Explorer la collection'
+    products:
+        eyebrow: 'Équipement à la une'
+        title: 'Approuvé par les explorateurs'
+        lead: 'Un équipement haut de gamme pour votre prochaine aventure, testé sur le terrain par des guides de montagne. Conçu pour performer, fait pour durer.'
+        cta: 'Voir la fiche technique'
+    promise:
+        title: 'Notre engagement'
+        tested:
+            title: 'Testé sur le terrain'
+            text: 'Chaque produit est porté sur le sentier par nos guides de montagne avant d’entrer en boutique.'
+        dispatch:
+            title: 'Expédié sous 24 h'
+            text: 'Du lundi au samedi, livraison offerte dès 60 €.'
+        returns:
+            title: 'Retours 60 jours'
+            text: 'Essayez votre équipement dehors, pas seulement au salon.'
+        repair:
+            title: 'Réparation à vie'
+            text: 'Notre atelier répare le matériel que nous vendons, garantie deux ans incluse.'
+    activities:
+        title: 'Par activité'
+        hiking:
+            name: 'Randonnée'
+            level: 'Sentiers · à la journée'
+        trail:
+            name: 'Trail'
+            level: 'Rapide · léger'
+        climbing:
+            name: 'Escalade'
+            level: 'Falaise · grandes voies'
+        bivouac:
+            name: 'Bivouac'
+            level: 'Nuits dehors'
+    gear:
+        eyebrow: 'Fiche technique'
+        title: 'Ridge 38, <em>taillé pour les grandes journées.</em>'
+        lead: 'Chaque fiche produit détaille les caractéristiques techniques, les couleurs et tailles en stock et l’équipement qui va avec.'
+        illustration: 'Le sac à dos technique Ridge 38, vert forêt avec zips orange, avec quatre repères numérotés.'
+        callout_1: 'Rabat enroulable, imperméable 20 000 mm'
+        callout_2: 'Rappels de charge et dos réglable'
+        callout_3: 'Poche avant extensible pour une veste'
+        callout_4: 'Poche latérale pour une gourde de 1 L'
+        specs:
+            volume:
+                label: 'Volume'
+                value: '38 L + 4 L d’extension'
+            weight:
+                label: 'Poids'
+                value: '1,18 kg (taille M)'
+            fabric:
+                label: 'Tissu'
+                value: 'Nylon ripstop recyclé 210D'
+            waterproof:
+                label: 'Imperméabilité'
+                value: 'Enduction PU, 3 000 mm'
+            back:
+                label: 'Longueur de dos'
+                value: '42 à 52 cm, trois tailles'
+        colours: 'Couleurs'
+        colour:
+            forest: 'Vert forêt, sélectionné'
+            granite: 'Gris granite'
+            signal: 'Orange balisage'
+        sizes: 'Tailles'
+        pairs: 'Va bien avec'
+        pair:
+            cover:
+                name: 'Housse pluie 30–40 L'
+                meta: 'Se range dans sa poche'
+            bladder:
+                name: 'Poche à eau 2 L'
+                meta: 'Se glisse dans le fourreau'
+            poles:
+                name: 'Bâtons carbone'
+                meta: 'Pliants, 290 g la paire'
+        cta: 'Voir tous les sacs'
+    footer:
+        tagline: 'Équipement outdoor technique, testé sur le terrain par des guides de montagne.'
+        notice: 'Prix TTC. Chaque produit est garanti deux ans, et notre atelier répare à vie le matériel que nous vendons.'
+        services:
+            eyebrow: 'Avec vous dehors'
+            title: 'Du matériel qui <em>tient la distance.</em>'
+            advice:
+                title: 'Conseil terrain'
+                text: 'Un itinéraire à préparer, une taille à choisir, un système de couches à construire : nos guides vous répondent personnellement.'
+                cta: 'Demander à un guide'
+            returns:
+                title: 'Retours 60 jours'
+                text: 'Essayez votre équipement sur le sentier, pas seulement au salon : les retours sont gratuits pendant soixante jours.'
+                cta: 'Mes commandes'
+            repair:
+                title: 'Atelier réparation'
+                text: 'Une veste déchirée, une boucle cassée, un zip usé : notre atelier répare à vie le matériel que nous vendons.'
+                cta: 'Demander une réparation'
