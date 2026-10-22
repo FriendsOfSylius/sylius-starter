@@ -31,6 +31,12 @@ the default channel.
 castor sylius:import:fixtures:load --project="Organic Kids"
 ```
 
+The product and taxon images of a project (`.castor/import/var/{project-slug}/media/`) are first mirrored into the
+Sylius app, `var/import/{project-slug}/media/`, where the generated fixtures read them
+(`%kernel.project_dir%/var/import/…`): the containers that load the fixtures only mount the app directory, in the
+main checkout as in a [worktree stack](../contributing/worktrees.md). `sylius:import:delete` removes that copy.
+Fixtures generated before still point at `../.castor/import/var/`: run `sylius:import:fixtures:generate` again.
+
 ## Shop images
 
 The shop images of a project (logo, header, interstice, any of them optional, read from
