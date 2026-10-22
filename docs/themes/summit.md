@@ -51,7 +51,9 @@ navigation by activity, technical attributes, variants (colours and sizes) and a
 - **Homepage** — a full-bleed **photograph** (a hiker on a ridge at sunset), shaded on the copy side: an
   eyebrow, a condensed headline, a short lead and one orange call to action. Right under it, **shop by
   activity** (`theme_activities` hookable): four large photo tiles (hiking, trail running, climbing, camping),
-  each with its terrain, its name in capitals, an arrow and an orange rule on hover. Then the **featured gear**:
+  each with its terrain, its name in capitals, an arrow and an orange rule on hover. The promise block
+  (`theme_promise` hookable) lines up four commitments (field-tested, 24 h dispatch, 60-day returns, repairs
+  for life) in a light band. Then the **featured gear**:
   an editorial intro next to the six latest products, and the **gear spotlight** (`theme_gear` hookable): a
   technical backpack with numbered call-outs, its spec sheet, its colours and sizes, and the gear that goes
   with it. The deals and new collection blocks are hidden.
