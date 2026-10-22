@@ -1,0 +1,649 @@
+// Homepage sections: the crates by genre, the promise, the new arrivals and the pressing of the month (a collector's
+// sheet: pressing references, tracklist, editions, what to play it on). The sleeves are large and carry the colour,
+// the interface echoes it in its accents.
+
+.groove-genres,
+.groove-products {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+}
+
+.groove-section-head h2 {
+  max-width: 16ch;
+}
+
+// Crates: six sleeves with flat cover art, a record tucked behind each one, sliding out and turning on hover.
+
+.groove-crates {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(3rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.groove-crate__link {
+  display: flex;
+  flex-direction: column;
+  color: $heading;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: $heading;
+
+    .groove-crate__sleeve::before {
+      transform: translateY(-17%) rotate(220deg);
+    }
+
+    .groove-crate__art {
+      box-shadow: $shadow-float;
+      transform: translateY(-4px);
+    }
+
+    .groove-crate__name {
+      color: $accent-text;
+    }
+  }
+}
+
+.groove-crate__sleeve {
+  position: relative;
+  display: block;
+  isolation: isolate;
+  aspect-ratio: 1;
+
+  // The record tucked behind the sleeve, its label in the colour of the sleeve.
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 3%;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, $page 0 2%, var(--groove-label, #{$hot}) 2.5% 16%, #0E0D10 16.5% 18%, transparent 18.5%),
+      repeating-radial-gradient(circle, #0E0D10 0 3px, #2B2A2E 3px 4px);
+    content: "";
+    transform: translateY(-4%);
+    transition: transform 700ms $ease;
+  }
+}
+
+.groove-crate__art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: $radius-sm;
+  background-color: #0E0D10;
+  box-shadow: $shadow-soft;
+  transition: box-shadow 260ms ease, transform 260ms $ease;
+}
+
+// Cover art: flat shapes in the sleeve colours, the same in both schemes.
+.groove-crate--jazz {
+  --groove-label: #{$acid};
+
+  .groove-crate__art {
+    background:
+      radial-gradient(circle at 32% 68%, $acid 0 26%, transparent 26.5%),
+      linear-gradient(90deg, transparent 64%, #0E0D10 64% 76%, transparent 76%),
+      $electric;
+  }
+}
+
+.groove-crate--soul {
+  --groove-label: #{$tangerine};
+
+  .groove-crate__art {
+    background: repeating-radial-gradient(circle at 50% 100%, $hot 0 12%, $tangerine 12% 24%);
+  }
+}
+
+.groove-crate--rock {
+  --groove-label: #{$hot};
+
+  .groove-crate__art {
+    background: repeating-linear-gradient(-45deg, #0E0D10 0 14%, $hot 14% 34%);
+  }
+}
+
+.groove-crate--electronic {
+  --groove-label: #{$mint};
+
+  .groove-crate__art {
+    background:
+      radial-gradient(circle at 70% 30%, $hot 0 18%, transparent 18.5%),
+      linear-gradient($mint 2px, transparent 2px) 0 0 / 14% 14%,
+      linear-gradient(90deg, $mint 2px, transparent 2px) 0 0 / 14% 14%,
+      #0E0D10;
+  }
+}
+
+.groove-crate--hiphop {
+  --groove-label: #{$electric};
+
+  .groove-crate__art {
+    background:
+      linear-gradient(0deg, #0E0D10 0 22%, transparent 22%),
+      radial-gradient(circle, #0E0D10 0 26%, transparent 28%) 0 0 / 16% 16%,
+      $acid;
+  }
+}
+
+.groove-crate--world {
+  --groove-label: #{$acid};
+
+  .groove-crate__art {
+    background:
+      radial-gradient(circle at 100% 0, $electric 0 46%, transparent 46.5%),
+      radial-gradient(circle at 0 100%, $tangerine 0 42%, transparent 42.5%),
+      $mint;
+  }
+}
+
+.groove-crate__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid $line;
+}
+
+.groove-crate__index {
+  color: $accent-text;
+  font-family: $font-family-mono;
+  font-size: 0.74rem;
+}
+
+.groove-crate__name {
+  display: block;
+  font-family: $font-family-display;
+  font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+  font-stretch: 78%;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  transition: color 200ms ease;
+}
+
+.groove-crate__styles {
+  display: block;
+  margin-top: 0.5rem;
+  color: $text-muted;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+// Promise: four numbered commitments between two hairlines.
+
+.groove-promise__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-top: 3px solid $heading;
+  border-bottom: 1px solid $line-strong;
+  list-style: none;
+}
+
+.groove-promise__item {
+  padding: 2.25rem clamp(1rem, 2vw, 2rem) 2.5rem;
+
+  + .groove-promise__item {
+    border-left: 1px solid $line;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.groove-promise__number {
+  display: block;
+  margin-bottom: 1rem;
+  color: $accent-text;
+  font-family: $font-family-accent;
+  font-size: 2.6rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.groove-promise__name {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.4rem;
+  font-stretch: 82%;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.groove-promise__text {
+  margin-top: 0.6rem !important;
+  color: $text-muted;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+// New arrivals.
+
+.groove-products .products-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+// Pressing of the month: the collector's sheet.
+
+.groove-release {
+  padding-block: clamp(5rem, 10vw, 8.5rem);
+  border-top: 1px solid $line;
+  background-color: $surface;
+}
+
+.groove-release__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: start;
+}
+
+// The visual stands on a large acid yellow panel, like a record displayed on the shop wall.
+.groove-release__visual {
+  position: sticky;
+  top: 2rem;
+  margin: 0;
+}
+
+.groove-release__panel {
+  position: relative;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  border-radius: $radius-lg;
+  background-color: $acid;
+}
+
+.groove-release__sticker {
+  position: absolute;
+  z-index: 2;
+  right: 6%;
+  bottom: 7%;
+  display: grid;
+  width: clamp(5.5rem, 9vw, 7rem);
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: $hot;
+  color: #0E0D10;
+  font-family: $font-family-mono;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transform: rotate(10deg);
+
+  strong {
+    display: block;
+    font-family: $font-family-display;
+    font-size: 2.4em;
+    font-stretch: 78%;
+    font-weight: 800;
+  }
+}
+
+.groove-release__stage {
+  position: relative;
+  width: 100%;
+  max-width: 34rem;
+  margin-inline: auto;
+  aspect-ratio: 1.32;
+}
+
+.groove-release__sleeve {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 76%;
+  height: auto;
+  box-shadow: 0 30px 50px -26px rgba(#0E0D10, 0.6);
+}
+
+// Translucent blue wax: the light shows through the grooves.
+.groove-release__record {
+  position: absolute;
+  top: 3%;
+  left: 26%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, $surface 0 2.2%, #F6F2EA 2.6% 17%, rgba(#1C2C9E, 0.9) 17.4% 19%, transparent 19.4%),
+    repeating-radial-gradient(circle, rgba(#3D5AFE, 0.82) 0 3px, rgba(#2C45D8, 0.9) 3px 4px);
+  box-shadow: 0 26px 50px -26px rgba(#000, 0.6);
+  transition: transform 700ms $ease;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 200deg, transparent 0 10%, rgba(#FFF, 0.3) 14%, transparent 20% 60%, rgba(#FFF, 0.18) 64%, transparent 70%);
+    content: "";
+  }
+}
+
+// The coloured record slides a little further out and turns on hover.
+.groove-release__stage:hover .groove-release__record {
+  transform: translateX(6%) rotate(120deg);
+}
+
+.groove-release__caption {
+  display: flex;
+  max-width: 34rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin: 1.75rem auto 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid $line;
+  color: $text-muted;
+  font-family: $font-family-accent;
+  font-size: 1.25rem;
+  font-style: italic;
+
+  .groove-ref {
+    color: $heading;
+    font-size: 0.74rem;
+    font-style: normal;
+  }
+}
+
+.groove-release__lead {
+  max-width: 34rem;
+  margin: 1.25rem 0 2.25rem;
+  color: $text-muted;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+// Pressing references, in two columns of small capitals and values.
+.groove-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+  margin: 0 0 2.25rem;
+  border-top: 1px solid $heading;
+
+  div {
+    padding-block: 0.75rem;
+    border-bottom: 1px solid $line;
+  }
+
+  dt {
+    margin-bottom: 0.2rem;
+    color: $text-muted;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: $heading;
+    font-size: 0.94rem;
+    line-height: 1.45;
+
+    &.groove-ref {
+      font-size: 0.82rem;
+    }
+  }
+}
+
+.groove-tracklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 2rem;
+  margin-bottom: 2.25rem;
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr) auto;
+    gap: 0.5rem;
+    align-items: baseline;
+    padding-block: 0.45rem;
+    border-bottom: 1px solid $line;
+  }
+}
+
+.groove-tracklist__position,
+.groove-tracklist__time {
+  color: $text-muted;
+  font-family: $font-family-mono;
+  font-size: 0.74rem;
+}
+
+.groove-tracklist__title {
+  color: $heading;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.groove-variants {
+  margin-bottom: 2.25rem;
+}
+
+.groove-variants__label {
+  margin-bottom: 0.75rem;
+  color: $heading;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.groove-pressings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.groove-pressing {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.7rem;
+  align-items: center;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  background-color: $page;
+
+  &.is-selected {
+    border-color: $hot;
+    box-shadow: inset 0 0 0 1px $hot;
+  }
+}
+
+.groove-pressing__disc {
+  width: 1.9rem;
+  height: 1.9rem;
+  grid-row: span 2;
+  border-radius: 50%;
+  background: radial-gradient(circle, #F6F2EA 0 12%, $hot 13% 30%, transparent 31%), #0E0D10;
+  box-shadow: 0 0 0 1px $line-strong;
+}
+
+.groove-pressing--clear .groove-pressing__disc {
+  background: radial-gradient(circle, #F6F2EA 0 12%, $hot 13% 30%, transparent 31%), linear-gradient(135deg, rgba(#FFF, 0.7), rgba(#C9CED6, 0.6));
+}
+
+.groove-pressing--blue .groove-pressing__disc {
+  background: radial-gradient(circle, #F6F2EA 0 12%, #F6F2EA 13% 30%, transparent 31%), $electric;
+}
+
+.groove-pressing__name {
+  color: $heading;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.groove-pressing__meta {
+  color: $text-muted;
+  font-size: 0.74rem;
+  line-height: 1.3;
+}
+
+.groove-pairs {
+  margin-bottom: 2.5rem;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid $line;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    padding: 0.85rem 1rem 0.85rem 0;
+    border-bottom: 1px solid $line;
+
+    + li {
+      padding-left: 1rem;
+      border-left: 1px solid $line;
+    }
+
+    &::before {
+      width: 1.25rem;
+      height: 3px;
+      margin-bottom: 0.6rem;
+      background-color: $hot;
+      content: "";
+    }
+  }
+}
+
+.groove-pairs__name {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.12rem;
+  font-stretch: 85%;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.groove-pairs__meta {
+  margin-top: 0.2rem;
+  color: $text-muted;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 991.98px) {
+  .groove-promise__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .groove-promise__item:nth-child(3) {
+    border-left: 0;
+  }
+
+  .groove-promise__item:nth-child(n + 3) {
+    border-top: 1px solid $line;
+  }
+
+  .groove-products .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .groove-release__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .groove-release__visual {
+    position: static;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .groove-products .products-grid,
+  .groove-crates {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .groove-tracklist,
+  .groove-pressings {
+    grid-template-columns: 1fr;
+  }
+
+  .groove-pairs ul {
+    grid-template-columns: 1fr;
+  }
+
+  .groove-pairs li + li {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .groove-promise__items {
+    grid-template-columns: 1fr;
+  }
+
+  .groove-promise__item {
+    border-left: 0 !important;
+
+    + .groove-promise__item {
+      border-top: 1px solid $line;
+    }
+  }
+
+  .groove-specs {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Category roundels rendered after the hero (import collections): small records with the initial on an acid label.
+.groove-hero ~ .container .rounded-circle.bg-light {
+  border: 0;
+  background: radial-gradient(circle, $acid 0 34%, #0E0D10 35% 38%, transparent 38.5%), repeating-radial-gradient(circle, #0E0D10 0 3px, #2B2A2E 3px 4px) !important;
+  box-shadow: 0 0 0 1px if($dark, $line-strong, transparent);
+  color: #0E0D10 !important;
+  font-family: $font-family-display;
+  font-size: 1.5rem;
+  font-weight: 800 !important;
+  transition: transform 600ms $ease;
+}
+
+.groove-hero ~ .container a:hover .rounded-circle.bg-light {
+  transform: rotate(-20deg);
+}
+
+.groove-hero + .container {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.groove-hero ~ .container a:has(> .rounded-circle) span {
+  margin-top: 0.8rem !important;
+  color: $heading;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}

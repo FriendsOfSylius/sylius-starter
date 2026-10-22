@@ -1,0 +1,163 @@
+groove:
+    brand:
+        tagline: 'Disques & hi-fi'
+    top_bar:
+        delivery: 'Livraison assurée dans le monde entier · disques expédiés en double carton'
+        fridays: 'Salon d’écoute <strong>sur rendez-vous</strong>'
+    hero:
+        eyebrow: 'Disquaire indépendant'
+        title: 'La musique, <em>en grand format.</em>'
+        lead: 'Nouveautés chaque vendredi, pressages audiophiles, vinyles couleur et premières éditions rares, choisis un à un et gradés à la main, avec les platines qui leur rendent justice.'
+        cta: 'Découvrir les arrivages'
+        secondary_cta: 'Le pressage du mois'
+        illustration: 'Deux pochettes graphiques en éventail, bleu électrique, rose vif, jaune acide et mandarine, la première avec son disque à moitié sorti et un sticker « 500 exemplaires ».'
+        caption:
+            title: 'Groove Sessions, Vol. 3'
+            ref: 'GRV-003 · 180 g · gravé à demi-vitesse'
+        sticker: 'Édition<strong>500</strong>exemplaires'
+        ticker:
+            arrivals: 'Arrivages chaque vendredi'
+            half_speed: 'Gravure demi-vitesse'
+            first_pressings: 'Premiers pressages'
+            coloured: 'Vinyles couleur'
+            hifi: 'Platines & hi-fi'
+        formats:
+            half_speed: 'Gravure demi-vitesse'
+            one_step: 'One-step'
+            first_pressings: 'Premiers pressages'
+            hifi: 'Hi-fi'
+    genres:
+        eyebrow: 'Par genre'
+        title: 'Fouiller <em>les bacs</em>'
+        cta: 'Tous les arrivages'
+        jazz:
+            name: 'Jazz'
+            styles: 'Bebop · modal · spiritual'
+        soul:
+            name: 'Soul & funk'
+            styles: 'Northern · disco · boogie'
+        rock:
+            name: 'Rock'
+            styles: 'Punk · indé · krautrock'
+        electronic:
+            name: 'Électro'
+            styles: 'House · techno · ambient'
+        hiphop:
+            name: 'Hip-hop'
+            styles: 'Boom bap · jazz rap · beats'
+        world:
+            name: 'Musiques du monde'
+            styles: 'Afrobeat · tropical · bossa'
+    products:
+        eyebrow: 'Arrivages'
+        title: 'Tout juste <em>pressés</em>'
+        lead: 'Rééditions, premiers pressages et nouveautés entrés en boutique cette semaine, chacun inspecté avant de rejoindre les bacs.'
+        cta: 'Le pressage du mois'
+    promise:
+        title: 'Notre promesse'
+        graded:
+            title: 'Gradés à la main'
+            text: 'Chaque disque d’occasion est écouté et gradé selon la norme Goldmine, et vendu VG+ ou mieux.'
+        cleaned:
+            title: 'Nettoyés et protégés'
+            text: 'Nettoyage aux ultrasons, sous-pochette antistatique et pochette de protection extérieure.'
+        shipping:
+            title: 'Assurés, double carton'
+            text: 'Expédiés à plat en double carton, assurés à leur pleine valeur, dans le monde entier.'
+        listening:
+            title: 'Salon d’écoute'
+            text: 'Écoutez n’importe quel pressage sur notre système de référence, sur rendez-vous.'
+    release:
+        eyebrow: 'Le pressage du mois'
+        title: 'The Marlowe Quartet, <em>Blue Hours</em>'
+        lead: 'Une session de 1961 regravée depuis les bandes analogiques originales, en 45 tours sur deux disques. Chaque fiche disque se lit comme celle-ci : les références de pressage en attributs, une déclinaison par édition, et le matériel pour l’écouter.'
+        illustration: 'La pochette de Blue Hours bleu électrique et menthe, son vinyle bleu translucide à moitié sorti.'
+        caption: 'Édition bleu translucide'
+        number: 'N°<strong>0412</strong>sur 3 000'
+        specs:
+            label:
+                label: 'Label'
+                value: 'Lowtide Records, série Archive'
+            catalogue:
+                label: 'Référence'
+                value: 'LTA-1961-45'
+            matrix:
+                label: 'Matrice'
+                value: 'LTA-1961-A1 · KG'
+            mastering:
+                label: 'Mastering'
+                value: 'Demi-vitesse, depuis les bandes analogiques originales'
+            plant:
+                label: 'Pressé chez'
+                value: 'Optimal Media, Allemagne'
+            format:
+                label: 'Format'
+                value: '2 × LP, 45 tours, 180 g, pochette ouvrante tip-on'
+            edition:
+                label: 'Tirage'
+                value: '3 000 exemplaires numérotés'
+            condition:
+                label: 'État'
+                value: 'Neuf, scellé'
+        side_a: 'Face A'
+        side_b: 'Face B'
+        tracks:
+            a1:
+                title: 'Blue Hours'
+                time: '7:12'
+            a2:
+                title: 'Lantern Street'
+                time: '5:48'
+            a3:
+                title: 'A Quiet Room'
+                time: '6:05'
+            b1:
+                title: 'Half Past Midnight'
+                time: '8:21'
+            b2:
+                title: 'Marlowe’s Waltz'
+                time: '4:57'
+            b3:
+                title: 'The Last Set'
+                time: '6:40'
+        editions: 'Éditions'
+        edition:
+            black:
+                name: 'Noir, 180 g'
+                meta: 'En stock'
+            clear:
+                name: 'Clarity UHQR, 200 g'
+                meta: 'Plus que 2 exemplaires'
+            blue:
+                name: 'Bleu translucide'
+                meta: 'Numéroté, en stock'
+        pairs: 'Pour l’écouter'
+        pair:
+            turntable:
+                name: 'Platine à courroie'
+                meta: 'Plateau acrylique, bras carbone'
+            phono:
+                name: 'Préampli phono MC'
+                meta: 'Faible bruit, charge réglable'
+            cleaning:
+                name: 'Kit d’entretien'
+                meta: 'Brosse carbone et nettoyant diamant'
+        cta: 'Réserver un exemplaire'
+    footer:
+        tagline: 'Disquaire indépendant : pressages audiophiles, premières éditions rares et la hi-fi pour les écouter.'
+        notice: 'Prix TTC. Les disques sont gradés à la main et expédiés en double carton, assurés à leur pleine valeur.'
+        services:
+            eyebrow: 'À la boutique'
+            title: 'Venu pour un disque, <em>reparti avec trois.</em>'
+            booth:
+                title: 'Salon d’écoute'
+                text: 'Réservez une heure sur notre système de référence pour écouter un pressage ou comparer deux éditions.'
+                cta: 'Réserver une séance'
+            finder:
+                title: 'Recherche de disques'
+                text: 'Un premier pressage, une matrice précise, un exemplaire scellé : envoyez votre liste, nous interrogeons notre réseau.'
+                cta: 'Envoyer ma liste'
+            buyback:
+                title: 'Expertise & rachat'
+                text: 'Nous gradons, estimons et rachetons les collections entières, et vous conseillons sur les disques à garder.'
+                cta: 'Demander une expertise'

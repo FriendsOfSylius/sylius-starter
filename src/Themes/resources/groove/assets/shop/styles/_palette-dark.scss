@@ -1,0 +1,47 @@
+// Groove, dark scheme — the shop after closing time: ink, warm paper type and the same neon sleeves.
+$color-mode: dark;
+
+// House colours. The ink bands are ruled in hot pink, to stand out from a page just as dark.
+$vinyl: #08080A;
+$vinyl-deep: #050506;
+$vinyl-raised: #1A191E;
+$paper: #F6F2EA;
+$text-on-dark: #DAD5CB;
+$border-dark: rgba(#F6F2EA, 0.12);
+
+// Sleeve colours: cover art, coloured records, the brand and its accents.
+$hot: #FF3D8B;
+$hot-light: #FF7DB6;
+$acid: #FFE14D;
+$electric: #4D68FF;
+$tangerine: #FF7A2E;
+$mint: #22DDA8;
+
+// Ink and graphite.
+$page: #0E0D10;
+$surface: #17161B;
+$surface-raised: #212026;
+$line: #302F37;
+$line-strong: #4B4A54;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #86858F;
+$heading: #F6F2EA;
+$text: #DAD5CB;
+$text-muted: #A9A5AE;
+
+// Hot pink fills the calls to action, with ink on it, and turns acid yellow on hover; as text, the accent lightens to
+// a neon pink, and the second accent turns acid yellow.
+$accent: $hot;
+$accent-hover: $acid;
+$on-accent: #0E0D10;
+$accent-text: #FF7DB6;
+$accent-text-hover: #FFB0D3;
+$pop-text: $acid;
+$focus: $acid;
+$focus-ring: rgba($hot, 0.4);
+
+$success: #5FE3B8;
+$info: #A3B2FF;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.5);
+$shadow-float: 0 30px 50px -28px rgba(#000, 0.9);
