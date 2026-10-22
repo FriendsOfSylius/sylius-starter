@@ -46,6 +46,7 @@ const themeSelectors = {
   drive: '.drive-logo',
   cellar: '.cellar-logo',
   roastery: '.roastery-logo',
+  summit: '.summit-logo',
   arena: '.arena-logo',
 };
 
