@@ -82,7 +82,29 @@ Product thumbnails are cut to 3:4 by the Sylius image filters
 shoot bottles in portrait 3:4, or switch these filters to `inset` mode in the
 application, so the whole bottle reaches the page.
 
-Install it with:
+## Demo catalog
+
+The screenshots above show a demo catalog of seventeen wines from fictional estates, in seven regions (Bordeaux,
+Burgundy, Champagne, Rhône Valley, Loire Valley, Alsace, Provence), shipped in `src/Themes/demo/cellar/`
+(`products.yaml`, `collections.yaml`, and in `media/` a drawing of each bottle: its shape, glass, capsule and label,
+on a transparent background so it stands whole in the parchment niches). Descriptions carry the tasting notes,
+grapes, ageing and serving advice. Load it with the [import package](../import/fixtures.md), into the default
+channel:
+
+```bash
+cp -R src/Themes/demo/cellar .castor/import/var/cellar
+printf 'slug: cellar\nname: Cellar Wine Merchant\nmode: ai\nshop_password: %s\n' "$(openssl rand -hex 12)" > .castor/import/var/cellar/project.yaml
+castor sylius:import:fixtures:generate --project=cellar --subdomain=""
+castor sylius:import:fixtures:load --project=cellar
+```
+
+No AI call is made: the bottles are already in `media/`, under the code of each product. The shop menu then lists
+the seven regions; `castor sylius:import:delete cellar` removes the catalog. The import keeps the products already
+in the channel and gives the wines creation dates in the past, so on a store loaded with the default fixtures the
+latest products may still show clothing: run `castor app:db:fixtures app` first to start from a store without
+products.
+
+Install the theme with:
 
 ```bash
 castor sylius:theme:setup cellar
