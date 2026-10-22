@@ -12,25 +12,31 @@ lavender sections and midnight panels. It is set in tightly-tracked *Inter*
 
 **Desktop** (1440 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Aurora storefront homepage on desktop](../images/aurora-homepage-normal.webp) | ![Product page in Aurora on desktop](../images/aurora-product-normal.webp) | ![Aurora cart containing a product on desktop](../images/aurora-cart-normal.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Aurora storefront homepage on desktop, light scheme](../images/aurora-homepage-normal-light.webp) | ![Product page in Aurora on desktop, light scheme](../images/aurora-product-normal-light.webp) | ![Aurora cart containing a product on desktop, light scheme](../images/aurora-cart-normal-light.webp) |
+| Dark | ![Aurora storefront homepage on desktop, dark scheme](../images/aurora-homepage-normal-dark.webp) | ![Product page in Aurora on desktop, dark scheme](../images/aurora-product-normal-dark.webp) | ![Aurora cart containing a product on desktop, dark scheme](../images/aurora-cart-normal-dark.webp) |
 
 **Wide screen** (2560 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Aurora storefront homepage on a wide screen](../images/aurora-homepage-wide.webp) | ![Product page in Aurora on a wide screen](../images/aurora-product-wide.webp) | ![Aurora cart containing a product on a wide screen](../images/aurora-cart-wide.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Aurora storefront homepage on a wide screen, light scheme](../images/aurora-homepage-wide-light.webp) | ![Product page in Aurora on a wide screen, light scheme](../images/aurora-product-wide-light.webp) | ![Aurora cart containing a product on a wide screen, light scheme](../images/aurora-cart-wide-light.webp) |
+| Dark | ![Aurora storefront homepage on a wide screen, dark scheme](../images/aurora-homepage-wide-dark.webp) | ![Product page in Aurora on a wide screen, dark scheme](../images/aurora-product-wide-dark.webp) | ![Aurora cart containing a product on a wide screen, dark scheme](../images/aurora-cart-wide-dark.webp) |
 
 **Mobile** (390 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Aurora storefront homepage on mobile](../images/aurora-homepage-mobile.webp) | ![Product page in Aurora on mobile](../images/aurora-product-mobile.webp) | ![Aurora cart containing a product on mobile](../images/aurora-cart-mobile.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Aurora storefront homepage on mobile, light scheme](../images/aurora-homepage-mobile-light.webp) | ![Product page in Aurora on mobile, light scheme](../images/aurora-product-mobile-light.webp) | ![Aurora cart containing a product on mobile, light scheme](../images/aurora-cart-mobile-light.webp) |
+| Dark | ![Aurora storefront homepage on mobile, dark scheme](../images/aurora-homepage-mobile-dark.webp) | ![Product page in Aurora on mobile, dark scheme](../images/aurora-product-mobile-dark.webp) | ![Aurora cart containing a product on mobile, dark scheme](../images/aurora-cart-mobile-dark.webp) |
 
 - **Palette** — electric blue (`#2F55E8`), violet (`#6D35D6`), midnight
   (`#1A1830`) and lavender (`#F4F2FD`) on a white background. The blue-to-violet gradient is the theme signature
   (headline, figures, `.aurora-btn-glow`).
+- **Dark scheme** — the aurora at night: an indigo-black page (`#0E0C1A`, cards `#1A1730`), violet
+  buttons kept with lighter violet (`#BAA4FF`) and blue (`#93A9FF`) for text and icons, a brighter
+  gradient for the headline and figures, and a night-side journey panel darker than the page.
 - **Components** — violet pill buttons (white pills with violet text for
   secondary actions), white product cards with the image flush to the top that
   lift on hover (the whole card is clickable, on the homepage and on category

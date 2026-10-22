@@ -237,10 +237,8 @@ jobs:
                         value: "castor sylius:theme:setup canvas"
                     -   name: Blush theme
                         value: "castor sylius:theme:setup blush"
-                    -   name: Prompt Dark theme
-                        value: "castor sylius:theme:setup prompt_dark"
-                    -   name: Prompt Light theme
-                        value: "castor sylius:theme:setup prompt_light"
+                    -   name: Prompt theme
+                        value: "castor sylius:theme:setup prompt"
                     -   name: Volt theme
                         value: "castor sylius:theme:setup volt"
                     -   name: Lagoon theme
@@ -255,10 +253,8 @@ jobs:
                         value: "castor sylius:theme:setup drive"
                     -   name: Cellar theme
                         value: "castor sylius:theme:setup cellar"
-                    -   name: Arena Dark theme
-                        value: "castor sylius:theme:setup arena_dark"
-                    -   name: Arena Light theme
-                        value: "castor sylius:theme:setup arena_light"
+                    -   name: Arena theme
+                        value: "castor sylius:theme:setup arena"
                     -   name: B2B
                         value: 'castor sylius:b2b:enable -n hide_prices hide_checkout customer_validation'
                     -   name: Remove Menu items

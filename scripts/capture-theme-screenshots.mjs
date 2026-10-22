@@ -31,10 +31,12 @@ const defaultBaseUrl = `https://${storefrontDomain()}/en_US/`;
 // so that screenshots stay comparable between themes.
 const preferredProductSlug = 'comet-pulse-t-shirt';
 const maxEvaluatedProducts = 24;
+// Every theme ships both schemes: each one is captured through the visitor's
+// system preference (the switcher's "Auto" mode) and saved with its own suffix.
+const colorSchemes = ['light', 'dark'];
 const themeSelectors = {
   canvas: '.canvas-logo',
-  prompt_dark: '.prompt-logo',
-  prompt_light: '.prompt-logo',
+  prompt: '.prompt-logo',
   blush: '.blush-logo',
   volt: '.volt-logo',
   lagoon: '.lagoon-logo',
@@ -43,8 +45,7 @@ const themeSelectors = {
   retro_gaming: '.rg-logo',
   drive: '.drive-logo',
   cellar: '.cellar-logo',
-  arena_dark: '.arena-logo',
-  arena_light: '.arena-logo',
+  arena: '.arena-logo',
 };
 
 // A git worktree runs its own stack on <slug>.app.localhost, the main checkout on app.test.
@@ -65,10 +66,12 @@ function printUsage() {
   console.log(`Usage: node scripts/capture-theme-screenshots.mjs <theme> [options]
 
 Capture full-page screenshots of the homepage and of a product page, for each
-screen size. Screenshots are saved as docs/images/<theme>-<page>-<viewport>.webp,
-for example docs/images/canvas-homepage-mobile.webp.
+screen size and color scheme. Screenshots are saved as
+docs/images/<theme>-<page>-<viewport>-<scheme>.webp, for example
+docs/images/canvas-homepage-mobile-dark.webp.
 
 Screen sizes: ${Object.entries(viewportPresets).map(([name, { width, height }]) => `${name} (${width}x${height})`).join(', ')}.
+Color schemes: ${colorSchemes.join(', ')}.
 
 The product is chosen among the products listed on the storefront (homepage,
 then category pages): the first one that is in stock, has an add-to-cart button
@@ -84,6 +87,8 @@ Options:
   --width <px>        Capture a single desktop viewport of this width instead,
                       saved with a <width>x<height> suffix
   --height <px>       Height of that viewport (default: ${viewportPresets.normal.height})
+  --color-schemes <list>
+                      Comma-separated color schemes (default: ${colorSchemes.join(',')})
   --help              Show this help
 
 Requires Node.js 22+ and Google Chrome or Chromium. Set CHROME_BIN to use a
@@ -99,6 +104,7 @@ function parseArguments(args) {
   let viewportNames;
   let width;
   let height;
+  let schemes = colorSchemes;
 
   while (args.length > 0) {
     const argument = args.shift();
@@ -129,6 +135,17 @@ function parseArguments(args) {
       const unknown = viewportNames.filter(name => !Object.hasOwn(viewportPresets, name));
       if (unknown.length > 0 || viewportNames.length === 0) {
         throw new Error(`Unknown viewport(s): ${unknown.join(', ')}. Available: ${Object.keys(viewportPresets).join(', ')}`);
+      }
+      continue;
+    }
+
+    if (argument === '--color-schemes') {
+      const value = args.shift();
+      if (!value || value.startsWith('--')) throw new Error('--color-schemes requires a value');
+      schemes = [...new Set(value.split(',').map(name => name.trim()).filter(Boolean))];
+      const unknown = schemes.filter(name => !colorSchemes.includes(name));
+      if (unknown.length > 0 || schemes.length === 0) {
+        throw new Error(`Unknown color scheme(s): ${unknown.join(', ')}. Available: ${colorSchemes.join(', ')}`);
       }
       continue;
     }
@@ -168,7 +185,7 @@ function parseArguments(args) {
   }
   parsedBaseUrl.pathname = `${parsedBaseUrl.pathname.replace(/\/+$/, '')}/`;
 
-  return { theme, includeCart, productSlug, baseUrl: parsedBaseUrl, outputDir: resolve(outputDir), viewports };
+  return { theme, includeCart, productSlug, baseUrl: parsedBaseUrl, outputDir: resolve(outputDir), viewports, schemes };
 }
 
 function findChrome() {
@@ -237,7 +254,7 @@ async function waitForEvent(events, method) {
 }
 
 async function main() {
-  const { theme, includeCart, productSlug, baseUrl, outputDir, viewports } = parseArguments(process.argv.slice(2));
+  const { theme, includeCart, productSlug, baseUrl, outputDir, viewports, schemes } = parseArguments(process.argv.slice(2));
   const chrome = findChrome();
   if (!chrome) throw new Error('Could not find Chrome or Chromium; set CHROME_BIN to its executable');
 
@@ -337,6 +354,17 @@ async function main() {
       if (themeSelectors[theme] && !await evaluate(`document.querySelector(${JSON.stringify(themeSelectors[theme])}) !== null`)) {
         throw new Error(`Expected ${theme} theme marker ${themeSelectors[theme]} was not found at ${url.href}`);
       }
+      const activeScheme = await evaluate('document.documentElement.dataset.bsTheme ?? null');
+      if (activeScheme !== scheme) {
+        throw new Error(`Expected the ${scheme} color scheme at ${url.href}, got ${activeScheme ?? 'none'}: is the color scheme switcher installed?`);
+      }
+    };
+
+    // The switcher stays in "Auto" mode (fresh profile): the system preference picks the scheme.
+    let scheme;
+    const useScheme = async next => {
+      scheme = next;
+      await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: scheme }] });
     };
 
     let defaultUserAgent;
@@ -368,7 +396,7 @@ async function main() {
         fromSurface: true,
         clip: { x: 0, y: 0, width: size.width, height: size.height, scale },
       });
-      const path = join(outputDir, `${outputTheme}-${name}-${viewport.name}.webp`);
+      const path = join(outputDir, `${outputTheme}-${name}-${viewport.name}-${scheme}.webp`);
       mkdirSync(outputDir, { recursive: true });
       writeFileSync(path, Buffer.from(screenshot.data, 'base64'));
       const pixels = `${Math.round(size.width * pixelRatio * scale)}x${Math.round(size.height * pixelRatio * scale)}`;
@@ -407,6 +435,7 @@ async function main() {
     await send('Page.enable');
     await send('Runtime.enable');
 
+    await useScheme(schemes[0]);
     await useViewport(viewports[0]);
     const homepageUrl = new URL('./', baseUrl);
     await navigate(homepageUrl);
@@ -462,12 +491,15 @@ async function main() {
     const cartUrl = new URL('cart/', baseUrl);
 
     // The homepage and product page are captured with an empty cart.
-    for (const next of viewports) {
-      await useViewport(next);
-      await navigate(homepageUrl);
-      await capture(homepageUrl, 'homepage');
-      await navigate(productUrl);
-      await capture(productUrl, 'product');
+    for (const nextScheme of schemes) {
+      await useScheme(nextScheme);
+      for (const next of viewports) {
+        await useViewport(next);
+        await navigate(homepageUrl);
+        await capture(homepageUrl, 'homepage');
+        await navigate(productUrl);
+        await capture(productUrl, 'product');
+      }
     }
 
     if (includeCart) {
@@ -496,13 +528,16 @@ async function main() {
       }
       if (!cartHasProduct) throw new Error(`${product.name} did not appear in the cart after adding it`);
 
-      for (const next of viewports) {
-        await useViewport(next);
-        await navigate(cartUrl);
-        if (!await evaluate(`document.body.innerText.includes(${productName})`)) {
-          throw new Error(`The cart page did not render ${product.name}`);
+      for (const nextScheme of schemes) {
+        await useScheme(nextScheme);
+        for (const next of viewports) {
+          await useViewport(next);
+          await navigate(cartUrl);
+          if (!await evaluate(`document.body.innerText.includes(${productName})`)) {
+            throw new Error(`The cart page did not render ${product.name}`);
+          }
+          await capture(cartUrl, 'cart');
         }
-        await capture(cartUrl, 'cart');
       }
     }
   } finally {

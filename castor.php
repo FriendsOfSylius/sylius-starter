@@ -84,6 +84,8 @@ function docs_screenshots(
     ?int $width = null,
     #[AsOption(description: 'Height of that viewport (default: 900)')]
     ?int $height = null,
+    #[AsOption(description: 'Comma-separated color schemes: light, dark (default: both)')]
+    ?string $colorSchemes = null,
 ): int {
     $available = array_keys(Themes::installers());
     sort($available);
@@ -134,6 +136,10 @@ function docs_screenshots(
 
         if (null !== $height) {
             array_push($command, '--height', (string) $height);
+        }
+
+        if (null !== $colorSchemes) {
+            array_push($command, '--color-schemes', $colorSchemes);
         }
 
         run($command, context: $context);
@@ -207,6 +213,8 @@ function qa_a11y(
     array $themes = [],
     #[AsOption(description: 'Only check this viewport (desktop or mobile)')]
     ?string $viewport = null,
+    #[AsOption(description: 'Only check this color scheme (light or dark)')]
+    ?string $colorScheme = null,
     #[AsOption(description: 'Directory where a JSON report is written for each theme')]
     ?string $reportDir = null,
     #[AsOption(description: 'Theme to activate once the themes are checked')]
@@ -244,6 +252,10 @@ function qa_a11y(
 
         if (null !== $viewport) {
             array_push($command, '--viewport', $viewport);
+        }
+
+        if (null !== $colorScheme) {
+            array_push($command, '--color-scheme', $colorScheme);
         }
 
         if (null !== $reportDir) {

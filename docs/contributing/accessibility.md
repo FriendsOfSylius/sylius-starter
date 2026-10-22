@@ -27,8 +27,9 @@ castor qa:a11y tech --report-dir=var/a11y     # also write var/a11y/tech.json
 ```
 
 The task activates each theme (`castor sylius:theme:setup <theme>`), runs `scripts/check-theme-accessibility.mjs` and
-goes on with the next theme after a failure, then lists the themes that failed. `--viewport=desktop` or
-`--viewport=mobile` limits the check to one width.
+goes on with the next theme after a failure, then lists the themes that failed. Every page is checked in both
+[color schemes](../themes/color-schemes.md), light and dark. `--viewport=desktop` or `--viewport=mobile` limits the
+check to one width, `--color-scheme=light` or `--color-scheme=dark` to one scheme.
 
 The script can also run on its own, against the active theme:
 

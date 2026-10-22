@@ -12,24 +12,30 @@ soft rose panels and a deep plum footer.
 
 **Desktop** (1440 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Blush storefront homepage on desktop](../images/blush-homepage-normal.webp) | ![Product page in Blush on desktop](../images/blush-product-normal.webp) | ![Blush cart containing a product on desktop](../images/blush-cart-normal.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Blush storefront homepage on desktop, light scheme](../images/blush-homepage-normal-light.webp) | ![Product page in Blush on desktop, light scheme](../images/blush-product-normal-light.webp) | ![Blush cart containing a product on desktop, light scheme](../images/blush-cart-normal-light.webp) |
+| Dark | ![Blush storefront homepage on desktop, dark scheme](../images/blush-homepage-normal-dark.webp) | ![Product page in Blush on desktop, dark scheme](../images/blush-product-normal-dark.webp) | ![Blush cart containing a product on desktop, dark scheme](../images/blush-cart-normal-dark.webp) |
 
 **Wide screen** (2560 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Blush storefront homepage on a wide screen](../images/blush-homepage-wide.webp) | ![Product page in Blush on a wide screen](../images/blush-product-wide.webp) | ![Blush cart containing a product on a wide screen](../images/blush-cart-wide.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Blush storefront homepage on a wide screen, light scheme](../images/blush-homepage-wide-light.webp) | ![Product page in Blush on a wide screen, light scheme](../images/blush-product-wide-light.webp) | ![Blush cart containing a product on a wide screen, light scheme](../images/blush-cart-wide-light.webp) |
+| Dark | ![Blush storefront homepage on a wide screen, dark scheme](../images/blush-homepage-wide-dark.webp) | ![Product page in Blush on a wide screen, dark scheme](../images/blush-product-wide-dark.webp) | ![Blush cart containing a product on a wide screen, dark scheme](../images/blush-cart-wide-dark.webp) |
 
 **Mobile** (390 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Blush storefront homepage on mobile](../images/blush-homepage-mobile.webp) | ![Product page in Blush on mobile](../images/blush-product-mobile.webp) | ![Blush cart containing a product on mobile](../images/blush-cart-mobile.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Blush storefront homepage on mobile, light scheme](../images/blush-homepage-mobile-light.webp) | ![Product page in Blush on mobile, light scheme](../images/blush-product-mobile-light.webp) | ![Blush cart containing a product on mobile, light scheme](../images/blush-cart-mobile-light.webp) |
+| Dark | ![Blush storefront homepage on mobile, dark scheme](../images/blush-homepage-mobile-dark.webp) | ![Product page in Blush on mobile, dark scheme](../images/blush-product-mobile-dark.webp) | ![Blush cart containing a product on mobile, dark scheme](../images/blush-cart-mobile-dark.webp) |
 
 - **Palette** — white and pale rose surfaces (`#FFFFFF`, `#FBF6F8`), raspberry
   (`#B54878`) accents and plum (`#2D141F`) typography and footer.
+- **Dark scheme** — the boutique after hours: a plum-black page (`#1A1216`, cards `#251A21`),
+  blush-white type, raspberry kept for buttons and badges and lightened to `#F28DB9` for links and
+  prices, a bright pink hover on primary buttons, and a wine-plum footer (`#3A1829`).
 - **Components** — rounded buttons and product cards, a custom wordmark and
   responsive taxon navigation.
 - **Product cards** — rounded white cards with a pale rose image well and a soft
