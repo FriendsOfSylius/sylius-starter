@@ -6,8 +6,10 @@ sidebar:
 ---
 
 The screenshots of the [theme pages](../themes/index.md) live in `docs/images/`, as WebP files named
-`<theme>-<page>-<viewport>.webp`: pages `homepage`, `product` and `cart`, theme names with hyphens
-(`prompt-dark-cart-mobile.webp`).
+`<theme>-<page>-<viewport>-<scheme>.webp`: pages `homepage`, `product` and `cart`, schemes `light` and `dark` (every
+theme ships both [color schemes](../themes/color-schemes.md)), theme names with hyphens
+(`retro-gaming-cart-mobile-dark.webp`). Each scheme is captured through the emulated system preference, the switcher
+staying in its **Auto** mode.
 
 | Viewport | Size     | Purpose                                                                           |
 |----------|----------|-----------------------------------------------------------------------------------|
@@ -15,7 +17,7 @@ The screenshots of the [theme pages](../themes/index.md) live in `docs/images/`,
 | `wide`   | 2560x1080 | An ultra-wide screen: tells full-width layouts from centered containers         |
 | `mobile` | 390x844  | A phone, emulated: mobile viewport, 2x pixel ratio, iPhone user agent and touch   |
 
-Every theme page shows one table per viewport (desktop, wide screen, mobile).
+Every theme page shows one table per viewport (desktop, wide screen, mobile), with a light and a dark row.
 
 Before capturing a new or changed theme, check that it passes the [accessibility check](accessibility.md)
 (`castor qa:a11y <theme>`).
@@ -31,7 +33,8 @@ castor docs:screenshots all --restore=canvas   # every theme, then switch back t
 ```
 
 For each theme, the task runs `castor sylius:theme:setup <theme>` then the screenshot script with `--include-cart`
-(`--skip-cart` to leave the cart out, `--viewports` or `--width`/`--height` to change the screen sizes), and stops at
+(`--skip-cart` to leave the cart out, `--viewports` or `--width`/`--height` to change the screen sizes,
+`--color-schemes=dark` to capture one scheme only), and stops at
 the first failure. Without `--restore`, the last captured theme stays active.
 
 ## One theme
@@ -51,6 +54,7 @@ node scripts/capture-theme-screenshots.mjs canvas --include-cart
 | `--viewports <list>` | Comma-separated viewports to capture (default: `normal,wide,mobile`)  |
 | `--width <px>`    | Capture a single custom desktop viewport instead, saved with a `<width>x<height>` suffix |
 | `--height <px>`   | Height of that custom viewport (default: `900`)                          |
+| `--color-schemes <list>` | Comma-separated color schemes to capture (default: `light,dark`)  |
 
 The screenshots are full-page: the viewport height only matters for elements sized on it (hero sections, for
 example). Very long pages are scaled down to stay within the WebP size limit (16383 pixels).

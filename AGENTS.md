@@ -12,8 +12,7 @@ To refresh the full-page homepage and product page screenshots of a theme, at ev
 ```bash
 node scripts/capture-theme-screenshots.mjs canvas
 node scripts/capture-theme-screenshots.mjs blush
-node scripts/capture-theme-screenshots.mjs prompt_dark
-node scripts/capture-theme-screenshots.mjs prompt_light
+node scripts/capture-theme-screenshots.mjs prompt
 node scripts/capture-theme-screenshots.mjs volt
 node scripts/capture-theme-screenshots.mjs lagoon
 node scripts/capture-theme-screenshots.mjs aurora
@@ -21,15 +20,15 @@ node scripts/capture-theme-screenshots.mjs tech
 node scripts/capture-theme-screenshots.mjs retro_gaming
 node scripts/capture-theme-screenshots.mjs drive
 node scripts/capture-theme-screenshots.mjs cellar
-node scripts/capture-theme-screenshots.mjs arena_dark
-node scripts/capture-theme-screenshots.mjs arena_light
+node scripts/capture-theme-screenshots.mjs arena
 ```
 
 Each page is captured at three screen sizes: `normal` (1440x900), `wide` (2560x1080, to tell full-width layouts from
 centered containers) and `mobile` (390x844, emulating a phone: mobile viewport, 2x pixel ratio, iPhone user agent and
-touch). The script saves WebP screenshots in `docs/images/`, named `<theme>-<page>-<viewport>.webp` (for example
-`canvas-homepage-mobile.webp`, pages `homepage`, `product` and `cart`); theme names use hyphens (`prompt-dark`). Use
-`--viewports normal,mobile` to capture some sizes only, or `--width <px>` / `--height <px>` for a single custom desktop
+touch), in both color schemes (`light` and `dark`, through the emulated system preference). The script saves WebP
+screenshots in `docs/images/`, named `<theme>-<page>-<viewport>-<scheme>.webp` (for example
+`canvas-homepage-mobile-dark.webp`, pages `homepage`, `product` and `cart`); theme names use hyphens (`retro-gaming`).
+Use `--color-schemes dark` to capture one scheme only, `--viewports normal,mobile` to capture some sizes only, or `--width <px>` / `--height <px>` for a single custom desktop
 viewport (saved with a `<width>x<height>` suffix). Use `--base-url <url>` to capture from another storefront URL, or
 `--output-dir <dir>` to choose another output directory. The default storefront is `https://app.test/en_US/` in the main checkout, and the worktree stack (see below) in a git worktree.
 
@@ -43,8 +42,7 @@ Add `--include-cart` to also put the selected product in a fresh browser cart an
 ```bash
 node scripts/capture-theme-screenshots.mjs canvas --include-cart
 node scripts/capture-theme-screenshots.mjs blush --include-cart
-node scripts/capture-theme-screenshots.mjs prompt_dark --include-cart
-node scripts/capture-theme-screenshots.mjs prompt_light --include-cart
+node scripts/capture-theme-screenshots.mjs prompt --include-cart
 node scripts/capture-theme-screenshots.mjs volt --include-cart
 node scripts/capture-theme-screenshots.mjs lagoon --include-cart
 node scripts/capture-theme-screenshots.mjs aurora --include-cart
@@ -52,8 +50,7 @@ node scripts/capture-theme-screenshots.mjs tech --include-cart
 node scripts/capture-theme-screenshots.mjs retro_gaming --include-cart
 node scripts/capture-theme-screenshots.mjs drive --include-cart
 node scripts/capture-theme-screenshots.mjs cellar --include-cart
-node scripts/capture-theme-screenshots.mjs arena_dark --include-cart
-node scripts/capture-theme-screenshots.mjs arena_light --include-cart
+node scripts/capture-theme-screenshots.mjs arena --include-cart
 ```
 
 The cart uses an isolated temporary browser profile and does not alter another browser session's cart.
@@ -73,7 +70,8 @@ the first failure. Without `--restore`, the last captured theme stays active.
 The script hides the Symfony web debug toolbar, so the app can stay in the `dev` environment.
 
 Theme pages (`docs/themes/<theme>.md`) show one table per screen size (**Desktop**, **Wide screen**, **Mobile**), each
-with the homepage, product page and cart; the theme overview uses the `wide` homepage as thumbnail, so full-width layouts stand out.
+with a **Light** and a **Dark** row of the homepage, product page and cart; the theme overview uses the `wide` homepages
+of both schemes as thumbnails, so full-width layouts stand out.
 
 The script requires Node.js 22+ and Google Chrome or Chromium. Set `CHROME_BIN` if the browser executable is not detected automatically. The selected theme must be active on the storefront.
 
@@ -122,11 +120,17 @@ castor sylius:theme:setup <theme>
 
 ## Theme styling
 
+Every theme ships a light and a dark color scheme, switched by the visitor (auto / light / dark) from the header: its
+styles are compiled once per scheme, scoped on `<html data-bs-theme>` (wrapped in `:where()`, so no specificity is
+added), with the colors in `_palette-light.scss` and `_palette-dark.scss`. Never hard-code a color that differs
+between schemes in a partial or a Twig template, and write `@include scheme-root {` instead of `:root {` or `html {`.
+See `docs/themes/color-schemes.md`.
+
 Every theme must meet WCAG 2.1 AA contrast: 4.5:1 for text, 3:1 for large text (24px, or 18.66px bold), UI
 components and focus indicators. This includes the Bootstrap utilities core templates use (`text-body-tertiary`,
 `text-black-50`, `text-muted`…), whose colors the theme owns. Keep a bold palette by darkening the accent behind
 text or switching the text on it to a dark color, rather than lowering contrast. Before committing a theme, run
-`castor qa:a11y <theme>` on your own stack and fix every violation it reports (violations from core Sylius templates
+`castor qa:a11y <theme>` on your own stack (it checks both color schemes) and fix every violation it reports (violations from core Sylius templates
 are listed apart and do not fail it); check focus rings and hover states by hand. See
 `docs/contributing/accessibility.md`.
 

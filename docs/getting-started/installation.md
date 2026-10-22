@@ -53,7 +53,7 @@ castor sylius:init --no-interaction \
 | `--with-domain`           | Domain of the store                                                                                                                  | `app.test`   |
 | `--with-sylius-version`   | Sylius-Standard version                                                                                                              | latest       |
 | `--with-database`         | `postgres`, `mysql`, `mariadb` or `none`                                                                                             | `postgres`   |
-| `--with-theme`            | `default`, `arena_dark`, `arena_light`, `aurora`, `blush`, `canvas`, `cellar`, `drive`, `lagoon`, `prompt_dark`, `prompt_light`, `retro_gaming`, `tech` or `volt` | `default`    |
+| `--with-theme`            | `default`, `arena`, `aurora`, `blush`, `canvas`, `cellar`, `drive`, `lagoon`, `prompt`, `retro_gaming`, `tech` or `volt` (each with a light and a dark scheme) | `default`    |
 | `--with-payment-gateways` | `mollie`, `paypal`, `stripe` (repeat the option for several)                                                                         | all          |
 
 `castor docker:service:install` (without argument) prints the options of every installable service.

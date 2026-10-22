@@ -12,25 +12,31 @@ capitals and portrait product niches keep the bottles at the centre.
 
 **Desktop** (1440 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Cellar storefront homepage on desktop](../images/cellar-homepage-normal.webp) | ![Product page in Cellar on desktop](../images/cellar-product-normal.webp) | ![Cellar cart containing a product on desktop](../images/cellar-cart-normal.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Cellar storefront homepage on desktop, light scheme](../images/cellar-homepage-normal-light.webp) | ![Product page in Cellar on desktop, light scheme](../images/cellar-product-normal-light.webp) | ![Cellar cart containing a product on desktop, light scheme](../images/cellar-cart-normal-light.webp) |
+| Dark | ![Cellar storefront homepage on desktop, dark scheme](../images/cellar-homepage-normal-dark.webp) | ![Product page in Cellar on desktop, dark scheme](../images/cellar-product-normal-dark.webp) | ![Cellar cart containing a product on desktop, dark scheme](../images/cellar-cart-normal-dark.webp) |
 
 **Wide screen** (2560 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Cellar storefront homepage on a wide screen](../images/cellar-homepage-wide.webp) | ![Product page in Cellar on a wide screen](../images/cellar-product-wide.webp) | ![Cellar cart containing a product on a wide screen](../images/cellar-cart-wide.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Cellar storefront homepage on a wide screen, light scheme](../images/cellar-homepage-wide-light.webp) | ![Product page in Cellar on a wide screen, light scheme](../images/cellar-product-wide-light.webp) | ![Cellar cart containing a product on a wide screen, light scheme](../images/cellar-cart-wide-light.webp) |
+| Dark | ![Cellar storefront homepage on a wide screen, dark scheme](../images/cellar-homepage-wide-dark.webp) | ![Product page in Cellar on a wide screen, dark scheme](../images/cellar-product-wide-dark.webp) | ![Cellar cart containing a product on a wide screen, dark scheme](../images/cellar-cart-wide-dark.webp) |
 
 **Mobile** (390 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Cellar storefront homepage on mobile](../images/cellar-homepage-mobile.webp) | ![Product page in Cellar on mobile](../images/cellar-product-mobile.webp) | ![Cellar cart containing a product on mobile](../images/cellar-cart-mobile.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Cellar storefront homepage on mobile, light scheme](../images/cellar-homepage-mobile-light.webp) | ![Product page in Cellar on mobile, light scheme](../images/cellar-product-mobile-light.webp) | ![Cellar cart containing a product on mobile, light scheme](../images/cellar-cart-mobile-light.webp) |
+| Dark | ![Cellar storefront homepage on mobile, dark scheme](../images/cellar-homepage-mobile-dark.webp) | ![Product page in Cellar on mobile, dark scheme](../images/cellar-product-mobile-dark.webp) | ![Cellar cart containing a product on mobile, dark scheme](../images/cellar-cart-mobile-dark.webp) |
 
 - **Palette** — night bordeaux (`#22080F`), bordeaux (`#5E1626`) and claret
   (`#7A1C30`) on cream paper (`#F7F2E9`) and ivory (`#FFFCF6`), with an antique
   gold (`#B08D57`, `#D8C08F`) for fillets, numerals and accents.
+- **Dark scheme** — a candlelit cellar: oak-black stone (page `#151011`, surfaces `#1E1718`), cream
+  type, a lifted bordeaux (`#8E2539`) for buttons and a rosé (`#E49DAB`) for bordeaux text, a brighter
+  gold leaf, gold hairlines on the night-bordeaux bands, and a moonlit cut of the cellar window.
 - **Typography** — *Bodoni Moda* (SIL Open Font License, variable 400–900, roman
   and italic, shipped in `assets/shop/fonts/`) for headings, product names and
   figures, with italic accents in gold; *Inter* (already shipped by the Sylius shop)

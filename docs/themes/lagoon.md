@@ -12,24 +12,30 @@ shipped by the Sylius shop, so no extra font file is needed).
 
 **Desktop** (1440 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Lagoon storefront homepage on desktop](../images/lagoon-homepage-normal.webp) | ![Product page in Lagoon on desktop](../images/lagoon-product-normal.webp) | ![Lagoon cart containing a product on desktop](../images/lagoon-cart-normal.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Lagoon storefront homepage on desktop, light scheme](../images/lagoon-homepage-normal-light.webp) | ![Product page in Lagoon on desktop, light scheme](../images/lagoon-product-normal-light.webp) | ![Lagoon cart containing a product on desktop, light scheme](../images/lagoon-cart-normal-light.webp) |
+| Dark | ![Lagoon storefront homepage on desktop, dark scheme](../images/lagoon-homepage-normal-dark.webp) | ![Product page in Lagoon on desktop, dark scheme](../images/lagoon-product-normal-dark.webp) | ![Lagoon cart containing a product on desktop, dark scheme](../images/lagoon-cart-normal-dark.webp) |
 
 **Wide screen** (2560 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Lagoon storefront homepage on a wide screen](../images/lagoon-homepage-wide.webp) | ![Product page in Lagoon on a wide screen](../images/lagoon-product-wide.webp) | ![Lagoon cart containing a product on a wide screen](../images/lagoon-cart-wide.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Lagoon storefront homepage on a wide screen, light scheme](../images/lagoon-homepage-wide-light.webp) | ![Product page in Lagoon on a wide screen, light scheme](../images/lagoon-product-wide-light.webp) | ![Lagoon cart containing a product on a wide screen, light scheme](../images/lagoon-cart-wide-light.webp) |
+| Dark | ![Lagoon storefront homepage on a wide screen, dark scheme](../images/lagoon-homepage-wide-dark.webp) | ![Product page in Lagoon on a wide screen, dark scheme](../images/lagoon-product-wide-dark.webp) | ![Lagoon cart containing a product on a wide screen, dark scheme](../images/lagoon-cart-wide-dark.webp) |
 
 **Mobile** (390 px)
 
-| Homepage | Product page | Cart |
-|---|---|---|
-| ![Lagoon storefront homepage on mobile](../images/lagoon-homepage-mobile.webp) | ![Product page in Lagoon on mobile](../images/lagoon-product-mobile.webp) | ![Lagoon cart containing a product on mobile](../images/lagoon-cart-mobile.webp) |
+| Scheme | Homepage | Product page | Cart |
+|---|---|---|---|
+| Light | ![Lagoon storefront homepage on mobile, light scheme](../images/lagoon-homepage-mobile-light.webp) | ![Product page in Lagoon on mobile, light scheme](../images/lagoon-product-mobile-light.webp) | ![Lagoon cart containing a product on mobile, light scheme](../images/lagoon-cart-mobile-light.webp) |
+| Dark | ![Lagoon storefront homepage on mobile, dark scheme](../images/lagoon-homepage-mobile-dark.webp) | ![Product page in Lagoon on mobile, dark scheme](../images/lagoon-product-mobile-dark.webp) | ![Lagoon cart containing a product on mobile, dark scheme](../images/lagoon-cart-mobile-dark.webp) |
 
 - **Palette** — abyss teal (`#0A3A3E`), teal (`#0E7C86`), aqua (`#14DFE6`),
   mint foam (`#E7F9F9`) and an iris accent (`#6B3FE0`) on a white background.
+- **Dark scheme** — the lagoon at night: deep water (page `#061A1D`, surfaces `#0B2427`), glowing
+  aqua links and labels, iris lifted to `#A88CFF` for text, teal pills turning aqua on hover, and the
+  deep-water bands lifted to `#0C3D42` with a thin aqua edge.
 - **Components** — pill-shaped buttons (teal for primary actions, aqua for
   highlights), white product cards with a mint image well, quiet
   text-only breadcrumbs, a teal cart pill with an aqua item counter, a full-width
