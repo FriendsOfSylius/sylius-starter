@@ -11,7 +11,7 @@ Installing a theme installs both schemes: there is nothing to configure.
 
 ## How it works
 
-The switcher is shared by every theme (`src/Themes/resources/color_scheme/`, installed by
+The switcher is shared by every theme (`src/Themes/color_scheme/`, installed by
 `SyliusStarter\Themes\ColorScheme`):
 
 - a script in `<head>` (`sylius_shop.base#stylesheets` hook, before the stylesheets, so the page is painted in the
