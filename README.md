@@ -14,10 +14,10 @@ menu or importing a catalog. That makes it a reliable interface for you and for 
 
 Requires [Docker](https://docs.docker.com/get-docker/) with Compose and
 [Castor](https://castor.jolicode.com/getting-started/installation/). Create a new project with the
-[skeleton](https://github.com/sylius-starter/skeleton):
+[skeleton](https://github.com/FriendsOfSylius/skeleton):
 
 ```bash
-git clone --depth=1 https://github.com/sylius-starter/skeleton.git my-shop
+git clone --depth=1 https://github.com/FriendsOfSylius/skeleton.git my-shop
 cd my-shop
 rm -rf .git && git init
 
