@@ -87,11 +87,14 @@ function split(
     bool $force = false,
     #[AsOption(description: 'Remote URL pattern, {name}, {short} and {repository} are replaced (env: SPLIT_REMOTE_PATTERN)')]
     ?string $remotePattern = null,
+    #[AsOption(description: 'GitHub owner of the package repositories, used by {repository} (env: SPLIT_REPOSITORY_OWNER)')]
+    ?string $owner = null,
     #[AsOption(description: 'Path to the splitsh-lite binary (env: SPLITSH_BIN)')]
     ?string $splitshBin = null,
 ): int {
     $monorepo = monorepo();
     $remotePattern ??= getenv('SPLIT_REMOTE_PATTERN') ?: 'git@github.com:{repository}.git';
+    $owner ??= getenv('SPLIT_REPOSITORY_OWNER') ?: Monorepo::REPOSITORY_OWNER;
     $splitshBin ??= getenv('SPLITSH_BIN') ?: 'splitsh-lite';
     $ref ??= 'refs/heads/' . trim(capture(['git', 'rev-parse', '--abbrev-ref', 'HEAD']));
 
@@ -124,7 +127,7 @@ function split(
             continue;
         }
 
-        $remote = Monorepo::remoteUrl($remotePattern, $package['name']);
+        $remote = Monorepo::remoteUrl($remotePattern, $package['name'], $owner);
         $command = ['git', 'push', $remote, \sprintf('%s:%s', $sha, $ref)];
 
         if ($force) {

@@ -4,7 +4,8 @@ name: Publish the documentation
 # so that https://sylius-starter.github.io/docs/ follows the docs/ folder of main.
 #
 # Requires a DOCS_DISPATCH_TOKEN secret: a token allowed to create repository
-# dispatch events (contents: write) on sylius-starter/docs.
+# dispatch events (contents: write) on the documentation repository. Set the
+# DOCS_REPOSITORY variable to target another repository than sylius-starter/docs.
 
 "on":
     push:
@@ -18,14 +19,16 @@ permissions:
 jobs:
     dispatch:
         name: Rebuild the documentation website
+        if: ${{ !github.event.repository.fork }}
         runs-on: ubuntu-latest
         steps:
             - name: Send the docs-updated event
               env:
                   GH_TOKEN: ${{ secrets.DOCS_DISPATCH_TOKEN }}
+                  DOCS_REPOSITORY: ${{ vars.DOCS_REPOSITORY || 'sylius-starter/docs' }}
               run: |
                   curl --fail-with-body -sS -X POST \
                       -H "Accept: application/vnd.github+json" \
                       -H "Authorization: Bearer ${GH_TOKEN}" \
-                      https://api.github.com/repos/sylius-starter/docs/dispatches \
+                      "https://api.github.com/repos/${DOCS_REPOSITORY}/dispatches" \
                       -d '{"event_type": "docs-updated"}'

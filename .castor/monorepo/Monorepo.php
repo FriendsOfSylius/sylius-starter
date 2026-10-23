@@ -286,23 +286,23 @@ final class Monorepo
     /**
      * Splitsh-lite / git remote URL of a package split repository.
      * "{name}" is replaced by the package name (sylius-starter/core), "{short}" by its short name (core)
-     * and "{repository}" by its GitHub repository (sylius-starter/sylius-starter-core).
+     * and "{repository}" by its GitHub repository (sylius-starter/sylius-starter-core), owned by $owner.
      */
-    public static function remoteUrl(string $pattern, string $packageName): string
+    public static function remoteUrl(string $pattern, string $packageName, string $owner = self::REPOSITORY_OWNER): string
     {
         return strtr($pattern, [
             '{name}' => $packageName,
             '{short}' => self::shortName($packageName),
-            '{repository}' => self::repositoryName($packageName),
+            '{repository}' => self::repositoryName($packageName, $owner),
         ]);
     }
 
     /**
      * GitHub repository of a package split: sylius-starter/core => sylius-starter/sylius-starter-core.
      */
-    public static function repositoryName(string $packageName): string
+    public static function repositoryName(string $packageName, string $owner = self::REPOSITORY_OWNER): string
     {
-        return self::REPOSITORY_OWNER . '/' . str_replace('/', '-', $packageName);
+        return $owner . '/' . str_replace('/', '-', $packageName);
     }
 
     public static function shortName(string $packageName): string
