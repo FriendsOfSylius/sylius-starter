@@ -1,6 +1,6 @@
 ---
 title: Groove theme
-description: A premium independent record store with a strong graphic identity: ink and warm paper, saturated sleeve colours, a heavy grotesque answered by a serif italic, large cover compositions and records that slide out of their sleeves.
+description: "A premium independent record store with a strong graphic identity: ink and warm paper, saturated sleeve colours, a heavy grotesque answered by a serif italic, large cover compositions and records that slide out of their sleeves."
 sidebar:
   order: 15
 ---
