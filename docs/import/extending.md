@@ -2,7 +2,7 @@
 title: Extending the import
 description: Attach your own data to imported shops with an import extension.
 sidebar:
-  order: 5
+  order: 6
 ---
 
 The import only adds the catalog, its channel and a demo customer: it does not change your database schema. A project

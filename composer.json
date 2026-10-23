@@ -34,6 +34,7 @@
     "replace": {
         "sylius-starter/core": "self.version",
         "sylius-starter/b2b": "self.version",
+        "sylius-starter/datasets": "self.version",
         "sylius-starter/import": "self.version",
         "sylius-starter/menu": "self.version",
         "sylius-starter/plugins": "self.version",
@@ -47,6 +48,7 @@
         "psr-4": {
             "SyliusStarter\\Core\\": "src/Core/src/",
             "SyliusStarter\\B2b\\": "src/B2b/src/",
+            "SyliusStarter\\Datasets\\": "src/Datasets/src/",
             "SyliusStarter\\Import\\": "src/Import/src/",
             "SyliusStarter\\Menu\\": "src/Menu/src/",
             "SyliusStarter\\Plugins\\": "src/Plugins/src/",
@@ -56,6 +58,7 @@
         "files": [
             "src/Core/src/Installer/functions.php",
             "src/B2b/src/functions.php",
+            "src/Datasets/src/functions.php",
             "src/Import/src/constants.php",
             "src/Import/src/ImportContext.php",
             "src/Import/src/ImportBootstrap.php",
@@ -71,6 +74,7 @@
         "psr-4": {
             "SyliusStarter\\Core\\Tests\\": "src/Core/tests/",
             "SyliusStarter\\B2b\\Tests\\": "src/B2b/tests/",
+            "SyliusStarter\\Datasets\\Tests\\": "src/Datasets/tests/",
             "SyliusStarter\\Import\\Tests\\": "src/Import/tests/",
             "SyliusStarter\\Menu\\Tests\\": "src/Menu/tests/",
             "SyliusStarter\\Plugins\\Tests\\": "src/Plugins/tests/",
