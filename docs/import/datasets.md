@@ -24,10 +24,11 @@ In a dataset, the `image` of a product or a collection is a path relative to the
 
 `sylius-starter/datasets` ships ready-made datasets, images included, so a demo shop needs no AI call nor download:
 
-| Dataset  | Catalog                                                  | Suggested theme              |
-|----------|----------------------------------------------------------|------------------------------|
-| `cellar` | Seventeen wines from fictional estates, in seven regions | [Cellar](../themes/cellar.md) |
-| `groove` | Sixteen fictional vinyl records, in six genres           | [Groove](../themes/groove.md) |
+| Dataset       | Catalog                                                  | Suggested theme               |
+|---------------|----------------------------------------------------------|-------------------------------|
+| `cellar`      | Seventeen wines from fictional estates, in seven regions | [Cellar](../themes/cellar.md) |
+| `groove`      | Sixteen fictional vinyl records, in six genres           | [Groove](../themes/groove.md) |
+| `supermarket` | Nine everyday groceries, one per supermarket aisle       | [Drive](../themes/drive.md)   |
 
 To add one, drop its directory in `src/Datasets/datasets/` (a [downloaded dataset](#download-a-dataset) has that
 layout). Every product needs a local image: the package tests check it. Another package can ship its own datasets by
