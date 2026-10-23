@@ -45,7 +45,7 @@ castor monorepo:split core themes --push           # push the current branch of 
 castor monorepo:split --ref=refs/tags/v0.1.0 --push
 ```
 
-The remote of each package defaults to `git@github.com:{repository}.git` (`{repository}` = `sylius-starter/sylius-starter-core`,
+The remote of each package defaults to `git@github.com:{repository}.git` (`{repository}` = `FriendsOfSylius/sylius-starter-core`,
 `{name}` = `sylius-starter/core`, `{short}` = `core`); override it with `--remote-pattern` or the `SPLIT_REMOTE_PATTERN` environment variable.
 
 ## Adding a package
