@@ -3,6 +3,7 @@ parameters:
     paths:
         - src/B2b/src
         - src/Core/src
+        - src/Datasets/src
         - src/Import/src
         - src/Menu/src
         - src/Plugins/src

@@ -4,6 +4,8 @@
 .castor/vendor
 .castor/.env.local
 .castor/import/var/
+.castor/import/datasets/
+.castor/import/exports/
 castor.composer.lock
 
 compose.override.yaml

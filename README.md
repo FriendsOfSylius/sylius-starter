@@ -38,7 +38,7 @@ existing Castor project.
 | [`castor sylius:theme:setup`](docs/commands/themes.md)          | `sylius-starter/themes`  |
 | [`castor sylius:menu:remove`](docs/commands/admin-menu.md)      | `sylius-starter/menu`    |
 | [`castor sylius:b2b:enable`](docs/commands/b2b.md)              | `sylius-starter/b2b`     |
-| [`castor sylius:import:*`](docs/import/index.md)                | `sylius-starter/import`  |
+| [`castor sylius:import:*`](docs/import/index.md)                | `sylius-starter/import`, `sylius-starter/datasets` |
 | [`castor sylius:upsun:*`](docs/commands/upsun.md)              | `sylius-starter/upsun`   |
 
 Every package relies on `sylius-starter/core`; `sylius-starter/sylius-starter` installs them all. See
@@ -59,7 +59,7 @@ Read it online at [sylius-starter.github.io/docs](https://sylius-starter.github.
 - **Commands**: [Plugins](docs/commands/plugins.md), [Themes](docs/commands/themes.md),
   [Admin menu](docs/commands/admin-menu.md), [B2B features](docs/commands/b2b.md), [Upsun](docs/commands/upsun.md)
 - **E-commerce import**: [Overview](docs/import/index.md), [AI-generated catalog](docs/import/ai-catalog.md),
-  [Existing website](docs/import/existing-website.md), [Fixtures](docs/import/fixtures.md),
+  [Existing website](docs/import/existing-website.md), [Fixtures](docs/import/fixtures.md), [Datasets](docs/import/datasets.md),
   [Extending the import](docs/import/extending.md)
 - **Extending**: [Plugins and themes](docs/extending/index.md), [App and helpers](docs/extending/toolbox.md),
   [Custom tasks](docs/extending/tasks.md)

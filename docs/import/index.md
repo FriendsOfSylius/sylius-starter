@@ -31,6 +31,9 @@ You can also create a .castor/.env.local file for your sensitive values or local
    [generate it with AI](ai-catalog.md), or [fetch it from an existing website](existing-website.md).
 2. [Generate the Sylius fixtures](fixtures.md) from that YAML, then load them.
 
+To reuse a catalog, build it as a [dataset](datasets.md) instead (catalog and images, downloadable as a zip), or pick a
+ready-made one from `sylius-starter/datasets`, then create shops from it with `castor sylius:import:shop:create`.
+
 ## Managing imported shops
 
 ```bash

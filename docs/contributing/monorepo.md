@@ -20,6 +20,7 @@ src/
 ├── Themes/            sylius-starter/themes      (+ resources/)
 ├── Menu/              sylius-starter/menu
 ├── B2b/               sylius-starter/b2b         (+ resources/)
+├── Datasets/          sylius-starter/datasets    (+ datasets/)
 ├── Import/            sylius-starter/import      (+ resources/)
 └── Upsun/             sylius-starter/upsun
 tests/Integration/     cross-package tests
