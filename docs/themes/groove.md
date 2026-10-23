@@ -87,18 +87,18 @@ through the core hero slot replaces the drawn sleeves, with its record still pul
 ## Demo catalog
 
 The screenshots above show a demo catalog of sixteen fictional records in six genres, with their own cover art,
-shipped in `src/Themes/demo/groove/` (`products.yaml`, `collections.yaml` and the covers in `media/`). Load it with
-the [import package](../import/fixtures.md), into the default channel:
+shipped as the `groove` dataset of `sylius-starter/datasets` (`src/Datasets/datasets/groove/`: `products.yaml`,
+`collections.yaml` and the covers in `media/`). Create a shop from it with the [import package](../import/datasets.md),
+into the default channel:
 
 ```bash
-cp -R src/Themes/demo/groove .castor/import/var/groove
-printf 'slug: groove\nname: Groove Records\nmode: ai\nshop_password: %s\n' "$(openssl rand -hex 12)" > .castor/import/var/groove/project.yaml
+castor sylius:import:shop:create groove
 castor sylius:import:fixtures:generate --project=groove --subdomain=""
 castor sylius:import:fixtures:load --project=groove
 ```
 
-No AI call is made: the covers are already in `media/`, under the code of each product. The shop menu then lists
-the six genres; `castor sylius:import:delete groove` removes the catalog. The import keeps the products already in
+No AI call is made: `products.yaml` points at the covers of the dataset `media/`. The shop menu then lists the six
+genres; `castor sylius:import:delete groove` removes the catalog. The import keeps the products already in
 the channel and gives the records creation dates in the past, so on a store loaded with the default fixtures the
 latest products may still show clothing: run `castor app:db:fixtures app` first to start from a store without
 products.

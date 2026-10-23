@@ -1,4 +1,4 @@
-# Groove demo catalog: the genres the records are sorted by (see products.yaml).
+# Groove dataset: the genres the records are sorted by (see products.yaml).
 collections:
     -   name: Jazz
     -   name: Soul & Funk
