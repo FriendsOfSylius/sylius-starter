@@ -46,7 +46,9 @@ castor monorepo:split --ref=refs/tags/v0.1.0 --push
 ```
 
 The remote of each package defaults to `git@github.com:{repository}.git` (`{repository}` = `sylius-starter/sylius-starter-core`,
-`{name}` = `sylius-starter/core`, `{short}` = `core`); override it with `--remote-pattern` or the `SPLIT_REMOTE_PATTERN` environment variable.
+`{name}` = `sylius-starter/core`, `{short}` = `core`); override it with `--remote-pattern` or the `SPLIT_REMOTE_PATTERN` environment variable. `{repository}` belongs to the
+`sylius-starter` owner unless `--owner` or `SPLIT_REPOSITORY_OWNER` says otherwise; the split workflow passes the owner
+of the monorepo, so the package repositories follow it if it moves to another organization.
 
 ## Adding a package
 
