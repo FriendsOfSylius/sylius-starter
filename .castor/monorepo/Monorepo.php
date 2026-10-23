@@ -17,7 +17,7 @@ final class Monorepo
 {
     public const string VENDOR = 'sylius-starter';
     public const string PACKAGE_PREFIX = 'sylius-starter/';
-    public const string REPOSITORY_OWNER = 'sylius-starter';
+    public const string REPOSITORY_OWNER = 'FriendsOfSylius';
     public const string NAMESPACE = 'SyliusStarter';
     public const string CORE_PACKAGE = 'sylius-starter/core';
 
@@ -286,7 +286,7 @@ final class Monorepo
     /**
      * Splitsh-lite / git remote URL of a package split repository.
      * "{name}" is replaced by the package name (sylius-starter/core), "{short}" by its short name (core)
-     * and "{repository}" by its GitHub repository (sylius-starter/sylius-starter-core).
+     * and "{repository}" by its GitHub repository (FriendsOfSylius/sylius-starter-core).
      */
     public static function remoteUrl(string $pattern, string $packageName): string
     {
@@ -298,7 +298,7 @@ final class Monorepo
     }
 
     /**
-     * GitHub repository of a package split: sylius-starter/core => sylius-starter/sylius-starter-core.
+     * GitHub repository of a package split: sylius-starter/core => FriendsOfSylius/sylius-starter-core.
      */
     public static function repositoryName(string $packageName): string
     {

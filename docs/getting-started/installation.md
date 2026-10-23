@@ -5,7 +5,7 @@ sidebar:
   order: 1
 ---
 
-The [Sylius Starter skeleton](https://github.com/sylius-starter/skeleton) creates a new Sylius project, ready to
+The [Sylius Starter skeleton](https://github.com/FriendsOfSylius/skeleton) creates a new Sylius project, ready to
 develop: [Castor](https://castor.jolicode.com) installs Sylius-Standard, its Docker stack (FrankenPHP, PostgreSQL,
 HTTPS router), the assets and the fixtures, then hands you the tasks to shape your store.
 
@@ -17,14 +17,14 @@ HTTPS router), the assets and the fixtures, then hands you the tasks to shape yo
 ## Create your project
 
 ```bash
-git clone --depth=1 https://github.com/sylius-starter/skeleton.git my-shop
+git clone --depth=1 https://github.com/FriendsOfSylius/skeleton.git my-shop
 cd my-shop
 rm -rf .git && git init
 
 castor sylius:init
 ```
 
-On GitHub, **Use this template** on the [skeleton repository](https://github.com/sylius-starter/skeleton) gives you a
+On GitHub, **Use this template** on the [skeleton repository](https://github.com/FriendsOfSylius/skeleton) gives you a
 fresh repository without cloning the history.
 
 `castor sylius:init` asks a few questions (application name, PHP version, domain, database, theme, payment
