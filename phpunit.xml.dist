@@ -25,6 +25,9 @@
         <testsuite name="plugins">
             <directory>src/Plugins/tests</directory>
         </testsuite>
+        <testsuite name="themes">
+            <directory>src/Themes/tests</directory>
+        </testsuite>
         <testsuite name="upsun">
             <directory>src/Upsun/tests</directory>
         </testsuite>

@@ -126,6 +126,11 @@ To switch the active storefront theme, use:
 castor sylius:theme:setup <theme>
 ```
 
+To give each channel its own theme, install the themes with `--target=theme-bundle` and pick one per channel with
+`castor sylius:theme:channel <channel> <theme>`. That target generates the theme hooks (prefixed with `<theme>:`) from
+the theme resources and the app hooks they override: never edit them in the app, reinstall the theme instead. See
+`docs/commands/themes.md`.
+
 ## Theme styling
 
 Every theme ships a light and a dark color scheme, switched by the visitor (auto / light / dark) from the header: its
