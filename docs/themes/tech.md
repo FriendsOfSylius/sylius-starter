@@ -68,6 +68,27 @@ the system monospace font for labels, so no extra font file is needed.
   hidden from assistive technologies, and no motion (blinking LED included)
   for visitors who prefer reduced motion.
 
+## Demo catalog
+
+The screenshots above show a demo catalog of sixteen laptops, smartphones, headphones, wearables, smart home devices
+and accessories from fictional brands, in six departments (Laptops, Smartphones, Audio, Wearables, Smart Home,
+Accessories), shipped as the `tech` dataset of `sylius-starter/datasets` (`src/Datasets/datasets/tech/`:
+`products.yaml`, `collections.yaml`, and in `media/` a studio photo of each device generated with Ollama, on a brushed
+aluminium backdrop with a signal-orange rim light). Descriptions carry what a gadget buyer looks for: key specs,
+battery life, what is in the box and the warranty. Create a shop from it with the
+[import package](../import/datasets.md), into the default channel:
+
+```bash
+castor sylius:import:shop:create tech
+castor sylius:import:fixtures:generate --project=tech --subdomain=""
+castor sylius:import:fixtures:load --project=tech
+```
+
+No AI call is made: `products.yaml` points at the photos of the dataset `media/`. The shop menu then lists the six
+departments; `castor sylius:import:delete tech` removes the catalog. The import keeps the products already in the
+channel and gives the devices creation dates in the past, so on a store loaded with the default fixtures the latest
+products may still show clothing: run `castor app:db:fixtures app` first to start from a store without products.
+
 Install it with:
 
 ```bash
