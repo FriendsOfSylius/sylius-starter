@@ -36,8 +36,8 @@ The channel theme can also be picked in the admin (channel form, **Theme** field
 
 | What | Where |
 |------|-------|
-| Templates and translations | `themes/<theme>/` (theme `sylius-starter/<theme>`) |
-| Twig hooks | `config/sylius/twig_hooks/themes/<theme>/`, hook names prefixed with `<theme>:` |
+| Templates and translations | `themes/<theme>/` (theme `sylius-starter/<theme>`, hyphens for underscores: `sylius-starter/retro-gaming`) |
+| Twig hooks | `config/sylius/twig_hooks/themes/<theme>/`, hook names prefixed with `<theme>:` (`retro-gaming:`) |
 | Styles | `assets/themes/<theme>/`, built as the `theme-<theme>` Encore entry, linked after the app styles |
 | Other config (image filters…) | `config/`, shared by every channel |
 
