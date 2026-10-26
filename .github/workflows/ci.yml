@@ -255,6 +255,8 @@ jobs:
                         value: "castor sylius:theme:setup cellar"
                     -   name: Roastery theme
                         value: "castor sylius:theme:setup roastery"
+                    -   name: Teahouse theme
+                        value: "castor sylius:theme:setup teahouse"
                     -   name: Summit theme
                         value: "castor sylius:theme:setup summit"
                     -   name: Groove theme
