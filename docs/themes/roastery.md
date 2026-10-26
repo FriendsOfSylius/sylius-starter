@@ -67,6 +67,27 @@ roast curves are part of the page.
 - **Accessibility** — visible copper focus rings, text alternatives for the hero illustration, the roast
   curve and the roast levels, and no motion for visitors who prefer reduced motion.
 
+## Demo catalog
+
+The screenshots above show a demo catalog of sixteen specialty coffees and brewing tools from a fictional roaster, on
+six shelves (Single Origins, Blends, Espresso, Decaf, Brewing, Gifts), shipped as the `roastery` dataset of
+`sylius-starter/datasets` (`src/Datasets/datasets/roastery/`: `products.yaml`, `collections.yaml`, and in `media/` a
+photo of each item generated with Ollama, on the cream paper and copper of the theme). The single origins are the ones
+of the homepage (Ethiopia Guji and Yirgacheffe, Colombia Huila, Guatemala Antigua, Brazil Cerrado), and descriptions
+carry what a coffee lover looks for: farm, altitude, process, cup notes, roast level out of five and brewing advice.
+Create a shop from it with the [import package](../import/datasets.md), into the default channel:
+
+```bash
+castor sylius:import:shop:create roastery
+castor sylius:import:fixtures:generate --project=roastery --subdomain=""
+castor sylius:import:fixtures:load --project=roastery
+```
+
+No AI call is made: `products.yaml` points at the photos of the dataset `media/`. The shop menu then lists the six
+shelves; `castor sylius:import:delete roastery` removes the catalog. The import keeps the products already in the
+channel and gives the items creation dates in the past, so on a store loaded with the default fixtures the latest
+products may still show clothing: run `castor app:db:fixtures app` first to start from a store without products.
+
 Install it with:
 
 ```bash
