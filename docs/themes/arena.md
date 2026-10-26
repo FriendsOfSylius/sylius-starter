@@ -84,6 +84,27 @@ Product thumbnails are cut to 3:4 by the Sylius image filters (`sylius_shop_prod
 `outbound` mode): upload covers in portrait 3:4, the usual box-art ratio, so they reach the page
 uncropped.
 
+## Demo catalog
+
+The screenshots above show a demo catalog of sixteen fictional video games in six genres (Action,
+Role-Playing, Shooters, Racing, Sports, Strategy), from day-one blockbusters and collector's editions to small indies,
+shipped as the `video-games` dataset of `sylius-starter/datasets` (`src/Datasets/datasets/video-games/`:
+`products.yaml`, `collections.yaml`, and in `media/` the cover of each game: a 3:4 key art generated with Ollama, with
+its title printed on it). Descriptions carry what a player looks for: platforms, modes, edition contents, pre-order
+bonuses and age rating. The dataset stays generic, so it suits any store selling video games. Create a shop from it
+with the [import package](../import/datasets.md), into the default channel:
+
+```bash
+castor sylius:import:shop:create video-games
+castor sylius:import:fixtures:generate --project=video-games --subdomain=""
+castor sylius:import:fixtures:load --project=video-games
+```
+
+No AI call is made: `products.yaml` points at the covers of the dataset `media/`. The shop menu then lists the six
+genres; `castor sylius:import:delete video-games` removes the catalog. The import keeps the products already in the
+channel and gives the games creation dates in the past, so on a store loaded with the default fixtures the latest
+products may still show clothing: run `castor app:db:fixtures app` first to start from a store without products.
+
 Install it with:
 
 ```bash
