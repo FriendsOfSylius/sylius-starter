@@ -78,6 +78,27 @@ Photographs from [Unsplash](https://unsplash.com/license) (Unsplash License), sh
 hero by Adrià Sánchez Roqué, hiking by Alex Gruber, trail running by Brian Erickson, climbing by Patrick Hendry,
 camping by Frank Zinsli.
 
+## Demo catalog
+
+The screenshots above show a demo catalog of eighteen pieces of fictional outdoor gear in six categories (Packs,
+Footwear, Clothing, Climbing, Camping, Accessories), shipped as the `outdoor` dataset of `sylius-starter/datasets`
+(`src/Datasets/datasets/outdoor/`: `products.yaml`, `collections.yaml`, and in `media/` a 3:4 photograph of each
+product out in the mountains, generated with Ollama). Descriptions carry what a hiker or a climber looks for: weight,
+capacity, materials, sizes and certifications. The dataset names no activity of the theme, so it suits any outdoor
+or mountain sports store. Create a shop from it with the [import package](../import/datasets.md), into the default
+channel:
+
+```bash
+castor sylius:import:shop:create outdoor
+castor sylius:import:fixtures:generate --project=outdoor --subdomain=""
+castor sylius:import:fixtures:load --project=outdoor
+```
+
+No AI call is made: `products.yaml` points at the photographs of the dataset `media/`. The shop menu then lists the
+six categories; `castor sylius:import:delete outdoor` removes the catalog. The import keeps the products already in
+the channel and gives the gear creation dates in the past, so on a store loaded with the default fixtures the latest
+products may still show clothing: run `castor app:db:fixtures app` first to start from a store without products.
+
 Install it with:
 
 ```bash
