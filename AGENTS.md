@@ -21,6 +21,7 @@ node scripts/capture-theme-screenshots.mjs retro_gaming
 node scripts/capture-theme-screenshots.mjs drive
 node scripts/capture-theme-screenshots.mjs cellar
 node scripts/capture-theme-screenshots.mjs roastery
+node scripts/capture-theme-screenshots.mjs teahouse
 node scripts/capture-theme-screenshots.mjs summit
 node scripts/capture-theme-screenshots.mjs groove
 node scripts/capture-theme-screenshots.mjs arena
@@ -54,6 +55,7 @@ node scripts/capture-theme-screenshots.mjs retro_gaming --include-cart
 node scripts/capture-theme-screenshots.mjs drive --include-cart
 node scripts/capture-theme-screenshots.mjs cellar --include-cart
 node scripts/capture-theme-screenshots.mjs roastery --include-cart
+node scripts/capture-theme-screenshots.mjs teahouse --include-cart
 node scripts/capture-theme-screenshots.mjs summit --include-cart
 node scripts/capture-theme-screenshots.mjs groove --include-cart
 node scripts/capture-theme-screenshots.mjs arena --include-cart
