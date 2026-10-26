@@ -7,7 +7,8 @@ sidebar:
 ---
 
 Pick a theme below to see what it changes and its screenshots on desktop, on a wide screen and on mobile, then
-install it with [`castor sylius:theme:setup`](../commands/themes.md). Only one theme can be active at a time.
+install it with [`castor sylius:theme:setup`](../commands/themes.md). One theme applies to the whole shop, or each
+channel picks its own with the [theme-bundle target](../commands/themes.md#one-theme-per-channel).
 
 Every theme ships a light and a dark [color scheme](color-schemes.md): visitors pick **Auto** (their system
 setting), **Light** or **Dark** from the header.
