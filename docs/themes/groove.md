@@ -70,8 +70,8 @@ pressing references as attributes, editions as variants and the gear to play the
   sourcing, appraisal and buy-back) linking to the contact page, the wordmark, the Sylius links and the notice.
 - **Product page** — the cover stands whole on a paper tile; the attributes table reads like a collector's sheet,
   with small-capital labels and zebra rows; the price sits directly below the product name.
-- **Square thumbnails** — sleeves are square, so the theme crops the `sylius_shop_product_thumbnail` image filter
-  square (600 × 600) instead of the shop's 3:4 portrait (`config/packages/groove_imagine.yaml`).
+- **Square thumbnails** — sleeves are square, so the product cards use the theme's own `groove_product_thumbnail`
+  image filter, cropped square (600 × 600) instead of the shop's 3:4 portrait (`config/packages/groove_imagine.yaml`).
 - **Checkout** — the checkout header uses the Groove wordmark and responsive category navigation, the current
   step is ruled in hot pink.
 - **Translations** — every Groove-specific text lives in its own `groove` translation domain
