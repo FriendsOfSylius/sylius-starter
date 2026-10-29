@@ -57,7 +57,7 @@ keep it fresh rather than clinical, and the page speaks of rituals, textures and
   with a peony cap, a pot of pink cream and an amber dropper serum, a lipstick on the marble, falling petals,
   twinkling sparkles and three tilted **stickers** (vegan, key ingredient, refillable). A fig band of **house
   figures** (natural origin, no animal testing, refills, reviews) closes the hero. Category roundels take a
-  pastel each. The ritual block (`theme_ritual` hookable) presents the routine in three steps on petal
+  pastel each. The ritual block (`theme_promise` hookable) presents the routine in three steps on petal
   numerals (cleanse, treat, glow), next to a **ritual card** for one skin type on a pastel board (texture
   swatches of a gel, a serum and a cream, skin, key ingredients, finish and texture). After the four latest
   products, the **shelves** block (`theme_shelves` hookable) shows the six shelves of the house (skincare,
