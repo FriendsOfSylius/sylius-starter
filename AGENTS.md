@@ -25,6 +25,7 @@ node scripts/capture-theme-screenshots.mjs teahouse
 node scripts/capture-theme-screenshots.mjs summit
 node scripts/capture-theme-screenshots.mjs groove
 node scripts/capture-theme-screenshots.mjs arena
+node scripts/capture-theme-screenshots.mjs hearth
 ```
 
 Each page is captured at three screen sizes: `normal` (1440x900), `wide` (2560x1080, to tell full-width layouts from
@@ -59,6 +60,7 @@ node scripts/capture-theme-screenshots.mjs teahouse --include-cart
 node scripts/capture-theme-screenshots.mjs summit --include-cart
 node scripts/capture-theme-screenshots.mjs groove --include-cart
 node scripts/capture-theme-screenshots.mjs arena --include-cart
+node scripts/capture-theme-screenshots.mjs hearth --include-cart
 ```
 
 The cart uses an isolated temporary browser profile and does not alter another browser session's cart.

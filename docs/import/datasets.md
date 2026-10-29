@@ -28,6 +28,7 @@ In a dataset, the `image` of a product or a collection is a path relative to the
 |----------------|---------------------------------------------------------------|-------------------------------------------|
 | `cellar`       | Seventeen wines from fictional estates, in seven regions      | [Cellar](../themes/cellar.md)             |
 | `groove`       | Sixteen fictional vinyl records, in six genres                | [Groove](../themes/groove.md)             |
+| `home`         | Eighteen pieces of furniture, lighting, linen and tableware   | [Hearth](../themes/hearth.md)             |
 | `outdoor`      | Eighteen pieces of hiking, climbing and camping gear          | [Summit](../themes/summit.md)             |
 | `retro-gaming` | Sixteen retro consoles, games and accessories, on six shelves | [Retro Gaming](../themes/retro_gaming.md) |
 | `roastery`     | Sixteen specialty coffees and brewing tools, on six shelves   | [Roastery](../themes/roastery.md)         |
