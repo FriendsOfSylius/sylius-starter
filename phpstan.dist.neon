@@ -1,7 +1,6 @@
 parameters:
     level: 0
     paths:
-        - src/B2b/src
         - src/Core/src
         - src/Datasets/src
         - src/Import/src

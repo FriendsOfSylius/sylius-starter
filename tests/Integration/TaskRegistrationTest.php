@@ -32,7 +32,6 @@ final class TaskRegistrationTest extends TestCase
         yield 'import ai build' => ['import', 'sylius:import:ai:build'];
         yield 'import fixtures generate' => ['import', 'sylius:import:fixtures:generate'];
         yield 'import fixtures load' => ['import', 'sylius:import:fixtures:load'];
-        yield 'b2b' => ['b2b', 'sylius:b2b:enable'];
         yield 'upsun' => ['upsun', 'sylius:upsun:check'];
         yield 'upsun setup' => ['upsun', 'sylius:upsun:setup'];
         yield 'upsun deploy' => ['upsun', 'sylius:upsun:deploy'];

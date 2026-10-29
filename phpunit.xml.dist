@@ -7,9 +7,6 @@
          failOnRisky="true"
 >
     <testsuites>
-        <testsuite name="b2b">
-            <directory>src/B2b/tests</directory>
-        </testsuite>
         <testsuite name="core">
             <directory>src/Core/tests</directory>
         </testsuite>
