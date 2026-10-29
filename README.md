@@ -3,8 +3,6 @@
 A set of [Castor](https://castor.jolicode.com/) packages that turns a PHP description of
 your stack into a Sylius app, and gives you the tasks to drive it.
 
-> Formerly the `castor-php/sylius` Castor plugin, see the [upgrade guide](docs/getting-started/upgrading.md).
-
 Instead of a list of manual steps, each workflow is a single, deterministic command: installing or removing a plugin
 (entities, migrations, assets, cache), switching the storefront theme, cleaning up the Admin menu or
 importing a catalog. That makes it a reliable interface for you and for AI agents alike.
@@ -54,7 +52,7 @@ Every package relies on `sylius-starter/core`; `sylius-starter/sylius-starter` i
 Read it online at [sylius-starter.github.io/docs](https://sylius-starter.github.io/docs/), or here on GitHub:
 
 - **Getting started**: [Introduction](docs/index.md), [Installation](docs/getting-started/installation.md),
-  [Packages](docs/getting-started/packages.md), [Upgrading from `castor-php/sylius`](docs/getting-started/upgrading.md)
+  [Packages](docs/getting-started/packages.md)
 - **Commands**: [Plugins](docs/commands/plugins.md), [Themes](docs/commands/themes.md),
   [Admin menu](docs/commands/admin-menu.md), [Upsun](docs/commands/upsun.md)
 - **E-commerce import**: [Overview](docs/import/index.md), [AI-generated catalog](docs/import/ai-catalog.md),

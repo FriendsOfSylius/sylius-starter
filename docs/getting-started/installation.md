@@ -86,5 +86,3 @@ castor docker:service:install sylius
 `sylius-starter/sylius-starter` brings every package. To pick only what you need, require `sylius-starter/core` and
 the [task packages](packages.md) you want, e.g.
 `castor composer require sylius-starter/core sylius-starter/themes sylius-starter/plugins "@dev"`.
-
-Coming from the `castor-php/sylius` plugin? Follow the [upgrade guide](upgrading.md).
