@@ -265,6 +265,8 @@ jobs:
                         value: "castor sylius:theme:setup arena"
                     -   name: Hearth theme
                         value: "castor sylius:theme:setup hearth"
+                    -   name: Bloom theme
+                        value: "castor sylius:theme:setup bloom"
                     -   name: Remove Menu items
                         value: "castor sylius:menu:remove official_support sylius.ui.administration"
                     -   name: Run Fixtures

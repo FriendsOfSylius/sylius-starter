@@ -26,6 +26,7 @@ In a dataset, the `image` of a product or a collection is a path relative to the
 
 | Dataset        | Catalog                                                       | Suggested theme                           |
 |----------------|---------------------------------------------------------------|-------------------------------------------|
+| `bloom`        | Eighteen beauty products and tools, on six shelves            | [Bloom](../themes/bloom.md)               |
 | `cellar`       | Seventeen wines from fictional estates, in seven regions      | [Cellar](../themes/cellar.md)             |
 | `groove`       | Sixteen fictional vinyl records, in six genres                | [Groove](../themes/groove.md)             |
 | `home`         | Eighteen pieces of furniture, lighting, linen and tableware   | [Hearth](../themes/hearth.md)             |
