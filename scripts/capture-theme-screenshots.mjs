@@ -50,6 +50,7 @@ const themeSelectors = {
   summit: '.summit-logo',
   groove: '.groove-logo',
   arena: '.arena-logo',
+  hearth: '.hearth-logo',
 };
 
 // A git worktree runs its own stack on <slug>.app.localhost, the main checkout on app.test.
