@@ -2,7 +2,7 @@
 title: Drive theme
 description: A full-screen grocery click-and-collect storefront in basil green, lemon and tomato.
 sidebar:
-  order: 10
+  order: 7
 ---
 
 Drive is built for grocery stores and click-and-collect ("drive") shops: a dense,

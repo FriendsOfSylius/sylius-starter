@@ -2,7 +2,7 @@
 title: Prompt theme
 description: A terminal-inspired storefront theme with green accents, on a dark workspace or soft green paper.
 sidebar:
-  order: 3
+  order: 6
 ---
 
 Prompt is the terminal-inspired storefront direction: terminal-green accents,

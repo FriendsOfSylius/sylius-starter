@@ -2,7 +2,7 @@
 title: Retro Gaming theme
 description: A night-arcade gaming store, with neon accents, a pixel font, a HUD and a CRT hero.
 sidebar:
-  order: 9
+  order: 17
 ---
 
 Retro Gaming turns the storefront into a night arcade: a dark console-blue shop lit by neon magenta

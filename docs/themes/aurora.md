@@ -2,7 +2,7 @@
 title: Aurora theme
 description: The violet sibling of Lagoon, lit by a blue-to-violet gradient.
 sidebar:
-  order: 7
+  order: 2
 ---
 
 Aurora is the violet sibling of [Lagoon](lagoon.md): the same airy, product-led

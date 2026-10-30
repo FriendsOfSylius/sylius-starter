@@ -2,7 +2,7 @@
 title: Culture theme
 description: A bright cultural store, Culture & Co — white shelves, warm light grey and a sunny yellow, Plus Jakarta Sans, a living room hero, category tiles, offer banners and the booksellers' picks.
 sidebar:
-  order: 19
+  order: 14
 ---
 
 Culture (*Culture & Co* on the storefront) is built for culture, games and entertainment shops selling books,

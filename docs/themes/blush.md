@@ -2,7 +2,7 @@
 title: Blush theme
 description: A storefront theme with a white canvas, raspberry accents, rose panels and a plum footer.
 sidebar:
-  order: 2
+  order: 4
 ---
 
 Blush adapts the visual language of the

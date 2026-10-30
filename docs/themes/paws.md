@@ -2,7 +2,7 @@
 title: Paws theme
 description: A warm pet supply look in oat and collar navy with tangerine calls to action, Bricolage Grotesque headings, a house paw stamped on the product cards, a shop window hero onto the living room of a corgi and a cat, and six pastel aisles.
 sidebar:
-  order: 19
+  order: 13
 ---
 
 Paws is built for pet shops selling food, treats, toys, accessories, beds and care products for dogs and

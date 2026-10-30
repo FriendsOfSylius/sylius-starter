@@ -2,7 +2,7 @@
 title: Canvas theme
 description: A clean, editorial storefront theme with warm neutrals and squared corners.
 sidebar:
-  order: 1
+  order: 3
 ---
 
 Canvas gives the storefront a clean, editorial look, with warm neutral colors,
