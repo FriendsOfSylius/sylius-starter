@@ -2,7 +2,7 @@
 title: Tech theme
 description: A crisp electronics-store look in carbon, aluminium and signal orange.
 sidebar:
-  order: 19
+  order: 8
 ---
 
 Tech is built for high-tech and gadget stores: a crisp, product-led storefront
