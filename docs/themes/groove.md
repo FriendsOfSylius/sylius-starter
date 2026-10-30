@@ -2,7 +2,7 @@
 title: Groove theme
 description: "A premium independent record store with a strong graphic identity: ink and warm paper, saturated sleeve colours, a heavy grotesque answered by a serif italic, large cover compositions and records that slide out of their sleeves."
 sidebar:
-  order: 15
+  order: 18
 ---
 
 Groove is built for independent record stores with a premium catalogue: new releases, rare first pressings,

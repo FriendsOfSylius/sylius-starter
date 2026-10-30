@@ -2,7 +2,7 @@
 title: Summit theme
 description: A photographic outdoor and adventure look in forest green and mineral grey, with signal orange accents and condensed capitals.
 sidebar:
-  order: 20
+  order: 9
 ---
 
 Summit is built for outdoor and adventure shops selling hiking, trail and mountaineering gear: packs,

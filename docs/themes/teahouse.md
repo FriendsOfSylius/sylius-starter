@@ -2,7 +2,7 @@
 title: Teahouse theme
 description: A fine tea merchant look in jade night and rice paper, with Petrona headings, a vermilion house seal, a moon gate hero and the six colours of tea.
 sidebar:
-  order: 10
+  order: 13
 ---
 
 Teahouse is built for tea merchants and tea rooms selling loose leaf teas, matcha and teaware: a

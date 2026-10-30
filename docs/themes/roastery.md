@@ -2,7 +2,7 @@
 title: Roastery theme
 description: A specialty coffee roaster look in espresso brown and cream paper, with Fraunces headings and copper fillets.
 sidebar:
-  order: 9
+  order: 12
 ---
 
 Roastery is built for specialty coffee roasters selling beans, blends and brewing gear: an

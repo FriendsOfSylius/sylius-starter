@@ -2,7 +2,7 @@
 title: Arena theme
 description: A modern video game store styled like a game launcher, with acid-lime accents, wide display type and a cinematic key-art hero, by night or by day.
 sidebar:
-  order: 16
+  order: 19
 ---
 
 Arena is built for stores selling today's AAA and AA video games: new releases, pre-orders and

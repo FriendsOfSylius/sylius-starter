@@ -26,6 +26,16 @@ Brand looks that suit any catalogue: pick one for its style.
 | <a href="volt.md"><img src="../images/volt-homepage-wide-light.webp" alt="Volt storefront homepage on a wide screen, light scheme" width="140"></a> | [Volt](volt.md) | High-energy sport-tech look in electric violet |
 | <a href="prompt.md"><img src="../images/prompt-homepage-wide-light.webp" alt="Prompt storefront homepage on a wide screen, light scheme" width="140"></a> | [Prompt](prompt.md) | Terminal-inspired workspace with green accents |
 
+## Gear and supplies
+
+Electronics, outdoor equipment and trade supplies, built around specs and references.
+
+| Preview | Theme | Description |
+|---------|-------|-------------|
+| <a href="depot.md"><img src="../images/depot-homepage-wide-light.webp" alt="Depot storefront homepage on a wide screen, light scheme" width="140"></a> | [Depot](depot.md) | Trade supplies and B2B: a trade catalogue in white, steel and navy with a teal call to action, Outfit headings, a photo banner, department cards, catalogue lines with stock and reference, and a price break band |
+| <a href="tech.md"><img src="../images/tech-homepage-wide-light.webp" alt="Tech storefront homepage on a wide screen, light scheme" width="140"></a> | [Tech](tech.md) | Electronics-store look in carbon, aluminium and signal orange |
+| <a href="summit.md"><img src="../images/summit-homepage-wide-light.webp" alt="Summit storefront homepage on a wide screen, light scheme" width="140"></a> | [Summit](summit.md) | Outdoor and adventure gear: full-bleed mountain photography, forest green, mineral grey, orange accents, condensed capitals and shop by activity |
+
 ## Food and drink
 
 Grocery, wine, coffee and tea shops, with their own typography and homepage.
@@ -57,13 +67,3 @@ Video games, records, books and entertainment, with striking heroes.
 | <a href="groove.md"><img src="../images/groove-homepage-wide-light.webp" alt="Groove storefront homepage on a wide screen, light scheme" width="140"></a> | [Groove](groove.md) | Premium independent record store: ink and warm paper, saturated sleeve colours, a heavy grotesque with serif italic accents, large cover compositions and records sliding out of their sleeves |
 | <a href="arena.md"><img src="../images/arena-homepage-wide-light.webp" alt="Arena storefront homepage on a wide screen, light scheme" width="140"></a> | [Arena](arena.md) | Modern video game store: game launcher, acid lime, wide display type and a cinematic key-art hero |
 | <a href="retro_gaming.md"><img src="../images/retro-gaming-homepage-wide-light.webp" alt="Retro Gaming storefront homepage on a wide screen, light scheme" width="140"></a> | [Retro Gaming](retro_gaming.md) | Night arcade gaming store: neon magenta and cyan, pixel font, HUD and CRT hero |
-
-## Gear and supplies
-
-Electronics, outdoor equipment and trade supplies, built around specs and references.
-
-| Preview | Theme | Description |
-|---------|-------|-------------|
-| <a href="depot.md"><img src="../images/depot-homepage-wide-light.webp" alt="Depot storefront homepage on a wide screen, light scheme" width="140"></a> | [Depot](depot.md) | Trade supplies and B2B: a trade catalogue in white, steel and navy with a teal call to action, Outfit headings, a photo banner, department cards, catalogue lines with stock and reference, and a price break band |
-| <a href="tech.md"><img src="../images/tech-homepage-wide-light.webp" alt="Tech storefront homepage on a wide screen, light scheme" width="140"></a> | [Tech](tech.md) | Electronics-store look in carbon, aluminium and signal orange |
-| <a href="summit.md"><img src="../images/summit-homepage-wide-light.webp" alt="Summit storefront homepage on a wide screen, light scheme" width="140"></a> | [Summit](summit.md) | Outdoor and adventure gear: full-bleed mountain photography, forest green, mineral grey, orange accents, condensed capitals and shop by activity |

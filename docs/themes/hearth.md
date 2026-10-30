@@ -2,7 +2,7 @@
 title: Hearth theme
 description: A warm home, decoration and furniture store in terracotta clay, linen and sage, with DM Serif Display headings, arched product niches and a living room photograph in the hero.
 sidebar:
-  order: 11
+  order: 14
 ---
 
 Hearth is built for home and living stores selling furniture, lighting, decoration, home linen, kitchenware and garden
