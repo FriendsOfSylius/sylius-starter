@@ -1,6 +1,6 @@
 ---
 title: Hearth theme
-description: A warm home, decoration and furniture store in terracotta clay, linen and sage, with DM Serif Display headings, arched product niches and a sunlit living room hero.
+description: A warm home, decoration and furniture store in terracotta clay, linen and sage, with DM Serif Display headings, arched product niches and a living room photograph in the hero.
 sidebar:
   order: 17
 ---
@@ -36,7 +36,8 @@ opens an arch onto a living room, and the bands end in the fringe of a woven rug
   ochre (`#E3A33B`, `#F6D79B` on the dark bands) and a deep terracotta (`#96432A`) for eyebrows and accent text.
 - **Dark scheme** — the living room at dusk: walnut shadows (page `#18120F`, surfaces `#211915`), lamp-lit linen type,
   a fired terracotta (`#A44D2E`) for buttons, a warm peach (`#F0A783`) for accent text and a pale sage (`#BACD9F`), with
-  ochre hairlines on the walnut bands. The hero clay takes the colour of the evening, and night falls in its window.
+  ochre hairlines on the walnut bands. The hero clay takes the colour of the evening, and its living room is lit by the
+  pendant.
 - **Typography** — *DM Serif Display* (SIL Open Font License, roman and italic, shipped in `assets/shop/fonts/`) for
   headings, product names and figures, with ochre and terracotta italics; *Inter* (already shipped by the Sylius shop)
   for body copy, and spaced uppercase small capitals for eyebrows, navigation, buttons and breadcrumbs.
@@ -50,11 +51,11 @@ opens an arch onto a living room, and the bands end in the fringe of a woven rug
   the ochre flame of the hearth, which flickers on hover) and the *Hearth* wordmark, centered category navigation
   underlined in terracotta.
 - **Homepage** — a clay hero: an eyebrow, a DM Serif Display headline ending in ochre italic, two calls to action and a
-  signature with the house mark. On the right, the **living room** seen through a plaster arch: an arched window onto
-  the sea and an olive branch, a rattan pendant that sways over a sage sofa with its ochre and terracotta cushions, a
-  walnut side table with a terracotta vase of dried grasses, a print of arches, a plant in a woven basket and a ginger
-  cat asleep on a wool rug, flicking its tail. In the dark scheme the window turns to night, with a moon and stars, and
-  the pendant lights the room. A band of **house figures** (returns, partner workshops, solid wood warranty,
+  signature with the house mark. On the right, a photograph of the **living room** in an arch: limewashed terracotta
+  walls, a sage linen sofa with its ochre and rust cushions, an oak coffee table with a stoneware vase of
+  olive branches, a rattan pendant and a striped wool rug, in the morning sun. In the dark scheme the same room is shown
+  at dusk, lit by its pendant, with the evening sky in the window; each scheme only downloads its own photograph
+  (`assets/shop/images/`). A band of **house figures** (returns, partner workshops, solid wood warranty,
   installation) closes the hero. The promise block (`theme_promise` hookable) presents the studio in three steps
   numbered in arched windows (drawn, made by hand, delivered and installed), next to the **moodboard of the season**:
   a linen card taped askew to the studio wall, with five arched paint chips (terracotta, sage, ochre, linen, walnut)
