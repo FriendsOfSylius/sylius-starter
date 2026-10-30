@@ -31,13 +31,14 @@ opens an arch onto a living room, and the bands end in the fringe of a woven rug
 | Light | ![Hearth storefront homepage on mobile, light scheme](../images/hearth-homepage-mobile-light.webp) | ![Product page in Hearth on mobile, light scheme](../images/hearth-product-mobile-light.webp) | ![Hearth cart containing a product on mobile, light scheme](../images/hearth-cart-mobile-light.webp) |
 | Dark | ![Hearth storefront homepage on mobile, dark scheme](../images/hearth-homepage-mobile-dark.webp) | ![Product page in Hearth on mobile, dark scheme](../images/hearth-product-mobile-dark.webp) | ![Hearth cart containing a product on mobile, dark scheme](../images/hearth-cart-mobile-dark.webp) |
 
-- **Palette** — terracotta clay (`#94432A`, `#7A3520`) for the hero and the buttons, walnut (`#2B1F19`) for the top
-  bar and the footer, on linen (`#F7F0E6`) and plaster (`#FFFBF5`), with garden sage (`#55703F` as text, `#9DB08A`),
-  ochre (`#E3A33B`, `#F6D79B` on the dark bands) and a deep terracotta (`#96432A`) for eyebrows and accent text.
+- **Palette** — terracotta clay (`#94432A`, `#7A3520`) for the buttons, an ochre limewash sampled from the hero
+  photograph (`#83471F`, sunlit `#B0703F`) for the hero wall, walnut (`#2B1F19`) for the top bar and the footer, on
+  linen (`#F7F0E6`) and plaster (`#FFFBF5`), with garden sage (`#55703F` as text, `#9DB08A`), ochre (`#E3A33B`,
+  `#F6D79B` on the dark bands) and a deep terracotta (`#96432A`) for eyebrows and accent text.
 - **Dark scheme** — the living room at dusk: walnut shadows (page `#18120F`, surfaces `#211915`), lamp-lit linen type,
   a fired terracotta (`#A44D2E`) for buttons, a warm peach (`#F0A783`) for accent text and a pale sage (`#BACD9F`), with
-  ochre hairlines on the walnut bands. The hero clay takes the colour of the evening, and its living room is lit by the
-  pendant.
+  ochre hairlines on the walnut bands. The hero wall falls into the shadow of the evening (`#5A3119`), lit by the
+  pendant of its living room.
 - **Typography** — *DM Serif Display* (SIL Open Font License, roman and italic, shipped in `assets/shop/fonts/`) for
   headings, product names and figures, with ochre and terracotta italics; *Inter* (already shipped by the Sylius shop)
   for body copy, and spaced uppercase small capitals for eyebrows, navigation, buttons and breadcrumbs.
@@ -50,19 +51,20 @@ opens an arch onto a living room, and the bands end in the fringe of a woven rug
 - **Header** — a walnut top bar with the delivery and returns promises, then the **house mark** (a terracotta arch with
   the ochre flame of the hearth, which flickers on hover) and the *Hearth* wordmark, centered category navigation
   underlined in terracotta.
-- **Homepage** — a clay hero: an eyebrow, a DM Serif Display headline ending in ochre italic, two calls to action and a
-  signature with the house mark. On the right, a photograph of the **living room** in an arch: limewashed terracotta
-  walls, a sage linen sofa with its ochre and rust cushions, an oak coffee table with a stoneware vase of
-  olive branches, a rattan pendant and a striped wool rug, in the morning sun. In the dark scheme the same room is shown
-  at dusk, lit by its pendant, with the evening sky in the window; each scheme only downloads its own photograph
-  (`assets/shop/images/`). A band of **house figures** (returns, partner workshops, solid wood warranty,
-  installation) closes the hero. The promise block (`theme_promise` hookable) presents the studio in three steps
-  numbered in arched windows (drawn, made by hand, delivered and installed), next to the **moodboard of the season**:
-  a linen card taped askew to the studio wall, with five arched paint chips (terracotta, sage, ochre, linen, walnut)
-  and its materials, light, textures and mood. After the four latest products, the **materials library**
-  (`theme_materials` hookable) shows six arched samples drawn in CSS (solid oak, washed linen, rattan, stoneware,
-  brushed brass and wool bouclé), crossed by a ray of light on hover, each with its origin and its care. The deals and
-  new collection blocks are hidden.
+- **Homepage** — a hero that is the wall of the living room, in a limewash mottled like plaster: an eyebrow, a DM
+  Serif Display headline ending in ochre italic, two calls to action and a signature with the house mark. On the
+  right, a photograph of the **living room** in an arch: limewashed terracotta walls, a sage linen sofa with its ochre
+  and rust cushions, an oak coffee table with a stoneware vase of olive branches, a rattan pendant and a striped wool
+  rug, in the morning sun. In the dark scheme the same room is shown at dusk, lit by its pendant, with the evening sky
+  in the window; each scheme only downloads its own photograph (`assets/shop/images/`). The sun casts the panes of a
+  window on the wall above the arch, and at dusk the pendant casts a pool of lamp light there. A band of **house
+  figures** (returns, partner workshops, solid wood warranty, installation) closes the hero. The promise block
+  (`theme_promise` hookable) presents the studio in three steps numbered in arched windows (drawn, made by hand,
+  delivered and installed), next to the **moodboard of the season**: a linen card taped askew to the studio wall, with
+  five arched paint chips (terracotta, sage, ochre, linen, walnut) and its materials, light, textures and mood. After
+  the four latest products, the **materials library** (`theme_materials` hookable) shows six arched samples drawn in
+  CSS (solid oak, washed linen, rattan, stoneware, brushed brass and wool bouclé), crossed by a ray of light on hover,
+  each with its origin and its care. The deals and new collection blocks are hidden.
 - **Footer** — walnut, with three **house services** (free decoration advice, delivered and installed, 30 days to
   change your mind) linking to the contact page and the customer account, the wordmark, the Sylius links and the
   delivery notice.
