@@ -54,12 +54,34 @@ The built-in plugins and themes are only a starting point. Register your own wit
 `castor.php` and they show up in the same commands, interactive prompts included. See
 [Extending](extending/index.md).
 
+## Themes
+
+Sylius Starter comes with ready-to-use storefront themes: general-purpose looks, and stores built around one kind of
+shop, from grocery and home decoration to culture and trade supplies. Each ships a light and a dark scheme, and one
+command installs it:
+
+```bash
+castor sylius:theme:setup lagoon
+```
+
+| Preview | Theme | Description |
+|---------|-------|-------------|
+| <a href="themes/lagoon.md"><img src="images/lagoon-homepage-wide-light.webp" alt="Lagoon storefront homepage on a wide screen, light scheme" width="140"></a> | [Lagoon](themes/lagoon.md) | Airy, product-led look in teal and aqua |
+| <a href="themes/aurora.md"><img src="images/aurora-homepage-wide-light.webp" alt="Aurora storefront homepage on a wide screen, light scheme" width="140"></a> | [Aurora](themes/aurora.md) | Lagoon's violet sibling, with a blue-to-violet gradient |
+| <a href="themes/drive.md"><img src="images/drive-homepage-wide-light.webp" alt="Drive storefront homepage on a wide screen, light scheme" width="140"></a> | [Drive](themes/drive.md) | Full-screen grocery click-and-collect store: basil green, lemon price stickers and a pick-up slot hero |
+| <a href="themes/hearth.md"><img src="images/hearth-homepage-wide-light.webp" alt="Hearth storefront homepage on a wide screen, light scheme" width="140"></a> | [Hearth](themes/hearth.md) | Home, decoration and furniture store: terracotta clay, linen and sage, DM Serif Display headings, arched product niches and a living room photograph in the hero |
+| <a href="themes/culture.md"><img src="images/culture-homepage-wide-light.webp" alt="Culture & Co storefront homepage on a wide screen, light scheme" width="140"></a> | [Culture](themes/culture.md) | Culture, games and entertainment: white and warm grey with a sunny yellow, Plus Jakarta Sans, a living room hero, category photo tiles, offer banners and the booksellers' picks |
+| <a href="themes/depot.md"><img src="images/depot-homepage-wide-light.webp" alt="Depot storefront homepage on a wide screen, light scheme" width="140"></a> | [Depot](themes/depot.md) | Trade supplies and B2B: a trade catalogue in white, steel and navy with a teal call to action, Outfit headings, a photo banner, department cards, catalogue lines with stock and reference, and a price break band |
+
+Browse [all the themes](themes/index.md), by category.
+
 ## Where to go next
 
 - [Installation](getting-started/installation.md): start a new project, or add Sylius Starter to an existing one.
 - [Packages](getting-started/packages.md): what each `sylius-starter/*` package brings.
 - Commands: [plugins](commands/plugins.md), [themes](commands/themes.md), [Admin menu](commands/admin-menu.md),
   [Upsun](commands/upsun.md).
+- [Themes](themes/index.md): every storefront theme, by category, with its screenshots.
 - [E-commerce import](import/index.md): generate a catalog with AI, or import an existing website.
 - [Extending](extending/index.md): register your own plugins, themes and tasks.
 - [Storefront slots](storefront/hero.md): how themes and packages share the homepage hero and the shop logo.

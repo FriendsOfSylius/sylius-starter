@@ -2,7 +2,7 @@
 title: Bloom theme
 description: A beauty and wellness look in milk and peony with a fig ink, DM Serif Display headings, a five-petal house flower, an arched vanity hero and six pastel shelves.
 sidebar:
-  order: 18
+  order: 12
 ---
 
 Bloom is built for beauty and wellness shops selling skincare, makeup, fragrance, hair care and beauty

@@ -2,7 +2,7 @@
 title: Cellar theme
 description: A fine wine merchant look in night bordeaux and cream paper, with Didone headings and gold fillets.
 sidebar:
-  order: 11
+  order: 8
 ---
 
 Cellar is built for wine merchants and estate shops selling bottles: a quiet, editorial

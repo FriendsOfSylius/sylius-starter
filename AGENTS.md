@@ -88,8 +88,8 @@ the first failure. Without `--restore`, the last captured theme stays active.
 The script hides the Symfony web debug toolbar, so the app can stay in the `dev` environment.
 
 Theme pages (`docs/themes/<theme>.md`) show one table per screen size (**Desktop**, **Wide screen**, **Mobile**), each
-with a **Light** and a **Dark** row of the homepage, product page and cart; the theme overview uses the `wide` homepages
-of both schemes as thumbnails, so full-width layouts stand out.
+with a **Light** and a **Dark** row of the homepage, product page and cart; the theme overview uses the `wide` light homepage
+as thumbnail, so full-width layouts stand out.
 
 The script requires Node.js 22+ and Google Chrome or Chromium. Set `CHROME_BIN` if the browser executable is not detected automatically. The selected theme must be active on the storefront.
 

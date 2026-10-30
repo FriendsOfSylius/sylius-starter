@@ -2,7 +2,7 @@
 title: Depot theme
 description: A trade catalogue for B2B supplies in white, steel and navy with a teal call to action, a photo banner, department cards, catalogue lines and a price break band.
 sidebar:
-  order: 20
+  order: 18
 ---
 
 Depot is built for business-to-business shops selling office supplies, packaging, industrial equipment,
