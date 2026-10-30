@@ -38,7 +38,7 @@ keep it fresh rather than clinical, and the page speaks of rituals, textures and
   (`#F6DF97`), sage (`#A9C6A2`), lilac (`#CDB8EC`) and sky (`#B9D3F0`).
 - **Dark scheme** — the bathroom by candlelight: night fig (page `#170B14`, surfaces `#20111C`), milk type,
   a deep peony (`#B32C5E`) for buttons and a pale pink (`#F8B4C8`) for accent text; the hero turns to a lilac
-  dusk with a rising moon.
+  dusk lit by a candle.
 - **Typography** — *DM Serif Display* (SIL Open Font License, roman and italic, shipped in
   `assets/shop/fonts/`) for headings, product names and figures, with round peony italics; *Inter* (already
   shipped by the Sylius shop) for body copy, and spaced uppercase small capitals for eyebrows, navigation,
@@ -51,25 +51,26 @@ keep it fresh rather than clinical, and the page speaks of rituals, textures and
 - **Header** — a fig top bar with the delivery and sample promise, then the **house flower** and the
   *Bloom* wordmark (its petals turn on hover), centered category navigation with a peony dot under the
   hovered link.
-- **Homepage** — a blush hero: an eyebrow, a DM Serif headline ending in peony italic, two calls to action
-  and a signature with the flower. On the right, the **vanity**: an arched mirror opening onto a garden at
-  sunrise (a lilac dusk and a moon in the dark scheme), swaying peonies, pastel pedestals holding a perfume
-  with a peony cap, a pot of pink cream and an amber dropper serum, a lipstick on the marble, falling petals,
-  twinkling sparkles and three tilted **stickers** (vegan, key ingredient, refillable). A fig band of **house
-  figures** (natural origin, no animal testing, refills, reviews) closes the hero. Category roundels take a
-  pastel each. The ritual block (`theme_promise` hookable) presents the routine in three steps on petal
-  numerals (cleanse, treat, glow), next to a **ritual card** for one skin type on a pastel board (texture
-  swatches of a gel, a serum and a cream, skin, key ingredients, finish and texture). After the four latest
-  products, the **shelves** block (`theme_shelves` hookable) shows the six shelves of the house (skincare,
-  makeup, fragrance, hair care, body & wellness, beauty tools), each on its pastel with a drawing, a promise
-  and its bestseller. The deals and new collection blocks are hidden.
+- **Homepage** — a blush hero: an eyebrow, a DM Serif headline ending in peony italic, two calls to action and
+  a signature with the flower. On the right, the **vanity**: a photograph in an arched mirror of pastel
+  pedestals on a marble vanity holding a perfume with a peony cap, a pot of pink cream and an amber dropper
+  serum, among pink and coral peonies and fallen petals, in the morning sun; in the dark scheme the same
+  vanity at a lilac dusk, by candlelight. Each scheme only downloads its own photograph
+  (`assets/shop/images/`). Three tilted **stickers** (vegan, key ingredient, refillable) are printed over it.
+  A fig band of **house figures** (natural origin, no animal testing, refills, reviews) closes the hero.
+  Category roundels take a pastel each. The ritual block (`theme_promise` hookable) presents the routine in
+  three steps on petal numerals (cleanse, treat, glow), next to a **ritual card** for one skin type on a
+  pastel board (texture swatches of a gel, a serum and a cream, skin, key ingredients, finish and texture).
+  After the four latest products, the **shelves** block (`theme_shelves` hookable) shows the six shelves of
+  the house (skincare, makeup, fragrance, hair care, body & wellness, beauty tools), each on its pastel with a
+  drawing, a promise and its bestseller. The deals and new collection blocks are hidden.
 - **Footer** — fig, with three **house services** (two samples always, beauty advisor, refills) linking to
   the contact page and the customer account, the wordmark, the Sylius links and a patch test notice.
 - **Checkout** — the checkout header uses the Bloom wordmark and responsive category navigation, the current
   step is ruled in peony.
 - **Translations** — every Bloom-specific text lives in its own `bloom` translation domain
   (`translations/bloom.en.yaml` and `bloom.fr.yaml`).
-- **Accessibility** — visible peony focus rings, text alternatives for the hero illustration and the
+- **Accessibility** — visible peony focus rings, text alternatives for the hero photograph and the
   texture levels, decorative stickers hidden from assistive technologies, and no motion (sparkles, falling
   petals, swaying peonies) for visitors who prefer reduced motion.
 
