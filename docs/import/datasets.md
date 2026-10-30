@@ -28,6 +28,7 @@ In a dataset, the `image` of a product or a collection is a path relative to the
 |----------------|---------------------------------------------------------------|-------------------------------------------|
 | `bloom`        | Eighteen beauty products and tools, on six shelves            | [Bloom](../themes/bloom.md)               |
 | `cellar`       | Seventeen wines from fictional estates, in seven regions      | [Cellar](../themes/cellar.md)             |
+| `culture`      | Eighteen books, games, instruments and collectibles           | [Culture](../themes/culture.md)           |
 | `groove`       | Sixteen fictional vinyl records, in six genres                | [Groove](../themes/groove.md)             |
 | `home`         | Eighteen pieces of furniture, lighting, linen and tableware   | [Hearth](../themes/hearth.md)             |
 | `outdoor`      | Eighteen pieces of hiking, climbing and camping gear          | [Summit](../themes/summit.md)             |
@@ -40,8 +41,9 @@ In a dataset, the `image` of a product or a collection is a path relative to the
 | `video-games`  | Sixteen fictional video games, in six genres                  | [Arena](../themes/arena.md)               |
 
 To add one, drop its directory in `src/Datasets/datasets/` (a [downloaded dataset](#download-a-dataset) has that
-layout). Every product needs a local image: the package tests check it. Another package can ship its own datasets by
-registering its directory from an autoloaded file:
+layout). Every product needs a local image, a collection may have one (shown on the homepage category tiles): the
+package tests check them. Another package can ship its own datasets by registering its directory from an autoloaded
+file:
 
 ```php
 use SyliusStarter\Core\Dataset\DatasetDirectories;
